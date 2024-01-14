@@ -17,6 +17,7 @@ class tehran
         void add_station();
     private:
         map<string, int> stations;
+        Node 
 
 };
 

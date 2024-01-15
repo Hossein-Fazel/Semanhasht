@@ -10,5 +10,5 @@ int main()
     Tehran t1;
     t1.add_station();
     t1.create_matrix();
-    t1.dijkstra(10, 53);
+    t1.dijkstra(0, 0);
 }

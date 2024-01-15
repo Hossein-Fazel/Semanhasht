@@ -360,6 +360,7 @@ void Tehran::dijkstra( int src,int dest)
 
 	
 	dist[src].distance = 0;
+    dist[src].direct.push_back(search(src));
 
 	
 	for (int count = 0; count < V - 1; count++) {

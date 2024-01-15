@@ -6,6 +6,12 @@ using namespace std;
 
 #define V 59
 
+Tehran::Tehran()
+{
+    add_station();
+    create_matrix();
+}
+
 void Tehran::create_matrix()
 {
     matrix[0][1].type = "l6" ;               matrix[1][0].type = "l6" ;
@@ -317,23 +323,6 @@ void Tehran::add_station()
     stations.insert({"Shahrak-e Shari'ati", 58});
 }
 
-void Tehran::print()
-{
-    for(int i = 0; i < 59; i++)
-    {
-        for(int j = 0; j < 59; j++)
-        {
-            if( matrix[i][j].s_p != 0)
-            cout << matrix[i][j].s_p << endl;//<< " " << matrix[i][j].type;
-        }
-        cout << endl;
-    }
-}
-
-
-
-
-
 int Tehran::minDistance(save_directions dist[], bool sptSet[])
 {
 
@@ -346,7 +335,7 @@ int Tehran::minDistance(save_directions dist[], bool sptSet[])
 	return min_index;
 }
 
-void Tehran::dijkstra( int src,int dest)
+void Tehran::dijkstra(int src,int dest)
 {
 	save_directions dist[V]; 
 				
@@ -385,9 +374,16 @@ void Tehran::dijkstra( int src,int dest)
 
 	
 	cout<< dist[dest].distance << endl;
-    for(auto i : dist[dest].direct)
-    {
-        cout << i << " -> ";
-    }
 
+    for(int i = 0 ; i < dist[dest].direct.size() - 1; i++)
+    {
+        cout << dist[dest].direct[i] << " --> ";
+    }
+    cout << dist[dest].direct[dist[dest].direct.size() - 1];
+
+}
+
+int Tehran::get_value(string key)
+{
+    return stations[key];
 }

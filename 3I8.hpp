@@ -5,6 +5,7 @@
 #include <map>
 #include<vector>
 #include<limits.h>
+
 using namespace std;
 
 #define V 59
@@ -25,19 +26,16 @@ struct save_directions
 class Tehran
 {
 public:
+    Tehran();
 
     void add_station();
     void create_matrix();
-    void print();
     int minDistance(save_directions dist[], bool sptSet[]);
-    void printSolution(save_directions dist[]);
     void dijkstra(int src,int dest);
     string search(int key);
+    int get_value(string key);
 private:
     map<string, int> stations;
     Node matrix[59][59];
 };
-
-
-
 #endif

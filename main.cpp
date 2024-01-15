@@ -1,14 +1,13 @@
-#include "3I8.hpp"
-
+#include "Semanhasht.hpp"
 #include <iostream>
 #include <map>
-using namespace std;
 
+using namespace std;
 
 int main()
 {
-    Tehran t1;
-    t1.add_station();
-    t1.create_matrix();
-    t1.dijkstra(0, 0);
+    SMHT S1;
+    S1.start();
+
+    return 0;
 }

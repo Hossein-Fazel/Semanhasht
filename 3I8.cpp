@@ -17,7 +17,7 @@ void Tehran::create_matrix()
     matrix[2][3].type = "l6" ;               matrix[3][2].type = "l6" ;
     matrix[2][3].s_p = 8 ;                   matrix[3][2].s_p = 8 ;
 
-    matrix[3][4].type = "l6" ;               matrix[3][3].type = "l6" ;
+    matrix[3][4].type = "l6" ;               matrix[4][3].type = "l6" ;
     matrix[3][4].s_p = 2 ;                   matrix[4][3].s_p = 2 ;
 
     matrix[4][5].type = "l6" ;               matrix[5][4].type = "l6" ;
@@ -47,7 +47,7 @@ void Tehran::create_matrix()
     matrix[11][12].s_p = 5;                   matrix[12][11].s_p = 5 ;
 
     matrix[12][13].type = "l4" ;               matrix[13][12].type = "l4" ;
-    matrix[12][13].s_p = 5 ;                   matrix[13][12].s_p = 6 ;
+    matrix[12][13].s_p = 6 ;                   matrix[13][12].s_p = 6 ;
 
     matrix[13][14].type = "l4" ;               matrix[14][13].type = "l4" ;
     matrix[13][14].s_p = 2 ;                   matrix[14][13].s_p = 2 ;
@@ -85,7 +85,7 @@ void Tehran::create_matrix()
     matrix[23][24].type = "l4" ;               matrix[24][23].type = "l4" ;
     matrix[23][24].s_p = 1 ;                   matrix[24][23].s_p = 1 ;
 
-    matrix[23][25].type = "l4" ;               matrix[25][24].type = "l4" ;
+    matrix[24][25].type = "l4" ;               matrix[25][24].type = "l4" ;
     matrix[24][25].s_p = 1 ;                   matrix[25][24].s_p = 1 ;
 
     matrix[25][26].type = "l4" ;               matrix[26][25].type = "l4" ;
@@ -128,7 +128,7 @@ void Tehran::create_matrix()
     matrix[35][36].type ="13" ;                matrix[36][35].type ="13" ;
     matrix[35][36].s_p = 1 ;                   matrix[36][35].s_p = 1 ;
 
-    matrix[36][37].type = "l3" ;               matrix[37][236].type = "l3" ;
+    matrix[36][37].type = "l3" ;               matrix[37][36].type = "l3" ;
     matrix[36][37].s_p = 2 ;                   matrix[37][36].s_p = 2 ;
 
     matrix[37][38].type = "l3" ;               matrix[38][37].type = "l3" ;
@@ -168,13 +168,13 @@ void Tehran::create_matrix()
     matrix[5][47].s_p = 2 ;                   matrix[47][5].s_p = 2 ;
 
     matrix[47][20].type = "l1" ;               matrix[20][47].type = "l1" ;
-    matrix[47][20].s_p = 1 ;                  matrix[40][47].s_p = 1 ;
+    matrix[47][20].s_p = 1 ;                  matrix[20][47].s_p = 1 ;
 
     matrix[20][48].type = "l1" ;               matrix[48][20].type = "l1" ;
     matrix[20][48].s_p = 4 ;                  matrix[48][20].s_p = 4 ;
 
-    matrix[48][49].type = "l1" ;               matrix[20][49].type = "l1" ;
-    matrix[48][49].s_p = 6 ;                  matrix[40][49].s_p = 6 ;
+    matrix[48][49].type = "l1" ;               matrix[49][48].type = "l1" ;
+    matrix[48][49].s_p = 6 ;                  matrix[49][48].s_p = 6 ;
 
     matrix[49][50].type = "l1" ;               matrix[50][49].type = "l1" ;
     matrix[49][50].s_p = 3 ;                  matrix[50][49].s_p = 3 ;
@@ -241,6 +241,17 @@ void Tehran::create_matrix()
 
     matrix[30][58].type = "b3" ;               matrix[58][30].type = "b3" ;
     matrix[30][58].s_p = 5 ;                  matrix[58][30].s_p = 5 ;
+}
+
+string Tehran::search(int key)
+{
+    for(auto i : stations)
+    {
+        if(i.second == key)
+        {
+            return i.first;
+        }
+    }
 }
 
 void Tehran::add_station()
@@ -335,14 +346,6 @@ int Tehran::minDistance(save_directions dist[], bool sptSet[])
 	return min_index;
 }
 
-// void Tehran::printSolution(save_directions dist[])
-// {
-// 	cout << "Vertex \t Distance from Source" << endl;
-// 	for (int i = 0; i < V; i++)
-// 		cout << i << " \t\t\t\t" << dist[i].distance << endl;
-// }
-
-
 void Tehran::dijkstra( int src,int dest)
 {
 	save_directions dist[V]; 
@@ -370,12 +373,20 @@ void Tehran::dijkstra( int src,int dest)
 		for (int v = 0; v < V; v++)
 
 			
-			if (!sptSet[v] && matrix[u][v].s_p
-				&& dist[u].distance != INT_MAX
-				&& dist[u].distance + matrix[u][v].s_p < dist[v].distance)
+			if (!sptSet[v] && matrix[u][v].s_p && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].s_p < dist[v].distance)
+            {
 				dist[v].distance = dist[u].distance + matrix[u][v].s_p;
+
+                dist[v].direct = dist[u].direct;
+                dist[v].direct.push_back(search(v));
+            }
 	}
 
 	
-	cout<< dist[dest].distance;
+	cout<< dist[dest].distance << endl;
+    for(auto i : dist[dest].direct)
+    {
+        cout << i << " -> ";
+    }
+
 }

@@ -32,7 +32,7 @@ public:
     int minDistance(save_directions dist[], bool sptSet[]);
     void printSolution(save_directions dist[]);
     void dijkstra(int src,int dest);
-
+    string search(int key);
 private:
     map<string, int> stations;
     Node matrix[59][59];

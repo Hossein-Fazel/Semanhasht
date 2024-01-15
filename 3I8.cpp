@@ -4,7 +4,9 @@
 #include <map>
 using namespace std;
 
-void tehran::create_matrix()
+#define V 59
+
+void Tehran::create_matrix()
 {
     matrix[0][1].type = "l6" ;               matrix[1][0].type = "l6" ;
     matrix[0][1].s_p = 10 ;                  matrix[1][0].s_p = 10 ;
@@ -241,7 +243,7 @@ void tehran::create_matrix()
     matrix[30][58].s_p = 5 ;                  matrix[58][30].s_p = 5 ;
 }
 
-void tehran::add_station()
+void Tehran::add_station()
 {
     stations.insert({"Kouhsar", 0});
     stations.insert({"Kashani", 1});
@@ -304,7 +306,7 @@ void tehran::add_station()
     stations.insert({"Shahrak-e Shari'ati", 58});
 }
 
-void tehran::print()
+void Tehran::print()
 {
     for(int i = 0; i < 59; i++)
     {
@@ -315,4 +317,65 @@ void tehran::print()
         }
         cout << endl;
     }
+}
+
+
+
+
+
+int Tehran::minDistance(save_directions dist[], bool sptSet[])
+{
+
+	int min = INT_MAX, min_index;
+
+	for (int v = 0; v < V; v++)
+		if (sptSet[v] == false && dist[v].distance <= min)
+			min = dist[v].distance, min_index = v;
+
+	return min_index;
+}
+
+// void Tehran::printSolution(save_directions dist[])
+// {
+// 	cout << "Vertex \t Distance from Source" << endl;
+// 	for (int i = 0; i < V; i++)
+// 		cout << i << " \t\t\t\t" << dist[i].distance << endl;
+// }
+
+
+void Tehran::dijkstra( int src,int dest)
+{
+	save_directions dist[V]; 
+				
+
+	bool sptSet[59]; 
+	
+
+	
+	for (int i = 0; i < V; i++)
+		dist[i].distance = INT_MAX, sptSet[i] = false;
+
+	
+	dist[src].distance = 0;
+
+	
+	for (int count = 0; count < V - 1; count++) {
+		
+		int u = minDistance(dist, sptSet);
+
+		
+		sptSet[u] = true;
+
+		
+		for (int v = 0; v < V; v++)
+
+			
+			if (!sptSet[v] && matrix[u][v].s_p
+				&& dist[u].distance != INT_MAX
+				&& dist[u].distance + matrix[u][v].s_p < dist[v].distance)
+				dist[v].distance = dist[u].distance + matrix[u][v].s_p;
+	}
+
+	
+	cout<< dist[dest].distance;
 }

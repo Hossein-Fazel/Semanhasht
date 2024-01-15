@@ -7,8 +7,8 @@ using namespace std;
 
 int main()
 {
-    tehran t1;
+    Tehran t1;
     t1.add_station();
     t1.create_matrix();
-    t1.print();
+    t1.dijkstra(4, 35);
 }

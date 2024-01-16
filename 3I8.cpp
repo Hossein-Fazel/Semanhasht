@@ -1,5 +1,5 @@
 #include "3I8.hpp"
-
+#include <stdexcept>
 #include <iostream>
 #include <map>
 using namespace std;
@@ -337,64 +337,70 @@ int Tehran::minDistance(save_directions dist[], bool sptSet[])
 
 void Tehran::dijkstra(int src,int dest)
 {
-	save_directions dist[V]; 
-				
-
-	bool sptSet[59]; 
-	
-
-	
-	for (int i = 0; i < V; i++)
-		dist[i].distance = INT_MAX, sptSet[i] = false;
-
-	
-	dist[src].distance = 0;
-    dist[src].direct.push_back(search(src));
-
-	
-	for (int count = 0; count < V - 1; count++) 
-    {
-        string viechel = "";
-		
-		int u = minDistance(dist, sptSet);
-
-		
-		sptSet[u] = true;
-
-		
-		for (int v = 0; v < V; v++)
-
-			
-			if (!sptSet[v] && matrix[u][v].s_p && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].s_p < dist[v].distance)
-            {
-				dist[v].distance = dist[u].distance + matrix[u][v].s_p;
-
-                dist[v].direct = dist[u].direct;
-                dist[v].direct.push_back(search(v));
-                dist[v].viechel = dist[u].viechel;
-                dist[v].viechel.push_back(matrix[v][u].type);
-            }
-	}
-
-	
-	cout<< dist[dest].distance << endl;
-
-    for(int i = 0 ; i < dist[dest].direct.size() - 1; i++)
-    {
-        cout << dist[dest].direct[i] << " -- ";
-
-        if(dist[dest].viechel[i] == "l1" or dist[dest].viechel[i] == "l6" or dist[dest].viechel[i] == "l3" or dist[dest].viechel[i] == "l4")
-        {
-            cout << "(Taxi or Subway)" ;
-        }
-        else
-        {
-            cout <<  "(Bus)" ;
-        }
+    //cout << src << endl << dest ;  // check the value of nodes.
     
-        cout << " --> ";
+    if( src >=0 && src <=58 && dest >=0 && dest <=58)
+    {
+        save_directions dist[V]; 
+                    
+        bool sptSet[59]; 
+        
+        for (int i = 0; i < V; i++)
+            dist[i].distance = INT_MAX, sptSet[i] = false;
+
+        
+        dist[src].distance = 0;
+        dist[src].direct.push_back(search(src));
+
+        
+        for (int count = 0; count < V - 1; count++) 
+        {
+            string viechel = "";
+            
+            int u = minDistance(dist, sptSet);
+
+            
+            sptSet[u] = true;
+
+            
+            for (int v = 0; v < V; v++)
+
+                
+                if (!sptSet[v] && matrix[u][v].s_p && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].s_p < dist[v].distance)
+                {
+                    dist[v].distance = dist[u].distance + matrix[u][v].s_p;
+
+                    dist[v].direct = dist[u].direct;
+                    dist[v].direct.push_back(search(v));
+                    dist[v].viechel = dist[u].viechel;
+                    dist[v].viechel.push_back(matrix[v][u].type);
+                }
+        }
+
+        cout<< dist[dest].distance << endl;
+
+        for(int i = 0 ; i < dist[dest].direct.size() - 1; i++)
+        {
+            cout << dist[dest].direct[i] << " -- ";
+
+            if(dist[dest].viechel[i] == "l1" or dist[dest].viechel[i] == "l6" or dist[dest].viechel[i] == "l3" or dist[dest].viechel[i] == "l4")
+            {
+                cout << "(Taxi or Subway)" ;
+            }
+            else
+            {
+                cout <<  "(Bus)" ;
+            }
+        
+            cout << " --> ";
+        }
+        cout << dist[dest].direct[dist[dest].direct.size() - 1];
     }
-    cout << dist[dest].direct[dist[dest].direct.size() - 1];
+    else
+    {
+        throw invalid_argument("Not existing value!") ;
+
+    }
 }
 
 int Tehran::get_value(string key)

@@ -21,6 +21,7 @@ struct save_directions
 {
     int distance = 0;
     vector<string> direct;
+    vector<string> viechel;
 };
 
 class Tehran

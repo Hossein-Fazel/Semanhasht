@@ -46,7 +46,7 @@ void Tehran::create_matrix()
     matrix[10][1].type = "l4" ;               matrix[1][10].type = "l4" ;
     matrix[10][1].s_p = 5 ;                   matrix[1][10].s_p = 5 ;
 
-    matrix[1][11].type ="14" ;                matrix[11][1].type ="14" ;
+    matrix[1][11].type ="l4" ;                matrix[11][1].type ="l4" ;
     matrix[1][11].s_p = 4 ;                   matrix[11][1].s_p = 4 ;
 
     matrix[11][12].type = "l4" ;               matrix[12][11].type = "l4" ;
@@ -352,7 +352,9 @@ void Tehran::dijkstra(int src,int dest)
     dist[src].direct.push_back(search(src));
 
 	
-	for (int count = 0; count < V - 1; count++) {
+	for (int count = 0; count < V - 1; count++) 
+    {
+        string viechel = "";
 		
 		int u = minDistance(dist, sptSet);
 
@@ -369,6 +371,8 @@ void Tehran::dijkstra(int src,int dest)
 
                 dist[v].direct = dist[u].direct;
                 dist[v].direct.push_back(search(v));
+                dist[v].viechel = dist[u].viechel;
+                dist[v].viechel.push_back(matrix[v][u].type);
             }
 	}
 
@@ -377,10 +381,20 @@ void Tehran::dijkstra(int src,int dest)
 
     for(int i = 0 ; i < dist[dest].direct.size() - 1; i++)
     {
-        cout << dist[dest].direct[i] << " --> ";
+        cout << dist[dest].direct[i] << " -- ";
+
+        if(dist[dest].viechel[i] == "l1" or dist[dest].viechel[i] == "l6" or dist[dest].viechel[i] == "l3" or dist[dest].viechel[i] == "l4")
+        {
+            cout << "(Taxi or Subway)" ;
+        }
+        else
+        {
+            cout <<  "(Bus)" ;
+        }
+    
+        cout << " --> ";
     }
     cout << dist[dest].direct[dist[dest].direct.size() - 1];
-
 }
 
 int Tehran::get_value(string key)

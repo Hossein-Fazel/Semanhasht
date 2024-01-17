@@ -410,3 +410,10 @@ int Tehran::get_value(string key)
 
     return stations[key];
 }
+
+void Tehran::creat_buslane(string lane)
+{
+    Buslan1.insert({"Tehran Pars","Ebn-e Sina","Emam Hossein","Darvazeh Dowlat","Ferdowsi","Ferdowsi","Ostad Mo'in","Meydan-e Azadi","Bimeh"});
+    Buslane2.insert({"Khajeh Abdollah-e Ansari","Gha'em","Pirouzi","Shahid Rezaei","Payaneh Javanmard"});
+    Buslane3.insert({"Shahid Sadr","Tajrish","Mirdamad","Meydan-e Hazrat-e ValiAsr","Rahahan","Shahrak-e Shari'ati"});
+}

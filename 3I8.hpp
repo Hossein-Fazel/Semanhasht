@@ -5,6 +5,7 @@
 #include <map>
 #include<vector>
 #include<limits.h>
+#include<unordered_set>
 
 using namespace std;
 
@@ -35,7 +36,9 @@ public:
     void dijkstra(int src,int dest);
     string search(int key);
     int get_value(string key);
+    void creat_buslane(string lane);
 private:
+    unordered_set<string> Buslan1,Buslane2,Buslane3;
     map<string, int> stations;
     Node matrix[59][59];
 };

@@ -336,9 +336,7 @@ int Tehran::minDistance(save_directions dist[], bool sptSet[])
 }
 
 void Tehran::dijkstra(int src,int dest)
-{
-    //cout << src << endl << dest ;  // check the value of nodes.
-    
+{    
     if( src >=0 && src <=58 && dest >=0 && dest <=58)
     {
         save_directions dist[V]; 
@@ -405,5 +403,10 @@ void Tehran::dijkstra(int src,int dest)
 
 int Tehran::get_value(string key)
 {
+    if(stations.count(key) == 0)
+    {
+        return -1;
+    }
+
     return stations[key];
 }

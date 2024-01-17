@@ -411,9 +411,19 @@ int Tehran::get_value(string key)
     return stations[key];
 }
 
-void Tehran::creat_buslane(string lane)
+void Tehran::create_busline()
 {
-    Buslan1.insert({"Tehran Pars","Ebn-e Sina","Emam Hossein","Darvazeh Dowlat","Ferdowsi","Ferdowsi","Ostad Mo'in","Meydan-e Azadi","Bimeh"});
-    Buslane2.insert({"Khajeh Abdollah-e Ansari","Gha'em","Pirouzi","Shahid Rezaei","Payaneh Javanmard"});
-    Buslane3.insert({"Shahid Sadr","Tajrish","Mirdamad","Meydan-e Hazrat-e ValiAsr","Rahahan","Shahrak-e Shari'ati"});
+    Busline1.insert({"Tehran Pars","Ebn-e Sina","Emam Hossein","Darvazeh Dowlat","Ferdowsi","Ferdowsi","Ostad Mo'in","Meydan-e Azadi","Bimeh"});
+    Busline2.insert({"Khajeh Abdollah-e Ansari","Gha'em","Pirouzi","Shahid Rezaei","Payaneh Javanmard"});
+    Busline3.insert({"Shahid Sadr","Tajrish","Mirdamad","Meydan-e Hazrat-e ValiAsr","Rahahan","Shahrak-e Shari'ati"});
+}
+
+void Tehran::create_metrolines()
+{
+    l4.insert({"Shahid Kolahdouz ", "Nirou Havaei", "Nabard", "Pirouzi", "Ebn-e Sina", "Meydan-e Shohada", "Darvazeh Shemiran",
+     "Darvazeh Dowlat", "Ferdowsi", "Teatr-e Shahr", "Meydan-e Enghelab-e Eslami", "Towhid", "Shademan", "Ostad Mo'in",
+      "Meydan-e Azadi", "Eram-e Sabz", "Allameh Jafari", "Kashani", "Chaharbagh"});
+
+    l3.insert({"Gha'em", "Aghdasiyeh", "Shahid Zeynoddin", "Shahid Ghodousi", "Sohrevardi", "Shahid Beheshti", "Merza-ye Shirazi",
+    "Meydan-e Jahad", "Meydan-e Hazrat-e ValiAsr", "Teatr-e Shahr", "Moniriyeh", "Mahdiyeh", "Rahahan", "Javadiyeh", "Zamzam", "Azadegan"});
 }

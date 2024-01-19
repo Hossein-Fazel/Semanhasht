@@ -17,7 +17,7 @@ void Tehran::create_matrix()
     matrix[0][1].type = "l6" ;               matrix[1][0].type = "l6" ;
     matrix[0][1].s_p = 10 ;                  matrix[1][0].s_p = 10 ;
 
-    matrix[1][2].type = "16" ;               matrix[2][1].type = "16" ;
+    matrix[1][2].type = "l6" ;               matrix[2][1].type = "l6" ;
     matrix[1][2].s_p = 6 ;                   matrix[2][1].s_p = 6 ;
 
     matrix[2][3].type = "l6" ;               matrix[3][2].type = "l6" ;
@@ -73,7 +73,7 @@ void Tehran::create_matrix()
     matrix[18][19].type = "l4" ;               matrix[19][18].type = "l4" ;
     matrix[18][19].s_p = 1 ;                   matrix[19][18].s_p = 1 ;
 
-    matrix[19][20].type ="14" ;                matrix[20][19].type ="14" ;
+    matrix[19][20].type ="l4" ;                matrix[20][19].type ="l4" ;
     matrix[19][20].s_p = 1 ;                   matrix[20][19].s_p = 1 ;
 
     matrix[20][21].type = "l4" ;               matrix[21][20].type = "l4" ;
@@ -101,10 +101,10 @@ void Tehran::create_matrix()
     //++++++++++++++++++++++++++++++++++++++++++++++++++++line3+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-     matrix[27][28].type = "l3" ;             matrix[28][27].type = "l3" ;
+    matrix[27][28].type = "l3" ;             matrix[28][27].type = "l3" ;
     matrix[27][28].s_p = 8 ;                  matrix[28][27].s_p = 8 ;
 
-    matrix[28][29].type ="13" ;                matrix[29][28].type ="13" ;
+    matrix[28][29].type ="l3" ;                matrix[29][28].type ="l3" ;
     matrix[28][29].s_p = 2 ;                   matrix[29][28].s_p = 2 ;
 
     matrix[29][30].type = "l3" ;               matrix[30][29].type = "l3" ;
@@ -131,7 +131,7 @@ void Tehran::create_matrix()
     matrix[34][35].type = "l3" ;               matrix[35][34].type = "l3" ;
     matrix[34][35].s_p = 3 ;                  matrix[35][34].s_p = 3 ;
 
-    matrix[35][36].type ="13" ;                matrix[36][35].type ="13" ;
+    matrix[35][36].type ="l3" ;                matrix[36][35].type ="l3" ;
     matrix[35][36].s_p = 1 ;                   matrix[36][35].s_p = 1 ;
 
     matrix[36][37].type = "l3" ;               matrix[37][36].type = "l3" ;
@@ -152,7 +152,7 @@ void Tehran::create_matrix()
     matrix[41][42].type = "l1" ;               matrix[42][41].type = "l1" ;
     matrix[41][42].s_p = 2 ;                  matrix[42][41].s_p = 2 ;
 
-    matrix[42][43].type ="11" ;                matrix[43][42].type ="11" ;
+    matrix[42][43].type ="l1" ;                matrix[43][42].type ="l1" ;
     matrix[42][43].s_p = 3 ;                   matrix[43][42].s_p = 3 ;
 
     matrix[43][44].type = "l1" ;               matrix[44][43].type = "l1" ;
@@ -195,9 +195,6 @@ void Tehran::create_matrix()
 
     matrix[53][13].type = "b1" ;               matrix[13][53].type = "b1" ;
     matrix[53][13].s_p = 3 ;                  matrix[13][53].s_p = 3 ;
-    
-    matrix[13][14].type = "b1" ;               matrix[14][13].type = "b1" ;
-    matrix[13][14].s_p = 4 ;                  matrix[14][13].s_p = 4 ;
 
     matrix[14][17].type = "b1" ;               matrix[17][14].type = "b1" ;
     matrix[14][17].s_p = 4 ;                  matrix[17][14].s_p = 4 ;

@@ -41,7 +41,7 @@ public:
 
 private:
 
-    unordered_set<string> Busline1, Busline2, Busline3, l4, l3;
+    unordered_set<string> Busline1, Busline2, Busline3, l4, l3, l1, l6;
     map<string, int> stations;
     Node matrix[59][59];
 };

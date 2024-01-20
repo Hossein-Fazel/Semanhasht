@@ -423,4 +423,10 @@ void Tehran::create_metrolines()
 
     l3.insert({"Gha'em", "Aghdasiyeh", "Shahid Zeynoddin", "Shahid Ghodousi", "Sohrevardi", "Shahid Beheshti", "Merza-ye Shirazi",
     "Meydan-e Jahad", "Meydan-e Hazrat-e ValiAsr", "Teatr-e Shahr", "Moniriyeh", "Mahdiyeh", "Rahahan", "Javadiyeh", "Zamzam", "Azadegan"});
+
+    l1.insert({"Tajrish", "Gheytariyeh", "Gholhak", "Mirdamad", "Shahid Haghani", "Shahid Beheshti", "Shahid Mofatteh", "Haftom-e Tir", "Taleghani",
+    "Darvazeh Dowlat", "Panzdah-e Khordad", "Shoush", "Jonoub Terminal", "Shahr-e Rey", "Shahr-e Rey"});
+
+    l6.insert({"Haram-e Hazrat-e Abdolazim", "Shahid Rezaei", "Meydan-e Shohada", "Emam Hossein", "Haftom-e Tir", "Meydan-e Hazrat-e ValiAsr",
+    "Boostan-e laleh", "Yadegar-e Emam", "Kashani", "Kouhsar"});
 }

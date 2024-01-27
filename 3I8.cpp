@@ -285,7 +285,7 @@ void Tehran::add_station()
     stations.insert({"Pirouzi", 23});
     stations.insert({"Nabard", 24});
     stations.insert({"Nirou Havaei", 25});
-    stations.insert({"Shahid Kolahdouz ", 26});
+    stations.insert({"Shahid Kolahdouz", 26});
     stations.insert({"Azadegan", 27});
     stations.insert({"Zamzam", 28});
     stations.insert({"Javadiyeh", 29});

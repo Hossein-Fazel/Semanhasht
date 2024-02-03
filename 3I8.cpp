@@ -2,6 +2,8 @@
 #include <stdexcept>
 #include <iostream>
 #include <map>
+#include <fstream>
+
 using namespace std;
 
 #define V 59
@@ -429,4 +431,43 @@ void Tehran::create_metrolines()
 
     l6.insert({"Haram-e Hazrat-e Abdolazim", "Shahid Rezaei", "Meydan-e Shohada", "Emam Hossein", "Haftom-e Tir", "Meydan-e Hazrat-e ValiAsr",
     "Boostan-e laleh", "Yadegar-e Emam", "Kashani", "Kouhsar"});
+}
+
+void Tehran::read_file()
+{
+     ifstream file ;
+
+     file.open("line.txt" , ios::in );
+     if(file.is_open())
+     {
+        string line ;
+        getline( file , line);
+        line.erase(line.size()-1 , 1) ;
+        cout << "line:" << line << endl ;
+
+        while (!file.eof())
+        {
+           string stat1 ;
+           string stat2 ;
+           string dis ;
+           getline(file , stat1);
+
+           if(stat1 == "end")
+           {
+                getline( file , line);
+                if (line.size()!= 0)
+                {
+                    line.erase(line.size()-1 , 1) ;
+                }
+                cout << "line:" << line << endl ; 
+                getline(file , stat1) ;
+           }
+           getline(file , stat2);
+           getline(file , dis);
+           cout << "stat1 ,2 dis :" << stat1 << " " << stat2 << " " << dis << endl ; 
+
+           
+        }
+        
+     }
 }

@@ -38,6 +38,7 @@ public:
     int get_value(string key);
     void create_busline();
     void create_metrolines();
+    void read_file();
 
 private:
 

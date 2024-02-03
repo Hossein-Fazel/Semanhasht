@@ -10,242 +10,7 @@ using namespace std;
 
 Tehran::Tehran()
 {
-    add_station();
-    create_matrix();
-}
-
-void Tehran::create_matrix()
-{
-    matrix[0][1].type = "l6" ;               matrix[1][0].type = "l6" ;
-    matrix[0][1].s_p = 10 ;                  matrix[1][0].s_p = 10 ;
-
-    matrix[1][2].type = "l6" ;               matrix[2][1].type = "l6" ;
-    matrix[1][2].s_p = 6 ;                   matrix[2][1].s_p = 6 ;
-
-    matrix[2][3].type = "l6" ;               matrix[3][2].type = "l6" ;
-    matrix[2][3].s_p = 8 ;                   matrix[3][2].s_p = 8 ;
-
-    matrix[3][4].type = "l6" ;               matrix[4][3].type = "l6" ;
-    matrix[3][4].s_p = 2 ;                   matrix[4][3].s_p = 2 ;
-
-    matrix[4][5].type = "l6" ;               matrix[5][4].type = "l6" ;
-    matrix[4][5].s_p = 2 ;                   matrix[5][4].s_p = 2 ;
-
-    matrix[5][6].type = "l6" ;               matrix[6][5].type = "l6" ;
-    matrix[5][6].s_p = 5 ;                   matrix[6][5].s_p = 5 ;
-
-    matrix[6][7].type = "l6" ;               matrix[7][6].type = "l6" ;
-    matrix[6][7].s_p = 2 ;                   matrix[7][6].s_p = 2 ;
-
-    matrix[7][8].type = "l6" ;               matrix[8][7].type = "l6" ;
-    matrix[7][8].s_p = 6 ;                   matrix[8][7].s_p = 6 ;
-
-    matrix[8][9].type = "l6" ;               matrix[9][8].type = "l6" ;
-    matrix[8][9].s_p = 10 ;                  matrix[9][8].s_p = 10 ;
-
-//++++++++++++++++++++++++++++++++++++++++++++++line4++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-    matrix[10][1].type = "l4" ;               matrix[1][10].type = "l4" ;
-    matrix[10][1].s_p = 5 ;                   matrix[1][10].s_p = 5 ;
-
-    matrix[1][11].type ="l4" ;                matrix[11][1].type ="l4" ;
-    matrix[1][11].s_p = 4 ;                   matrix[11][1].s_p = 4 ;
-
-    matrix[11][12].type = "l4" ;               matrix[12][11].type = "l4" ;
-    matrix[11][12].s_p = 5;                   matrix[12][11].s_p = 5 ;
-
-    matrix[12][13].type = "l4" ;               matrix[13][12].type = "l4" ;
-    matrix[12][13].s_p = 6 ;                   matrix[13][12].s_p = 6 ;
-
-    matrix[13][14].type = "l4" ;               matrix[14][13].type = "l4" ;
-    matrix[13][14].s_p = 2 ;                   matrix[14][13].s_p = 2 ;
-
-    matrix[14][15].type = "l4" ;               matrix[15][14].type = "l4" ;
-    matrix[14][15].s_p = 4 ;                   matrix[15][14].s_p = 4 ;
-
-    matrix[15][16].type = "l4" ;               matrix[16][15].type = "l4" ;
-    matrix[15][16].s_p = 2 ;                   matrix[16][15].s_p = 2 ;
-
-    matrix[16][17].type = "l4" ;               matrix[17][16].type = "l4" ;
-    matrix[16][17].s_p = 1 ;                   matrix[17][16].s_p = 1 ;
-
-    matrix[17][18].type = "l4" ;               matrix[18][17].type = "l4" ;
-    matrix[17][18].s_p = 3 ;                   matrix[18][17].s_p = 3 ;
-
-    matrix[18][19].type = "l4" ;               matrix[19][18].type = "l4" ;
-    matrix[18][19].s_p = 1 ;                   matrix[19][18].s_p = 1 ;
-
-    matrix[19][20].type ="l4" ;                matrix[20][19].type ="l4" ;
-    matrix[19][20].s_p = 1 ;                   matrix[20][19].s_p = 1 ;
-
-    matrix[20][21].type = "l4" ;               matrix[21][20].type = "l4" ;
-    matrix[20][21].s_p = 2 ;                   matrix[21][20].s_p = 2 ;
-
-    matrix[21][7].type = "l4" ;               matrix[7][21].type = "l4" ;
-    matrix[21][7].s_p = 2 ;                   matrix[7][21].s_p = 2 ;
-
-    matrix[7][22].type = "l4" ;               matrix[22][7].type = "l4" ;
-    matrix[7][22].s_p = 1 ;                   matrix[22][7].s_p = 1 ;
-
-    matrix[22][23].type = "l4" ;               matrix[23][22].type = "l4" ;
-    matrix[22][23].s_p = 3 ;                   matrix[23][22].s_p = 3 ;
-
-    matrix[23][24].type = "l4" ;               matrix[24][23].type = "l4" ;
-    matrix[23][24].s_p = 1 ;                   matrix[24][23].s_p = 1 ;
-
-    matrix[24][25].type = "l4" ;               matrix[25][24].type = "l4" ;
-    matrix[24][25].s_p = 1 ;                   matrix[25][24].s_p = 1 ;
-
-    matrix[25][26].type = "l4" ;               matrix[26][25].type = "l4" ;
-    matrix[25][26].s_p = 7 ;                  matrix[26][25].s_p = 7 ;
-
-
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++line3+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-    matrix[27][28].type = "l3" ;             matrix[28][27].type = "l3" ;
-    matrix[27][28].s_p = 8 ;                  matrix[28][27].s_p = 8 ;
-
-    matrix[28][29].type ="l3" ;                matrix[29][28].type ="l3" ;
-    matrix[28][29].s_p = 2 ;                   matrix[29][28].s_p = 2 ;
-
-    matrix[29][30].type = "l3" ;               matrix[30][29].type = "l3" ;
-    matrix[29][30].s_p = 2 ;                   matrix[30][29].s_p = 2 ;
-
-    matrix[30][31].type = "l3" ;               matrix[31][30].type = "l3" ;
-    matrix[30][31].s_p = 1 ;                   matrix[31][30].s_p = 1 ;
-
-    matrix[31][32].type = "l3" ;               matrix[32][31].type = "l3" ;
-    matrix[31][32].s_p = 3 ;                   matrix[32][31].s_p = 3 ;
-
-    matrix[32][18].type = "l3" ;               matrix[18][32].type = "l3" ;
-    matrix[32][18].s_p = 4 ;                   matrix[18][32].s_p = 4 ;
-
-    matrix[18][4].type = "l3" ;               matrix[4][18].type = "l3" ;
-    matrix[18][4].s_p = 2 ;                   matrix[4][18].s_p = 2 ;
-
-    matrix[4][33].type = "l3" ;               matrix[33][4].type = "l3" ;
-    matrix[4][33].s_p = 1 ;                   matrix[33][4].s_p = 1 ;
-
-    matrix[33][34].type = "l3" ;               matrix[34][33].type = "l3" ;
-    matrix[33][34].s_p = 2 ;                  matrix[34][33].s_p = 2 ;
-
-    matrix[34][35].type = "l3" ;               matrix[35][34].type = "l3" ;
-    matrix[34][35].s_p = 3 ;                  matrix[35][34].s_p = 3 ;
-
-    matrix[35][36].type ="l3" ;                matrix[36][35].type ="l3" ;
-    matrix[35][36].s_p = 1 ;                   matrix[36][35].s_p = 1 ;
-
-    matrix[36][37].type = "l3" ;               matrix[37][36].type = "l3" ;
-    matrix[36][37].s_p = 2 ;                   matrix[37][36].s_p = 2 ;
-
-    matrix[37][38].type = "l3" ;               matrix[38][37].type = "l3" ;
-    matrix[37][38].s_p = 5 ;                   matrix[38][37].s_p = 5 ;
-
-    matrix[38][39].type = "l3" ;               matrix[39][38].type = "l3" ;
-    matrix[38][39].s_p = 10 ;                   matrix[39][38].s_p = 10 ;
-
-    matrix[39][40].type = "l3" ;               matrix[40][39].type = "l3" ;
-    matrix[39][40].s_p = 4 ;                   matrix[40][39].s_p = 4 ;
-
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++line1+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-    matrix[41][42].type = "l1" ;               matrix[42][41].type = "l1" ;
-    matrix[41][42].s_p = 2 ;                  matrix[42][41].s_p = 2 ;
-
-    matrix[42][43].type ="l1" ;                matrix[43][42].type ="l1" ;
-    matrix[42][43].s_p = 3 ;                   matrix[43][42].s_p = 3 ;
-
-    matrix[43][44].type = "l1" ;               matrix[44][43].type = "l1" ;
-    matrix[43][44].s_p = 4 ;                   matrix[44][43].s_p = 4 ;
-
-    matrix[44][45].type = "l1" ;               matrix[45][44].type = "l1" ;
-    matrix[44][45].s_p = 5 ;                   matrix[45][44].s_p = 5 ;
-
-    matrix[45][35].type = "l1" ;               matrix[35][45].type = "l1" ;
-    matrix[45][35].s_p = 7 ;                   matrix[35][45].s_p = 7 ;
-
-    matrix[35][46].type = "l1" ;               matrix[46][35].type = "l1" ;
-    matrix[35][46].s_p = 2 ;                   matrix[46][35].s_p = 2 ;
-
-    matrix[46][5].type = "l1" ;               matrix[5][46].type = "l1" ;
-    matrix[46][5].s_p = 2 ;                   matrix[5][46].s_p = 2 ;
-
-    matrix[5][47].type = "l1" ;               matrix[47][5].type = "l1" ;
-    matrix[5][47].s_p = 2 ;                   matrix[47][5].s_p = 2 ;
-
-    matrix[47][20].type = "l1" ;               matrix[20][47].type = "l1" ;
-    matrix[47][20].s_p = 1 ;                  matrix[20][47].s_p = 1 ;
-
-    matrix[20][48].type = "l1" ;               matrix[48][20].type = "l1" ;
-    matrix[20][48].s_p = 4 ;                  matrix[48][20].s_p = 4 ;
-
-    matrix[48][49].type = "l1" ;               matrix[49][48].type = "l1" ;
-    matrix[48][49].s_p = 6 ;                  matrix[49][48].s_p = 6 ;
-
-    matrix[49][50].type = "l1" ;               matrix[50][49].type = "l1" ;
-    matrix[49][50].s_p = 3 ;                  matrix[50][49].s_p = 3 ;
-
-    matrix[50][51].type = "l1" ;               matrix[51][50].type = "l1" ;
-    matrix[50][51].s_p = 9 ;                  matrix[51][50].s_p = 9 ;
-
-    matrix[51][52].type = "l1" ;               matrix[52][51].type = "l1" ;
-    matrix[51][52].s_p = 13 ;                  matrix[52][51].s_p = 13 ;
-
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++++b1++++++++++++++++++++++++++++++++++++++++++++++++
-
-    matrix[53][13].type = "b1" ;               matrix[13][53].type = "b1" ;
-    matrix[53][13].s_p = 3 ;                  matrix[13][53].s_p = 3 ;
-
-    matrix[14][17].type = "b1" ;               matrix[17][14].type = "b1" ;
-    matrix[14][17].s_p = 4 ;                  matrix[17][14].s_p = 4 ;
-
-    matrix[17][19].type = "b1" ;               matrix[19][17].type = "b1" ;
-    matrix[17][19].s_p = 3 ;                  matrix[19][17].s_p = 3 ;
-
-    matrix[19][20].type = "b1" ;               matrix[20][19].type = "b1" ;
-    matrix[19][20].s_p = 1 ;                  matrix[20][19].s_p = 1 ;
-    
-    matrix[20][6].type = "b1" ;               matrix[6][20].type = "b1" ;
-    matrix[20][6].s_p = 2 ;                  matrix[6][20].s_p = 2 ;
-
-    matrix[6][22].type = "b1" ;               matrix[22][6].type = "b1" ;
-    matrix[6][22].s_p = 4 ;                  matrix[22][6].s_p = 4 ;
-
-    matrix[22][54].type = "b1" ;               matrix[54][22].type = "b1" ;
-    matrix[22][54].s_p = 10 ;                  matrix[54][22].s_p = 10 ;
-
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++++b2++++++++++++++++++++++++++++++++++++++++++++++++
-
-    matrix[55][40].type = "b2" ;               matrix[40][55].type = "b2" ;
-    matrix[55][40].s_p = 12 ;                  matrix[40][55].s_p = 12 ;
-    
-    matrix[40][23].type = "b2" ;               matrix[23][40].type = "b2" ;
-    matrix[40][23].s_p = 19 ;                  matrix[23][40].s_p = 19 ;
-
-    matrix[23][8].type = "b2" ;               matrix[8][23].type = "b2" ;
-    matrix[23][8].s_p = 8 ;                  matrix[8][23].s_p = 8 ;
-
-    matrix[8][56].type = "b2" ;               matrix[56][8].type = "b2" ;
-    matrix[8][56].s_p = 8 ;                  matrix[56][8].s_p = 8 ;
-
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++++b3++++++++++++++++++++++++++++++++++++++++++++++++
-
-    matrix[57][41].type = "b3" ;               matrix[41][57].type = "b3" ;
-    matrix[57][41].s_p = 4 ;                  matrix[41][57].s_p = 4 ;
-    
-    matrix[41][44].type = "b3" ;               matrix[44][41].type = "b3" ;
-    matrix[41][44].s_p = 8 ;                  matrix[44][41].s_p = 8 ;
-
-    matrix[44][4].type = "b3" ;               matrix[4][44].type = "b3" ;
-    matrix[44][4].s_p = 11 ;                  matrix[4][44].s_p = 11 ;
-
-    matrix[4][30].type = "b3" ;               matrix[30][4].type = "b3" ;
-    matrix[4][30].s_p = 8 ;                  matrix[30][4].s_p = 8 ;
-
-    matrix[30][58].type = "b3" ;               matrix[58][30].type = "b3" ;
-    matrix[30][58].s_p = 5 ;                  matrix[58][30].s_p = 5 ;
+    read_file() ;
 }
 
 string Tehran::search(int key)
@@ -374,7 +139,7 @@ void Tehran::dijkstra(int src,int dest)
                 }
         }
 
-        cout<< dist[dest].distance << endl;
+        cout<< dist[dest].distance << endl ;
 
         for(int i = 0 ; i < dist[dest].direct.size() - 1; i++)
         {
@@ -406,7 +171,7 @@ int Tehran::get_value(string key)
     {
         return -1;
     }
-
+    //cout << "val"<<stations[key];
     return stations[key];
 }
 
@@ -435,38 +200,75 @@ void Tehran::create_metrolines()
 
 void Tehran::read_file()
 {
+
      ifstream file ;
-
-     file.open("line.txt" , ios::in );
-     if(file.is_open())
+     string arr[2] = {"line" , "bus"} ;
+     int index = 0 ; 
+     for(int i=0 ; i<2 ; i++)
      {
-        string line ;
-        getline( file , line);
-        line.erase(line.size()-1 , 1) ;
-        cout << "line:" << line << endl ;
+        file.open(arr[i]+".txt" , ios::in );
+        if(file.is_open())
+        { 
+            string line ;
+            getline( file , line);
+            line.erase(line.size()-1 , 1) ;
+            //cout << "line:" << line << endl ;
 
-        while (!file.eof())
-        {
-           string stat1 ;
-           string stat2 ;
-           string dis ;
-           getline(file , stat1);
+            while (!file.eof())
+            {
+                string stat1 ;
+                string stat2 ;
+                string dis ;
+                getline(file , stat1);
 
-           if(stat1 == "end")
-           {
-                getline( file , line);
-                if (line.size()!= 0)
+                if(stat1 == "end")
                 {
-                    line.erase(line.size()-1 , 1) ;
+                        getline( file , line);
+                        if (line.size()!= 0)
+                        {
+                            line.erase(line.size()-1 , 1) ;
+                        }
+                        //cout << "line:" << line << endl ; 
+                        getline(file , stat1) ;
+                        
                 }
-                cout << "line:" << line << endl ; 
-                getline(file , stat1) ;
-           }
-           getline(file , stat2);
-           getline(file , dis);
-           cout << "stat1 ,2 dis :" << stat1 << " " << stat2 << " " << dis << endl ; 
 
-           
+                getline(file , stat2);
+                getline(file , dis);
+                //cout << "   :" << stat1 << " " << stat2 << " " << stoi(dis) << endl ; 
+                if (stations.count(stat1)== 0)
+                {
+                    stations.insert({stat1 , index}) ;
+                    //cout << "state1 ;"<< stat1 << index << endl ;
+                    index++ ;
+                    
+                }
+                if (stations.count(stat2)== 0)
+                {
+                    stations.insert({stat2 , index}) ;
+                    //cout << "state2 ;"<< stat2 << index << endl ;
+                    index++ ;
+                }
+                
+               if( matrix[get_value(stat1)][get_value(stat2)].s_p != 0 && matrix[get_value(stat1)][get_value(stat2)].s_p > stoi(dis) ) // for more info
+               {
+                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
+                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
+                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
+                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
+                 
+               }
+               else if( matrix[get_value(stat1)][get_value(stat2)].s_p == 0 )
+               {
+                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
+                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
+                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
+                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
+
+               }
+            
+            }
+        file.close() ;
         }
         
      }

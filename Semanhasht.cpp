@@ -8,11 +8,7 @@ using namespace std;
 void SMHT::start()
 {
     Tehran t1;
-    t1.read_file() ;
-
-    //cin >> n;
-
-/*
+    cin >> n;
     while (n--)
     {
         cin.ignore();
@@ -29,5 +25,5 @@ void SMHT::start()
             cout << e1.what();
         }
     }
-    */
+    
 }

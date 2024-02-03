@@ -2,7 +2,7 @@
 #define SEMANHASHT_HPP
 
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include<vector>
 #include<limits.h>
 #include<unordered_set>
@@ -29,7 +29,6 @@ class Tehran
 {
 public:
     Tehran();
-
     void add_station();
     void create_matrix();
     int minDistance(save_directions dist[], bool sptSet[]);
@@ -43,7 +42,7 @@ public:
 private:
 
     unordered_set<string> Busline1, Busline2, Busline3, l4, l3, l1, l6;
-    map<string, int> stations;
+    unordered_map<string, int> stations;
     Node matrix[59][59];
 };
 #endif

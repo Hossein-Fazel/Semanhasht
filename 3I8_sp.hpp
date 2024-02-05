@@ -5,7 +5,6 @@
 #include<unordered_map>
 #include<vector>
 #include<limits.h>
-#include<unordered_set>
 
 using namespace std;
 
@@ -33,13 +32,10 @@ public:
     void Find_Shortest_Path(int src,int dest);
     string search(int key);
     int get_value(string key);
-    void create_busline();
-    void create_metrolines();
     void read_file();
 
 private:
-
-    unordered_set<string> Busline1, Busline2, Busline3, l4, l3, l1, l6;
+    unordered_map<string,vector<string>>Linemap;
     unordered_map<string, int> stations;
     Node_sp matrix[59][59];
 };

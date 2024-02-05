@@ -42,11 +42,7 @@ void Tehran::Find_Shortest_Path(int src,int dest)
     {
         save_directions dist[V]; 
                     
-        bool sptSet[59]; 
-        
-        for (int i = 0; i < V; i++)
-            dist[i].distance = INT_MAX, sptSet[i] = false;
-
+        bool sptSet[59]{false};
         
         dist[src].distance = 0;
         dist[src].direct.push_back(search(src));

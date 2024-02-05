@@ -20,7 +20,7 @@ struct Node_sp
     
 struct save_directions
 {
-    int distance = 0;
+    int distance = INT_MAX;
     vector<string> direct;
     vector<string> viechel;
 };
@@ -29,8 +29,6 @@ class Tehran
 {
 public:
     Tehran();
-    void add_station();
-    void create_matrix();
     int minDistance(save_directions dist[], bool sptSet[]);
     void Find_Shortest_Path(int src,int dest);
     string search(int key);

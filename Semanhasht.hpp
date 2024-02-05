@@ -3,7 +3,7 @@
 
 #include<iostream>
 
-#include "3I8.hpp"
+#include "3I8_sp.hpp"
 using namespace std;
 
 class SMHT // samaneh modiriate haml-o naghle tehran 
@@ -17,18 +17,6 @@ class SMHT // samaneh modiriate haml-o naghle tehran
         string src, dst;      
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #endif

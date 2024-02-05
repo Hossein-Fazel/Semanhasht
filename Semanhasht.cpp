@@ -2,13 +2,13 @@
 #include <string>
 #include "Semanhasht.hpp"
 
-
 using namespace std;
 
 void SMHT::start()
 {
     Tehran t1;
     cin >> n;
+    
     while (n--)
     {
         cin.ignore();
@@ -18,7 +18,7 @@ void SMHT::start()
 
         try
         {
-            t1.dijkstra(t1.get_value(src) , t1.get_value(dst));
+            t1.Find_Shortest_Path(t1.get_value(src) , t1.get_value(dst));
         }
         catch (invalid_argument e1)
         {

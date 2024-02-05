@@ -1,4 +1,4 @@
-#include "3I8.hpp"
+#include "3I8_sp.hpp"
 #include <stdexcept>
 #include <iostream>
 #include <map>
@@ -36,7 +36,7 @@ int Tehran::minDistance(save_directions dist[], bool sptSet[])
 	return min_index;
 }
 
-void Tehran::dijkstra(int src,int dest)
+void Tehran::Find_Shortest_Path(int src,int dest)
 {    
     if( src >=0 && src <=58 && dest >=0 && dest <=58)
     {

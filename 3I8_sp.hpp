@@ -29,7 +29,8 @@ class Tehran
 public:
     Tehran();
     int minDistance(save_directions dist[], bool sptSet[]);
-    void Find_Shortest_Path(int src,int dest);
+    save_directions Find_Shortest_Path(int src,int dest);
+    void print_shortest_path(save_directions path);
     string search(int key);
     int get_value(string key);
     void read_file();

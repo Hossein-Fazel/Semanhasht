@@ -36,7 +36,7 @@ int Tehran::minDistance(save_directions dist[], bool sptSet[])
 	return min_index;
 }
 
-void Tehran::Find_Shortest_Path(int src,int dest)
+save_directions Tehran::Find_Shortest_Path(int src,int dest)
 {    
     if( src >=0 && src <=58 && dest >=0 && dest <=58)
     {
@@ -72,24 +72,7 @@ void Tehran::Find_Shortest_Path(int src,int dest)
                 }
         }
 
-        cout<< dist[dest].distance << endl ;
-
-        for(int i = 0 ; i < dist[dest].direct.size() - 1; i++)
-        {
-            cout << dist[dest].direct[i] << " -- ";
-
-            if(dist[dest].viechel[i] == "l1" or dist[dest].viechel[i] == "l6" or dist[dest].viechel[i] == "l3" or dist[dest].viechel[i] == "l4")
-            {
-                cout << "(Taxi or Subway)" ;
-            }
-            else
-            {
-                cout <<  "(Bus)" ;
-            }
-        
-            cout << " --> ";
-        }
-        cout << dist[dest].direct[dist[dest].direct.size() - 1];
+        return dist[dest];
     }
     else
     {
@@ -186,4 +169,26 @@ void Tehran::read_file()
         }
         
      }
+}
+
+void Tehran::print_shortest_path(save_directions path)
+{
+        cout<< path.distance << endl ;
+
+        for(int i = 0 ; i < path.direct.size() - 1; i++)
+        {
+            cout << path.direct[i] << " -- ";
+
+            if(path.viechel[i] == "l1" or path.viechel[i] == "l6" or path.viechel[i] == "l3" or path.viechel[i] == "l4")
+            {
+                cout << "(Taxi or Subway)" ;
+            }
+            else
+            {
+                cout <<  "(Bus)" ;
+            }
+        
+            cout << " --> ";
+        }
+        cout << path.direct[path.direct.size() - 1];
 }

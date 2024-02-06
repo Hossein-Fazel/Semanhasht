@@ -18,7 +18,8 @@ void SMHT::start()
 
         try
         {
-            t1.Find_Shortest_Path(t1.get_value(src) , t1.get_value(dst));
+            save_directions path = t1.Find_Shortest_Path(t1.get_value(src) , t1.get_value(dst));
+            t1.print_shortest_path(path);
         }
         catch (invalid_argument e1)
         {

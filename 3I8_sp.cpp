@@ -206,3 +206,51 @@ void Tehran::print_shortest_path(save_directions path)
         cout << path.direct[path.direct.size() - 1];
 }
 
+void Tehran::complete_matrix_p()
+{
+    for(auto item : Linemap)
+    {
+        bool count = 0;
+        if (item.first[0] == 'l')
+        {
+            count = 1;
+        }
+        bool check_line = 1;
+        for(int i = 0;i < 1 + count; i++)
+        {
+            if (check_line == 1)
+            {
+                for(auto st1 : item.second)
+                {
+                    for(auto st2 : item.second)
+                    {
+                        if (st1 != st2)
+                        {
+                            Node_p cost;
+                            cost.geymat = count == 1 ? 3267 : 2250 ;
+                            cost.type = item.first;
+                            cost.vehicle = count == 1 ? "Subway" : "Bus"; 
+                        
+                            matrix_p[stations[st1]][stations[st2]].price_edge.push_back(cost);
+                            matrix_p[stations[st2]][stations[st1]].price_edge.push_back(cost);
+                        }
+                    }
+                }
+            }
+            if(check_line == 0)
+            {
+                for(int j = 0; j < item.second.size()-2; j++)
+                {
+                    Node_p cost;
+                    cost.geymat = 6000 * matrix[stations[item.second[j]]][stations[item.second[j + 1]]].s_p ;
+                    cost.type = item.first ;
+                    cost.vehicle = "Taxi";
+
+                    matrix_p[stations[item.second[j]]][stations[item.second[j + 1]]].price_edge.push_back(cost);
+                    matrix_p[stations[item.second[j + 1]]][stations[item.second[j]]].price_edge.push_back(cost);
+                }
+            }
+            check_line = 0;
+        }
+    }
+}

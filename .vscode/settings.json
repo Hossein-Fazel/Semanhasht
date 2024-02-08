@@ -2,6 +2,7 @@
     "files.associations": {
         "iostream": "cpp",
         "xlocale": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "utility": "cpp"
     }
 }

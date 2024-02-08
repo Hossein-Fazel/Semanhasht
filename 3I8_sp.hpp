@@ -34,18 +34,20 @@ public:
     string search(int key);
     int get_value(string key);
     void read_file();
+    void complete_matrix_p() ;
 
 private:
     unordered_map<string,vector<string>>Linemap;
     unordered_map<string, int> stations;
     Node_sp matrix[59][59];
+    Price matrix_p[59][59];
 };
 
 struct Node_p
 {
 	int geymat = INT_MAX ;
     string type = NULL ;
-	void Readfrom_file() ;
+    string vehicle = NULL;
 
 };
 

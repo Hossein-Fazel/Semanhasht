@@ -3,6 +3,10 @@
         "iostream": "cpp",
         "xlocale": "cpp",
         "random": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "xstring": "cpp",
+        "vector": "cpp",
+        "format": "cpp",
+        "list": "cpp"
     }
 }

@@ -80,8 +80,8 @@ save_directions Tehran::Find_Shortest_Path(int src,int dest)
 
                     dist[v].direct = dist[u].direct;
                     dist[v].direct.push_back(search(v));
-                    dist[v].viechel = dist[u].viechel;
-                    dist[v].viechel.push_back(matrix[v][u].type);
+                    dist[v].Line_vehicle = dist[u].Line_vehicle;
+                    dist[v].Line_vehicle.push_back(matrix[v][u].type);
                 }
         }
 
@@ -192,7 +192,7 @@ void Tehran::print_shortest_path(save_directions path)
         {
             cout << path.direct[i] << " -- ";
 
-            if(path.viechel[i] == "l1" or path.viechel[i] == "l6" or path.viechel[i] == "l3" or path.viechel[i] == "l4")
+            if(path.Line_vehicle[i] == "l1" or path.Line_vehicle[i] == "l6" or path.Line_vehicle[i] == "l3" or path.Line_vehicle[i] == "l4")
             {
                 cout << "(Taxi or Subway)" ;
             }
@@ -252,5 +252,52 @@ void Tehran::complete_matrix_p()
             }
             check_line = 0;
         }
+    }
+}
+
+save_directions Tehran::find_best_cost(int src,int dest)
+{
+    if( src >=0 && src <=58 && dest >=0 && dest <=58)
+    {
+        save_directions dist[V]; 
+                    
+        bool sptSet[59]{false};
+        
+        dist[src].distance = 0;
+        dist[src].direct.push_back(search(src));
+
+        
+        for (int count = 0; count < V - 1; count++) 
+        {
+            string viechel = "";
+            
+            int u = minDistance(dist, sptSet);
+
+            
+            sptSet[u] = true;
+
+            
+            for (int v = 0; v < V; v++)
+
+                
+                if (!sptSet[v] && matrix_p[u][v].get_min().geymat && dist[u].distance != INT_MAX && dist[u].distance + matrix_p[u][v].get_min().geymat < dist[v].distance)
+                {
+                    dist[v].distance = dist[u].distance + matrix_p[u][v].get_min().geymat;
+
+                    dist[v].direct = dist[u].direct;
+                    dist[v].direct.push_back(search(v));
+                    dist[v].Line_vehicle = dist[u].Line_vehicle;
+                    dist[v].Line_vehicle.push_back(matrix_p[v][u].get_min().type);
+                    dist[v].vehicle = dist[u].vehicle ; 
+                    dist[u].vehicle.push_back(matrix_p[v][u].get_min().vehicle);
+                }
+        }
+
+        return dist[dest];
+    }
+    else
+    {
+        throw invalid_argument("Not existing value!") ;
+
     }
 }

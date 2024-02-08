@@ -24,6 +24,19 @@ string Tehran::search(int key)
     }
 }
 
+ Node_p Price::get_min()
+{
+	Node_p minimun ;
+	for(auto i : price_edge)
+	{
+		if( minimun.geymat > i.geymat)
+		{
+			minimun = i ;
+		}
+	}
+	return minimun ;
+}
+
 int Tehran::minDistance(save_directions dist[], bool sptSet[])
 {
 
@@ -192,3 +205,4 @@ void Tehran::print_shortest_path(save_directions path)
         }
         cout << path.direct[path.direct.size() - 1];
 }
+

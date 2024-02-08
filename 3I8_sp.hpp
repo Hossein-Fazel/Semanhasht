@@ -40,4 +40,22 @@ private:
     unordered_map<string, int> stations;
     Node_sp matrix[59][59];
 };
+
+struct Node_p
+{
+	int geymat = INT_MAX ;
+    string type = NULL ;
+	void Readfrom_file() ;
+
+};
+
+ class Price
+{
+	public:
+
+	vector<Node_p>price_edge ;
+	Node_p get_min() ;
+
+};
+
 #endif

@@ -7,15 +7,3 @@
 using namespace std;
 
 
- Node_p Price::get_min()
-{
-	Node_p minimun ;
-	for(auto i : price_edge)
-	{
-		if( minimun.geymat > i.geymat)
-		{
-			minimun = i ;
-		}
-	}
-	return minimun ;
-}

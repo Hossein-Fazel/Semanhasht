@@ -280,7 +280,7 @@ save_directions Tehran::find_best_cost(int src,int dest)
             for (int v = 0; v < V; v++)
 
                 
-                if (!sptSet[v] && matrix_p[u][v].get_min().geymat && dist[u].distance != INT_MAX && dist[u].distance + matrix_p[u][v].get_min().geymat < dist[v].distance)
+                if (!sptSet[v] && matrix_p[u][v].get_min().geymat != INT_MAX && dist[u].distance != INT_MAX && dist[u].distance + matrix_p[u][v].get_min().geymat < dist[v].distance)
                 {
                     dist[v].distance = dist[u].distance + matrix_p[u][v].get_min().geymat;
 
@@ -292,6 +292,7 @@ save_directions Tehran::find_best_cost(int src,int dest)
                     dist[u].vehicle.push_back(matrix_p[v][u].get_min().vehicle);
                 }
         }
+        // cout << dist[dest].distance;
 
         return dist[dest];
     }

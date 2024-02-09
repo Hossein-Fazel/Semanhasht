@@ -13,8 +13,8 @@ using namespace std;
 struct Node_p
 {
 	int geymat = INT_MAX ;
-    string type = NULL ;
-    string vehicle = NULL;
+    string type;
+    string vehicle;
 
 };
 

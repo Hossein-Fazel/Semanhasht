@@ -186,7 +186,8 @@ void Tehran::read_file()
 
 void Tehran::print_shortest_path(save_directions path)
 {
-        cout<< path.distance << endl ;
+        cout << "shortest path :" << endl ;
+        cout<< path.distance << " km"<< endl ;
 
         for(int i = 0 ; i < path.direct.size() - 1; i++)
         {
@@ -203,7 +204,7 @@ void Tehran::print_shortest_path(save_directions path)
         
             cout << " --> ";
         }
-        cout << path.direct[path.direct.size() - 1];
+        cout << path.direct[path.direct.size() - 1] << endl ;
 }
 
 void Tehran::complete_matrix_p()
@@ -292,13 +293,40 @@ save_directions Tehran::find_best_cost(int src,int dest)
                     dist[v].vehicle.push_back(matrix_p[v][u].get_min().vehicle);
                 }
         }
-        // cout << dist[dest].distance;
-
         return dist[dest];
     }
     else
     {
         throw invalid_argument("Not existing value!") ;
-
     }
+}
+
+void Tehran::print_best_price(save_directions path)
+{
+     cout << "best cost :" << endl ;
+     cout << path.distance << " toman" << endl ;
+     
+        for(int i = 0 ; i < path.direct.size() - 1; i++)
+        {
+            auto start = find(Linemap[path.Line_vehicle[i]].begin() ,Linemap[path.Line_vehicle[i]].end() , path.direct[i]) - Linemap[path.Line_vehicle[i]].begin()  ;
+            auto end   = find(Linemap[path.Line_vehicle[i]].begin() ,Linemap[path.Line_vehicle[i]].end() , path.direct[i+1]) - Linemap[path.Line_vehicle[i]].begin() ;
+
+            if( start+1 == end || end +1 == start  )
+            {
+                cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
+            }
+            else
+            {
+                int step = start < end ? 1 : -1 ;
+                for (size_t j = start; j != end+step ; j+=step)
+                {
+                    cout << Linemap[path.Line_vehicle[i]][j] ;
+
+                    if(j!= end)
+                    {
+                        cout <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
+                    }
+                } 
+            }           
+        }    
 }

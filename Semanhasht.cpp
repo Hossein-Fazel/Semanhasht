@@ -20,9 +20,9 @@ void SMHT::start()
         {
             save_directions path = t1.Find_Shortest_Path(t1.get_value(src) , t1.get_value(dst));
             t1.print_shortest_path(path);
-
-            // t1.complete_matrix_p();
-            // t1.find_best_cost(t1.get_value(src) , t1.get_value(dst));
+            t1.complete_matrix_p();
+            save_directions pri = t1.find_best_cost(t1.get_value(src) , t1.get_value(dst));
+            t1.print_best_price(pri) ;
         }
         catch (invalid_argument e1)
         {

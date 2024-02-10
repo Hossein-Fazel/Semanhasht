@@ -313,6 +313,11 @@ void Tehran::print_best_price(save_directions path)
 
             if( start+1 == end || end +1 == start  )
             {
+                if( path.direct.size() == 2 )
+                {
+                   cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> "  << path.direct[i+1];
+                   break;
+                }
                 cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
             }
             else

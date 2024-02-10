@@ -289,7 +289,7 @@ save_directions Tehran::find_best_cost(int src,int dest)
                     dist[v].Line_vehicle = dist[u].Line_vehicle;
                     dist[v].Line_vehicle.push_back(matrix_p[v][u].get_min().type);
                     dist[v].vehicle = dist[u].vehicle ; 
-                    dist[u].vehicle.push_back(matrix_p[v][u].get_min().vehicle);
+                    dist[v].vehicle.push_back(matrix_p[v][u].get_min().vehicle);
                 }
         }
         // cout << dist[dest].distance;

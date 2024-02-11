@@ -323,7 +323,7 @@ void Tehran::print_best_price(save_directions path)
             else
             {
                 int step = start < end ? 1 : -1 ;
-                for (size_t j = start; j != end+step ; j+=step)
+                for (size_t j = start; j != end ; j+=step)
                 {
                     cout << Linemap[path.Line_vehicle[i]][j] ;
 
@@ -333,5 +333,6 @@ void Tehran::print_best_price(save_directions path)
                     }
                 } 
             }           
-        }    
+        }
+        cout << path.direct[path.direct.size()- 1] << endl ;    
 }

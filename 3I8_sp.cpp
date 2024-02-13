@@ -205,6 +205,14 @@ void Tehran::print_shortest_path(save_directions path , Time arrive_t)
             }
         
             cout << " --> ";
+            if (i == 0)
+            {
+                arrive_t += calc_time(path.direct[i], path.direct[i+1]  ,"NULL");
+            }
+            else 
+            {
+                arrive_t += calc_time(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1]);
+            }
         }
         cout << path.direct[path.direct.size() - 1] << endl ;
         cout << "arriving time : " ;
@@ -339,4 +347,52 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
             }           
         }
         cout << path.direct[path.direct.size()- 1] << endl ;    
+}
+
+int Tehran::calc_time(string src, string dest, string pre_line)
+{
+    int speed;
+    string line_check = matrix[get_value(src)][get_value(dest)].type ;
+    
+    if(pre_line != "NULL")
+    {
+        if(matrix[get_value(src)][get_value(dest)].type == pre_line)
+        {
+            if(line_check[0] == 'b' )
+            {
+                speed = matrix[get_value(src)][get_value(dest)].s_p * 4 ;
+            }
+            else if(line_check[0] == 'l')
+            {
+                speed = matrix[get_value(src)][get_value(dest)].s_p * 1;
+            }
+            return speed ;
+        }
+        else
+        {
+            if( line_check[0] == 'l' )
+            {
+                speed = matrix[get_value(src)][get_value(dest)].s_p * 1 + 8 ;
+            }
+            else if( line_check[0] == 'b')
+            {
+                speed = matrix[get_value(src)][get_value(dest)].s_p * 4 + 15;
+            }
+            return speed ;
+        }
+    }
+    else
+    {
+        if(line_check[0] == 'b')
+        {
+            speed = 4;
+        }
+        else if(line_check[0] == 'l')
+        {
+            speed = 1;
+        }
+        
+        speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
+        return speed ;
+    }
 }

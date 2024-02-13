@@ -2,25 +2,29 @@
 
 Time::Time(string get_time)
 {
-    string minute = "", hour = "", noon = "";
+    string minute = "", hour = "", type = "";
     char dot = ':';
-    for(int i = 0; i < get_time.size() - 3; i++)
+    
+    for(int i = 0; i < get_time.size(); i++)
     {
         if(get_time[i] == dot)
         {
-            for(int j=i+1 ; j<get_time.size() ; j++) 
+            for(int j=i+1 ; j<get_time.size()-2 ; j++) 
             {
                 minute += get_time[j] ;
             }
-
+            break;
         }
         hour+=get_time[i] ;
     }
-    noon += get_time[get_time.size()-2] + get_time[get_time.size()-1];
-
-    set_noon(noon);
-    set_hour(stoi(hour));
-    set_minute(stoi(minute));
+    type = type + get_time[get_time.size()-2] + get_time[get_time.size()-1];
+    //cout << "type ;" << type ;
+    //cout << "hour ;"<< hour <<"min ;" << minute ;
+     int sto_h = stoi(hour) ;
+     int sto_m = stoi(minute) ;
+    set_hour(sto_h);
+    set_minute(sto_m);
+    set_noon(type);
 }
 
 void Time::set_hour(int h)
@@ -47,15 +51,16 @@ void Time::set_minute(int m)
     }
 }
 
-void Time::set_noon(string noon)
+void Time::set_noon(string type)
 {
-    if(noon != "AM" and noon != "PM")
+    
+    if(type == "am" or type == "AM" or type == "pm" or type == "PM")
     {
-        throw invalid_argument("Invalid time(minute) value"); 
+        noon = type;
     }
     else
     {
-        noon = noon;
+        throw invalid_argument("Invalid time(noon) value"); 
     }
 }
 
@@ -64,7 +69,7 @@ void Time::print()
     cout << hour;
     if(minute != 0)
     {
-        cout << ':' << minute;
+        cout << ':' << minute << " ";
     }
     cout << noon << endl;
 }
@@ -76,6 +81,18 @@ Time Time::operator+=(int min)
     {
         minute -= 60;
         hour++;
+        if(hour > 12)
+        {
+            if(noon == "AM")
+            {
+                noon = "PM";
+            }
+            else
+            {
+                noon = "AM";
+            }
+            hour -= 12;
+        }
     }
     return *this;
 }

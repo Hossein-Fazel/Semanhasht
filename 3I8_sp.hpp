@@ -5,6 +5,7 @@
 #include<unordered_map>
 #include<vector>
 #include<limits.h>
+#include"Time.hpp"
 
 using namespace std;
 
@@ -47,13 +48,13 @@ public:
     Tehran();
     int minDistance(save_directions dist[], bool sptSet[]);
     save_directions Find_Shortest_Path(int src,int dest);
-    void print_shortest_path(save_directions path);
+    void print_shortest_path(save_directions path , Time arrive_t);
     string search(int key);
     int get_value(string key);
     void read_file();
     void complete_matrix_p() ;
     save_directions find_best_cost(int src,int dest);
-    void print_best_price(save_directions path);
+    void print_best_price(save_directions path , Time arrive_t);
 
 private:
     unordered_map<string,vector<string>>Linemap;

@@ -4,6 +4,8 @@
 #include <map>
 #include <fstream>
 #include <algorithm>
+#include"Time.hpp"
+
 using namespace std;
 
 #define V 59
@@ -184,7 +186,7 @@ void Tehran::read_file()
      }
 }
 
-void Tehran::print_shortest_path(save_directions path)
+void Tehran::print_shortest_path(save_directions path , Time arrive_t)
 {
         cout << "shortest path :" << endl ;
         cout<< path.distance << " km"<< endl ;
@@ -205,6 +207,8 @@ void Tehran::print_shortest_path(save_directions path)
             cout << " --> ";
         }
         cout << path.direct[path.direct.size() - 1] << endl ;
+        cout << "arriving time : " ;
+        arrive_t.print();
 }
 
 void Tehran::complete_matrix_p()
@@ -301,7 +305,7 @@ save_directions Tehran::find_best_cost(int src,int dest)
     }
 }
 
-void Tehran::print_best_price(save_directions path)
+void Tehran::print_best_price(save_directions path , Time arrive_t)
 {
      cout << "best cost :" << endl ;
      cout << path.distance << " toman" << endl ;

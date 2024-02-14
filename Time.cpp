@@ -29,7 +29,7 @@ Time::Time(string get_time)
 
 void Time::set_hour(int h)
 {
-    if( h > 12 and h < 0)
+    if( h > 12 || h < 0)
     {
         throw invalid_argument("Invalid time(hour) value"); 
     }
@@ -41,7 +41,7 @@ void Time::set_hour(int h)
 
 void Time::set_minute(int m)
 {
-    if( m > 60 and m < 0)
+    if( m > 60 || m < 0)
     {
         throw invalid_argument("Invalid time(minute) value"); 
     }
@@ -81,17 +81,17 @@ Time Time::operator+=(int min)
     {
         minute -= 60;
         hour++;
-        if(hour > 12)
+        if(hour >= 12)
         {
-            if(noon == "AM")
+            if(noon == "AM" || noon == "am")
             {
                 noon = "PM";
             }
-            else
+            else if(noon == "PM" || noon == "pm")
             {
                 noon = "AM";
+                hour -= 12;
             }
-            hour -= 12;
         }
     }
     return *this;

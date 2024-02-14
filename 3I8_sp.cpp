@@ -195,23 +195,26 @@ void Tehran::print_shortest_path(save_directions path , Time arrive_t)
         {
             cout << path.direct[i] << " -- ";
 
+            string vehi ;
             if(path.Line_vehicle[i] == "l1" or path.Line_vehicle[i] == "l6" or path.Line_vehicle[i] == "l3" or path.Line_vehicle[i] == "l4")
             {
                 cout << "(Taxi or Subway)" ;
+                vehi = "Subway" ;
             }
             else
             {
                 cout <<  "(Bus)" ;
+                vehi = "Bus" ;
             }
         
             cout << " --> ";
             if (i == 0)
             {
-                arrive_t += calc_time(path.direct[i], path.direct[i+1]  ,"NULL");
+                arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , vehi);
             }
             else 
             {
-                arrive_t += calc_time(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1]);
+                arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] ,vehi);
             }
         }
         cout << path.direct[path.direct.size() - 1] << endl ;
@@ -326,12 +329,30 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
             if( start+1 == end || end +1 == start  )
             {
                 if( path.direct.size() == 2 )
-                {
-                   cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> "  << path.direct[i+1];
+                {          
+                   arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i]);
+                   cout << "arrive1 :";
+                   arrive_t.print();
+                   cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
                    break;
                 }
                 cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
+                if (i == 0)
+                {
+                   arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i]);
+                   cout << "arrive2 :";
+                   arrive_t.print();
+
+                }
+                else 
+                {
+                   arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] , path.vehicle[i]);
+                   cout << "arrive3 :";
+                   arrive_t.print();
+                   
+                }
             }
+
             else
             {
                 int step = start < end ? 1 : -1 ;
@@ -342,27 +363,50 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
                     if(j!= end)
                     {
                         cout <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
+                    } 
+                    if (i == 0)
+                    {
+                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j] , Linemap[path.Line_vehicle[i]][j+step]  ,"NULL" , path.vehicle[i]);
+                        cout << "arrive4 :";
+                        arrive_t.print();
+                    }
+                    else 
+                    {
+                        int index = i == 1 ? 0: i;
+                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j] , Linemap[path.Line_vehicle[i]][j+step] , path.Line_vehicle[index] , path.vehicle[i]);
+                        cout << "arrive5 :";
+                        arrive_t.print();
                     }
                 } 
             }           
         }
-        cout << path.direct[path.direct.size()- 1] << endl ;    
+        cout << path.direct[path.direct.size()- 1] ;
+        // arrive_t += calc_time_bestp( Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]][Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]].size()-2] , Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]][Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]].size()-1] , path.Line_vehicle[path.Line_vehicle.size() - 1] , path.vehicle[path.vehicle.size() - 1]);
+
+        cout<<endl;
+        cout << "arriving time : " ;
+        arrive_t.print();
+            
 }
 
-int Tehran::calc_time(string src, string dest, string pre_line)
+int Tehran::calc_time_bestp(string src ,string dest , string pre_line , string vehi) 
 {
+
     int speed;
-    string line_check = matrix[get_value(src)][get_value(dest)].type ;
-    
+
     if(pre_line != "NULL")
     {
         if(matrix[get_value(src)][get_value(dest)].type == pre_line)
         {
-            if(line_check[0] == 'b' )
+            if(vehi == "Taxi" )
+            {
+                speed = matrix[get_value(src)][get_value(dest)].s_p * 2 ;
+            }
+            else if(vehi == "Bus")
             {
                 speed = matrix[get_value(src)][get_value(dest)].s_p * 4 ;
             }
-            else if(line_check[0] == 'l')
+            else if(vehi == "Subway")
             {
                 speed = matrix[get_value(src)][get_value(dest)].s_p * 1;
             }
@@ -370,28 +414,35 @@ int Tehran::calc_time(string src, string dest, string pre_line)
         }
         else
         {
-            if( line_check[0] == 'l' )
+            if( vehi == "Taxi" )
             {
-                speed = matrix[get_value(src)][get_value(dest)].s_p * 1 + 8 ;
+                speed = matrix[get_value(src)][get_value(dest)].s_p * 2 + 5 ;
             }
-            else if( line_check[0] == 'b')
+            else if(vehi == "Bus")
             {
                 speed = matrix[get_value(src)][get_value(dest)].s_p * 4 + 15;
+            }
+            else
+            {
+                speed = matrix[get_value(src)][get_value(dest)].s_p * 1 + 8;
             }
             return speed ;
         }
     }
     else
     {
-        if(line_check[0] == 'b')
+        if(vehi == "Bus")
         {
             speed = 4;
         }
-        else if(line_check[0] == 'l')
+        else if(vehi == "Subway")
         {
             speed = 1;
         }
-        
+        else
+        {
+            speed = 2;
+        }
         speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
         return speed ;
     }

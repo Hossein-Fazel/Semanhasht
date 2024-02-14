@@ -332,7 +332,6 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
                 {          
                    arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i]);
                    cout << "arrive1 :";
-                   arrive_t.print();
                    cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
                    break;
                 }
@@ -341,15 +340,11 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
                 {
                    arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i]);
                    cout << "arrive2 :";
-                   arrive_t.print();
-
                 }
                 else 
                 {
                    arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] , path.vehicle[i]);
-                   cout << "arrive3 :";
-                   arrive_t.print();
-                   
+                   cout << "arrive3 :";                   
                 }
             }
 
@@ -364,24 +359,20 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
                     {
                         cout <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
                     } 
-                    if (i == 0)
+                    if(i == 0)
                     {
-                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j] , Linemap[path.Line_vehicle[i]][j+step]  ,"NULL" , path.vehicle[i]);
-                        cout << "arrive4 :";
-                        arrive_t.print();
+                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], "NULL", path.vehicle[i]);
                     }
-                    else 
+                    else
                     {
-                        int index = i == 1 ? 0: i;
-                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j] , Linemap[path.Line_vehicle[i]][j+step] , path.Line_vehicle[index] , path.vehicle[i]);
-                        cout << "arrive5 :";
-                        arrive_t.print();
+                        int index = j == start ? i-1 : i;
+                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], path.Line_vehicle[index], path.vehicle[i]);
                     }
                 } 
             }           
         }
         cout << path.direct[path.direct.size()- 1] ;
-        // arrive_t += calc_time_bestp( Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]][Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]].size()-2] , Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]][Linemap[path.Line_vehicle[path.Line_vehicle.size() - 1]].size()-1] , path.Line_vehicle[path.Line_vehicle.size() - 1] , path.vehicle[path.vehicle.size() - 1]);
+
 
         cout<<endl;
         cout << "arriving time : " ;

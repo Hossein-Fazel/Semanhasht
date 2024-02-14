@@ -424,17 +424,20 @@ int Tehran::calc_time_bestp(string src ,string dest , string pre_line , string v
     {
         if(vehi == "Bus")
         {
-            speed = 4;
+            speed = 4 ;
+            speed = matrix[get_value(src)][get_value(dest)].s_p * speed + 15;
         }
         else if(vehi == "Subway")
         {
             speed = 1;
+            speed = matrix[get_value(src)][get_value(dest)].s_p * speed + 8 ;
         }
         else
         {
             speed = 2;
+            speed = matrix[get_value(src)][get_value(dest)].s_p * speed + 5 ;
         }
-        speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
+        
         return speed ;
     }
 }

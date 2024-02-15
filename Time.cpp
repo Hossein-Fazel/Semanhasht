@@ -85,12 +85,21 @@ Time Time::operator+=(int min)
         {
             if(noon == "AM" || noon == "am")
             {
+                hour -= 12 ;
+                if( hour == 0)
+                {
+                    hour +=12 ;
+                }
                 noon = "PM";
             }
             else if(noon == "PM" || noon == "pm")
             {
-                noon = "AM";
                 hour -= 12;
+                if( hour == 0)
+                {
+                    hour +=12 ;
+                }
+                noon = "AM";
             }
         }
     }

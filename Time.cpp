@@ -81,26 +81,20 @@ Time Time::operator+=(int min)
     {
         minute -= 60;
         hour++;
-        if(hour >= 12)
+        if(hour == 12)
         {
             if(noon == "AM" || noon == "am")
             {
-                hour -= 12 ;
-                if( hour == 0)
-                {
-                    hour +=12 ;
-                }
-                noon = "PM";
+                  noon = "PM";
             }
             else if(noon == "PM" || noon == "pm")
             {
-                hour -= 12;
-                if( hour == 0)
-                {
-                    hour +=12 ;
-                }
-                noon = "AM";
+                  noon = "AM";
             }
+        }
+        else if(hour > 12 )
+        {
+            hour -= 12 ;
         }
     }
     return *this;

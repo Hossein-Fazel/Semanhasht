@@ -190,7 +190,7 @@ void Tehran::print_shortest_path(save_directions path , Time arrive_t)
 {
         cout << "shortest path :" << endl ;
         cout<< path.distance << " km"<< endl ;
-
+        bool ch = 0 ;
         for(int i = 0 ; i < path.direct.size() - 1; i++)
         {
             cout << path.direct[i] << " -- ";
@@ -210,11 +210,11 @@ void Tehran::print_shortest_path(save_directions path , Time arrive_t)
             cout << " --> ";
             if (i == 0)
             {
-                arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , vehi);
+                arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , vehi , ch);
             }
             else 
             {
-                arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] ,vehi);
+                arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] ,vehi ,ch);
             }
         }
         cout << path.direct[path.direct.size() - 1] << endl ;
@@ -320,7 +320,7 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
 {
      cout << "best cost :" << endl ;
      cout << path.distance << " toman" << endl ;
-     
+     bool check = 0 ;
         for(int i = 0 ; i < path.direct.size() - 1; i++)
         {
             auto start = find(Linemap[path.Line_vehicle[i]].begin() ,Linemap[path.Line_vehicle[i]].end() , path.direct[i]) - Linemap[path.Line_vehicle[i]].begin()  ;
@@ -330,27 +330,25 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
             {
                 if( path.direct.size() == 2 )
                 {          
-                   arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i]);
-                   cout << "arrive1 :";
+                   arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i] , check);
                    cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
                    break;
                 }
                 cout << path.direct[i] <<" -- " << "(" << path.vehicle[i] << ")" << " --> " ;
                 if (i == 0)
                 {
-                   arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i]);
-                   cout << "arrive2 :";
+                   arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , path.vehicle[i] , check);
                 }
                 else 
                 {
-                   arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] , path.vehicle[i]);
-                   cout << "arrive3 :";                   
+                   arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] , path.vehicle[i] , check);             
                 }
             }
 
             else
             {
                 int step = start < end ? 1 : -1 ;
+                bool check = 0 ;
                 for (size_t j = start; j != end ; j+=step)
                 {
                     cout << Linemap[path.Line_vehicle[i]][j] ;
@@ -361,12 +359,14 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
                     } 
                     if(i == 0)
                     {
-                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], "NULL", path.vehicle[i]);
+                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], "NULL", path.vehicle[i] , check);
+                        check = 1 ;
                     }
+
                     else
                     {
                         int index = j == start ? i-1 : i;
-                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], path.Line_vehicle[index], path.vehicle[i]);
+                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], path.Line_vehicle[index], path.vehicle[i] , check);
                     }
                 } 
             }           
@@ -380,7 +380,7 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
             
 }
 
-int Tehran::calc_time_bestp(string src ,string dest , string pre_line , string vehi) 
+int Tehran::calc_time_bestp(string src ,string dest , string pre_line , string vehi ,bool check) 
 {
 
     int speed;
@@ -420,7 +420,7 @@ int Tehran::calc_time_bestp(string src ,string dest , string pre_line , string v
             return speed ;
         }
     }
-    else
+    else if(pre_line == "NULL" and check == 0)
     {
         if(vehi == "Bus")
         {
@@ -439,5 +439,26 @@ int Tehran::calc_time_bestp(string src ,string dest , string pre_line , string v
         }
         
         return speed ;
+    }
+    else
+    {
+        if(vehi == "Bus")
+        {
+            speed = 4 ;
+            speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
+        }
+        else if(vehi == "Subway")
+        {
+            speed = 1;
+            speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
+        }
+        else
+        {
+            speed = 2;
+            speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
+        }
+        
+        return speed ;
+
     }
 }

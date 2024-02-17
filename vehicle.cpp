@@ -17,6 +17,6 @@ machine::machine(string file_name)
     read_vehicle >> get_in;
     read_vehicle >> traffic_get_in;
 
-    // read_vehicle >> start_traffic_time; wait for overload
-    // read_vehicle >> end_traffic_time; wait for overload
+    read_vehicle >> start_traffic_time;
+    read_vehicle >> end_traffic_time;
 }

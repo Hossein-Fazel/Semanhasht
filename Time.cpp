@@ -99,3 +99,18 @@ Time Time::operator+=(int min)
     }
     return *this;
 }
+
+istream &operator>>(istream &input, Time &t1)
+{
+    string hour, minute, type;
+
+    getline(input, hour, ':');
+    getline(input, minute, ' ');
+    getline(input, type);
+
+    t1.set_hour(stoi(hour));
+    t1.set_minute(stoi(minute));
+    t1.set_noon(type);
+
+    return input;
+}

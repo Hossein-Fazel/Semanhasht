@@ -1,4 +1,3 @@
-// در فایل Semanhasht.hpp
 #ifndef SMHT_HPP
 #define SMHT_HPP
 #include <queue>

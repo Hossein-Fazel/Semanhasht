@@ -1,4 +1,3 @@
-// در فایل Semanhasht.cpp
 #include <iostream>
 #include <string>
 #include "Semanhasht.hpp"
@@ -14,7 +13,7 @@ void RequestManager::addRequest(string &sorce, string &destination, string &inpu
 
 void RequestManager::processR(Request &request)
 {
-    cout << "-----------------------------------------"<<endl;
+    cout << "------------------------------------------"<<endl;
     cout << "Processing request - Source: " << request.sorce
          << ", Destination: " << request.destination
          << ", Time: " << request.input_time << endl;

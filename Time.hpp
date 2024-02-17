@@ -16,9 +16,15 @@ class Time
         void set_noon(string noon);
         void set_hour(int h);
         void set_minute(int m);
+        void print();
+
         Time operator+=(int min);
         friend istream &operator>>(istream &input, Time &time);
-        void print();
+
+        int get_hour();
+        int get_minute();
+        string get_noon();
+
     private :
         int hour = 0;
         int minute = 0;

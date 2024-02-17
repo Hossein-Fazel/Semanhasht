@@ -114,3 +114,18 @@ istream &operator>>(istream &input, Time &t1)
 
     return input;
 }
+
+int Time::get_hour()
+{
+    return hour;
+}
+
+int Time::get_minute()
+{
+    return minute;
+}
+
+string Time::get_noon()
+{
+    return noon;
+}

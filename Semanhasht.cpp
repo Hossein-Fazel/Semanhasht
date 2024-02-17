@@ -17,8 +17,6 @@ void RequestManager::processR(Request &request)
     cout << "Processing request - Source: " << request.sorce
          << ", Destination: " << request.destination
          << ", Time: " << request.input_time << endl;
-
-    cout << "Request processed successfully." << endl;
 }
 
 void SMHT::start()
@@ -29,9 +27,9 @@ void SMHT::start()
     cout << "How many request:";
     cin >> n;
 
+    cin.ignore();
     while (n--)
     {
-        cin.ignore();
         cout << "Starting Time : ";
         getline(cin, hour);
         cout << "Origin : ";
@@ -59,7 +57,7 @@ void SMHT::start()
         }
         catch (invalid_argument e1)
         {
-            cout << e1.what();
+            cout << e1.what() << endl;
         }
     }
 }

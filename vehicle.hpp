@@ -9,11 +9,13 @@ using namespace std;
 class machine
 {
     public:
+
         machine(string file_name);
         int get_in_time(Time t1);
         int get_path_time(Time t1);
 
     private:
+
         int speed;
         int traffic_speed;
 

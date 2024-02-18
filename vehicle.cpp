@@ -20,3 +20,27 @@ machine::machine(string file_name)
     read_vehicle >> start_traffic_time;
     read_vehicle >> end_traffic_time;
 }
+
+int machine::get_in_time(Time t1)
+{
+    if( t1.get_hour() >= 6 and t1.get_hour() <= 8 ) // check the noon later because traffic time for taxi is different.
+    {
+        return traffic_get_in ;
+    }
+    else
+    {
+        return get_in ;
+    }
+}
+
+int machine::get_path_time(Time t1)
+{
+    if( t1.get_hour() >= 6 and t1.get_hour() <= 8 )
+    {
+        return speed ;
+    }
+    else
+    {
+        return traffic_speed ;
+    }
+}

@@ -30,8 +30,7 @@ class RequestManager
 {
 public:
     void addRequest(string &sorce, string &destination, string &input_time);
-    void processR(Request &request);
-
+    
     queue<Request> requestQueue;
 };
 

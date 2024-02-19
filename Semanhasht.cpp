@@ -11,30 +11,19 @@ void RequestManager::addRequest(string &sorce, string &destination, string &inpu
     requestQueue.push(newRequest);
 }
 
-void RequestManager::processR(Request &request)
-{
-    cout << "------------------------------------------"<<endl;
-    cout << "Processing request - Source: " << request.sorce
-         << ", Destination: " << request.destination
-         << ", Time: " << request.input_time << endl;
-}
 
 void SMHT::start()
 {
     RequestManager request_M;
     Tehran t1;
 
-    cout << "How many request:";
     cin >> n;
 
     cin.ignore();
     while (n--)
     {
-        cout << "Starting Time : ";
         getline(cin, hour);
-        cout << "Origin : ";
         getline(cin, src);
-        cout << "DEstination : ";
         getline(cin, dst);
 
         request_M.addRequest(src, dst, hour);
@@ -45,7 +34,6 @@ void SMHT::start()
         Request currentRequest = request_M.requestQueue.front();
         request_M.requestQueue.pop();
 
-        request_M.processR(currentRequest);
         Time time(currentRequest.input_time);
         try
         {

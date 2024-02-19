@@ -51,8 +51,7 @@ public:
     void complete_matrix_p();
     save_directions find_best_cost(int src, int dest);
     void print_best_price(save_directions path, Time arrive_t);
-    int calc_time_shortp(string src, string dest, string pre_line);
-    int calc_time_bestp(string src, string dest, string pre_line, string vehi, bool check);
+    int calc_time(string src, string dest, string pre_line, string vehi,Time t1);
 
 private:
     unordered_map<string, vector<string>> Linemap;

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <algorithm>
 #include"Time.hpp"
+#include"vehicle.hpp"
 #include<queue>
 
 using namespace std;
@@ -211,11 +212,11 @@ void Tehran::print_shortest_path(save_directions path , Time arrive_t)
             cout << " --> ";
             if (i == 0)
             {
-                arrive_t += calc_time_bestp(path.direct[i], path.direct[i+1]  ,"NULL" , vehi , ch);
+                arrive_t += calc_time(path.direct[i], path.direct[i+1]  ,"NULL" , vehi ,arrive_t);
             }
             else 
             {
-                arrive_t += calc_time_bestp(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] ,vehi ,ch);
+                arrive_t += calc_time(path.direct[i] , path.direct[i+1] , path.Line_vehicle[i-1] ,vehi ,arrive_t);
             }
         }
         cout << path.direct[path.direct.size() - 1] << endl ;
@@ -349,7 +350,6 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
             // else
             // {
                 int step = start < end ? 1 : -1 ;
-                bool check = 0 ;
                 for (size_t j = start; j != end ; j+=step)
                 {
                     cout << Linemap[path.Line_vehicle[i]][j] ;
@@ -360,14 +360,13 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
                     } 
                     if(i == 0)
                     {
-                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], "NULL", path.vehicle[i] , check);
-                        check = 1 ;
+                       arrive_t += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], "NULL", path.vehicle[i] , arrive_t);
                     }
 
                     else
                     {
                         int index = j == start ? i-1 : i;
-                        arrive_t += calc_time_bestp(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], path.Line_vehicle[index], path.vehicle[i] , check);
+                        arrive_t += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j+step], path.Line_vehicle[index], path.vehicle[i] , arrive_t);
                     }
                 } 
             }           
@@ -381,85 +380,18 @@ void Tehran::print_best_price(save_directions path , Time arrive_t)
             
 }
 
-int Tehran::calc_time_bestp(string src ,string dest , string pre_line , string vehi ,bool check) 
+int Tehran::calc_time(string src ,string dest , string pre_line , string vehi ,Time t1) 
 {
 
     int speed;
+    machine m1(vehi);
 
-    if(pre_line != "NULL")
-    {
-        if(matrix[get_value(src)][get_value(dest)].type == pre_line)
-        {
-            if(vehi == "Taxi" )
-            {
-                speed = matrix[get_value(src)][get_value(dest)].s_p * 2 ;
-            }
-            else if(vehi == "Bus")
-            {
-                speed = matrix[get_value(src)][get_value(dest)].s_p * 4 ;
-            }
-            else if(vehi == "Subway")
-            {
-                speed = matrix[get_value(src)][get_value(dest)].s_p * 1;
-            }
-            return speed ;
-        }
-        else
-        {
-            if( vehi == "Taxi" )
-            {
-                speed = matrix[get_value(src)][get_value(dest)].s_p * 2 + 5 ;
-            }
-            else if(vehi == "Bus")
-            {
-                speed = matrix[get_value(src)][get_value(dest)].s_p * 4 + 15;
-            }
-            else
-            {
-                speed = matrix[get_value(src)][get_value(dest)].s_p * 1 + 8;
-            }
-            return speed ;
-        }
-    }
-    else if(pre_line == "NULL" and check == 0)
-    {
-        if(vehi == "Bus")
-        {
-            speed = 4 ;
-            speed = matrix[get_value(src)][get_value(dest)].s_p * speed + 15;
-        }
-        else if(vehi == "Subway")
-        {
-            speed = 1;
-            speed = matrix[get_value(src)][get_value(dest)].s_p * speed + 8 ;
-        }
-        else
-        {
-            speed = 2;
-            speed = matrix[get_value(src)][get_value(dest)].s_p * speed + 5 ;
-        }
-        
-        return speed ;
-    }
-    else
-    {
-        if(vehi == "Bus")
-        {
-            speed = 4 ;
-            speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
-        }
-        else if(vehi == "Subway")
-        {
-            speed = 1;
-            speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
-        }
-        else
-        {
-            speed = 2;
-            speed = matrix[get_value(src)][get_value(dest)].s_p * speed ;
-        }
-        
-        return speed ;
+    speed = matrix[get_value(src)][get_value(dest)].s_p * m1.get_path_time(t1) ;
 
-    }
+        if(matrix[get_value(src)][get_value(dest)].type != pre_line)
+        {
+             speed += m1.get_in_time(t1) ;
+        }
+
+    return speed ;
 }

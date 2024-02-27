@@ -110,11 +110,11 @@ int Tehran::get_value(string key)
 void Tehran::read_file()
 {
 
-     ifstream file ;
-     string arr[2] = {"line" , "bus"} ;
-     int index = 0 ; 
-     for(int i=0 ; i<2 ; i++)
-     {
+    ifstream file ;
+    string arr[2] = {"line" , "bus"} ;
+    int index = 0 ; 
+    for(int i=0 ; i<2 ; i++)
+    {
         file.open(arr[i]+".txt" , ios::in );
         if(file.is_open())
         { 
@@ -152,6 +152,7 @@ void Tehran::read_file()
                     Linemap[line].push_back(stat2);
                     
                 }
+
                 if (stations.count(stat1)== 0)
                 {
                     stations.insert({stat1 , index}) ;
@@ -163,29 +164,26 @@ void Tehran::read_file()
                     stations.insert({stat2 , index}) ;
                     index++ ;
                 }
-                
-               if( matrix[get_value(stat1)][get_value(stat2)].s_p != 0 && matrix[get_value(stat1)][get_value(stat2)].s_p > stoi(dis) ) // for more info
-               {
-                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
-                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
-                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
-                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
-                 
-               }
-               else if( matrix[get_value(stat1)][get_value(stat2)].s_p == 0 )
-               {
-                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
-                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
-                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
-                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
 
-               }
-            
+                if(line[0] == 'l')
+                {
+                    Node_p v1{stoi(dis), line, "Taxi"}, v2{stoi(dis), line, "Subway"};
+                    matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
+                    matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v2);
+                    matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
+                    matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v2);
+                }
+                else if(line[0] == 'b')
+                {
+                    Node_p v1{stoi(dis), line, "Bus"};
+                    matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
+                    matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
+                }
             }
-        file.close() ;
+            file.close() ;
         }
         
-     }
+    }
 }
 
 void Tehran::print_shortest_path(save_directions path , Time arrive_t)

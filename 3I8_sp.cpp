@@ -188,23 +188,20 @@ void Tehran::read_file()
                     index++;
                 }
                 
-               if( matrix[get_value(stat1)][get_value(stat2)].s_p != 0 && matrix[get_value(stat1)][get_value(stat2)].s_p > stoi(dis) ) // for more info
-               {
-                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
-                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
-                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
-                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
-                 
-               }
-               else if( matrix[get_value(stat1)][get_value(stat2)].s_p == 0 )
-               {
-                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
-                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
-                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
-                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
-
-               }
-            
+                if(line[0] == 'l')
+                {
+                    Node_p v1{stoi(dis), line, "Taxi"}, v2{stoi(dis), line, "Subway"};
+                    matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
+                    matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v2);
+                    matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
+                    matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v2);
+                }
+                else if(line[0] == 'b')
+                {
+                    Node_p v1{stoi(dis), line, "Bus"};
+                    matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
+                    matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
+                }
             }
         file.close() ;
         }

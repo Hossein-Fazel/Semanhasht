@@ -138,17 +138,17 @@ int Tehran::get_value(string key)
 void Tehran::read_file()
 {
 
-    ifstream file;
-    string arr[2] = {"line", "bus"};
-    int index = 0;
-    for (int i = 0; i < 2; i++)
-    {
-        file.open(arr[i] + ".txt", ios::in);
-        if (file.is_open())
-        {
-            string line;
-            getline(file, line);
-            line.erase(line.size() - 1, 1);
+     ifstream file ;
+     string arr[2] = {"line" , "bus"} ;
+     int index = 0 ; 
+     for(int i=0 ; i<2 ; i++)
+     {
+        file.open(arr[i]+".txt" , ios::in );
+        if(file.is_open())
+        { 
+            string line ;
+            getline( file , line);
+            line.erase(line.size()-1 , 1) ;
 
             while (!file.eof())
             {
@@ -177,7 +177,7 @@ void Tehran::read_file()
                 {
                     Linemap[line].push_back(stat2);
                 }
-                if (stations.count(stat1) == 0)
+                if (stations.count(stat1)== 0)
                 {
                     stations.insert({stat1, index});
                     index++;
@@ -187,25 +187,29 @@ void Tehran::read_file()
                     stations.insert({stat2, index});
                     index++;
                 }
+                
+               if( matrix[get_value(stat1)][get_value(stat2)].s_p != 0 && matrix[get_value(stat1)][get_value(stat2)].s_p > stoi(dis) ) // for more info
+               {
+                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
+                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
+                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
+                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
+                 
+               }
+               else if( matrix[get_value(stat1)][get_value(stat2)].s_p == 0 )
+               {
+                 matrix[get_value(stat1)][get_value(stat2)].type = line ;
+                 matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis) ;
+                 matrix[get_value(stat2)][get_value(stat1)].type = line ;
+                 matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis) ;
 
-                if (matrix[get_value(stat1)][get_value(stat2)].s_p != 0 && matrix[get_value(stat1)][get_value(stat2)].s_p > stoi(dis)) // for more info
-                {
-                    matrix[get_value(stat1)][get_value(stat2)].type = line;
-                    matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis);
-                    matrix[get_value(stat2)][get_value(stat1)].type = line;
-                    matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis);
-                }
-                else if (matrix[get_value(stat1)][get_value(stat2)].s_p == 0)
-                {
-                    matrix[get_value(stat1)][get_value(stat2)].type = line;
-                    matrix[get_value(stat1)][get_value(stat2)].s_p = stoi(dis);
-                    matrix[get_value(stat2)][get_value(stat1)].type = line;
-                    matrix[get_value(stat2)][get_value(stat1)].s_p = stoi(dis);
-                }
+               }
+            
             }
-            file.close();
+        file.close() ;
         }
-    }
+        
+     }
 }
 
 void Tehran::print_shortest_path(save_directions path, Time arrive_t)

@@ -26,6 +26,7 @@ public:
 };
 class Node_sp
 {
+    public:
     vector<Node_p> dist_edge;
     Node_p get_min_dist();
     int get_vehicle_dist(string name);

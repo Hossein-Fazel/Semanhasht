@@ -24,10 +24,11 @@ public:
     vector<Node_p> price_edge;
     Node_p get_min();
 };
-struct Node_sp
+class Node_sp
 {
-    int s_p = 0;
-    string type = "NULL";
+    vector<Node_p> dist_edge;
+    Node_p get_min_dist();
+    int get_vehicle_dist(string name);
 };
 
 struct save_directions

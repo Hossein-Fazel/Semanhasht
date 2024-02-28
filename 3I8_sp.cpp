@@ -43,19 +43,13 @@ Node_p Price::get_min()
 
 Node_p Node_sp::get_min_dist()
 {
-    vector<int> dist_values;
     Node_p min_dist;
 
-    for (Node_p &node : dist_edge)
+    for (Node_p &value : dist_edge)
     {
-        dist_values.push_back(node.geymat);
-    }
-
-    for (int &value : dist_values)
-    {
-        if (value < min_dist.geymat)
+        if (value.geymat < min_dist.geymat)
         {
-            min_dist.geymat = value;
+            min_dist = value;
         }
     }
 
@@ -219,7 +213,7 @@ void Tehran::print_shortest_path(save_directions path, Time arrive_t)
         cout << path.direct[i] << " -- ";
 
         string vehi;
-        if (path.Line_vehicle[i] == "l1" or path.Line_vehicle[i] == "l6" or path.Line_vehicle[i] == "l3" or path.Line_vehicle[i] == "l4")
+        if (path.Line_vehicle[i][0] == 'l')
         {
             cout << "(Taxi or Subway)";
             vehi = "Subway";
@@ -243,6 +237,7 @@ void Tehran::print_shortest_path(save_directions path, Time arrive_t)
     cout << path.direct[path.direct.size() - 1] << endl;
     cout << "arriving time : ";
     arrive_t.print();
+
 }
 
 void Tehran::complete_matrix_p()
@@ -399,10 +394,8 @@ void Tehran::print_best_price(save_directions path, Time arrive_t)
 
 int Tehran::calc_time(string src, string dest, string pre_line, string vehi, Time t1)
 {
-
-    int speed;
+    int speed = 0;
     machine m1(vehi);
-
     speed = matrix[get_value(src)][get_value(dest)].get_vehicle(vehi).geymat * m1.get_path_time(t1);
 
     if (matrix[get_value(src)][get_value(dest)].get_vehicle(vehi).type != pre_line)

@@ -44,7 +44,7 @@ Node_p Price::get_min()
 Node_p Node_sp::get_min_dist()
 {
     vector<int> dist_values;
-    int min_dist = INT_MAX;
+    Node_p min_dist;
 
     for (Node_p &node : dist_edge)
     {
@@ -53,19 +53,13 @@ Node_p Node_sp::get_min_dist()
 
     for (int &value : dist_values)
     {
-        if (min_dist > value)
+        if (value < min_dist.geymat)
         {
-            min_dist = value;
+            min_dist.geymat = value;
         }
     }
 
-    for (Node_p &node : dist_edge)
-    {
-        if (node.geymat == min_dist)
-        {
-            return node;
-        }
-    }
+    return min_dist;
 }
 
 Node_p Node_sp::get_vehicle(string name)
@@ -114,7 +108,7 @@ save_directions Tehran::Find_Shortest_Path(int src, int dest)
 
             for (int v = 0; v < V; v++)
 
-                if (!sptSet[v] && matrix[u][v].get_min_dist().geymat && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].get_min_dist().geymat < dist[v].distance)
+                if (!sptSet[v] && matrix[u][v].get_min_dist().geymat != INT_MAX && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].get_min_dist().geymat < dist[v].distance)
                 {
                     dist[v].distance = dist[u].distance + matrix[u][v].get_min_dist().geymat;
 

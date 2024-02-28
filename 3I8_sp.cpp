@@ -374,7 +374,14 @@ void Tehran::print_best_price(save_directions path, Time arrive_t)
             }
             if (i == 0)
             {
-                arrive_t += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], "NULL", path.vehicle[i], arrive_t);
+                if(j == start)
+                {
+                    arrive_t += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], "NULL", path.vehicle[i], arrive_t);
+                }
+                else
+                {
+                    arrive_t += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], path.Line_vehicle[i], path.vehicle[i], arrive_t);
+                }
             }
 
             else

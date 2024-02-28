@@ -44,19 +44,18 @@ Node_p Price::get_min()
 Node_p Node_sp::get_min_dist()
 {
     vector<int> dist_values;
+    int min_dist = INT_MAX;
 
     for (Node_p &node : dist_edge)
     {
         dist_values.push_back(node.geymat);
     }
 
-    // int min_dist = *min_element(dist_values.begin(), dist_values.end());
-    int min_dest = INT_MAX;
     for (int &value : dist_values)
     {
-        if (min_dest > value)
+        if (min_dist > value)
         {
-            min_dest = value;
+            min_dist = value;
         }
     }
 

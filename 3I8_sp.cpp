@@ -45,14 +45,14 @@ Node_p Node_sp::get_min_dist()
 {
     vector<int> dist_values;
 
-    for (Node_p& node : dist_edge) 
+    for (Node_p &node : dist_edge)
     {
         dist_values.push_back(node.geymat);
     }
 
     int min_dist = *min_element(dist_values.begin(), dist_values.end());
 
-    for (Node_p& node : dist_edge)
+    for (Node_p &node : dist_edge)
     {
         if (node.geymat == min_dist)
         {
@@ -61,17 +61,18 @@ Node_p Node_sp::get_min_dist()
     }
 }
 
-int Node_sp::get_vehicle_dist(string name)
+Node_p Node_sp::get_vehicle(string name)
 {
     for (Node_p& node : dist_edge)
     {
         if (node.vehicle == name)
         {
-            return node.geymat;
+            return node;
         }
     }
 
-    return -1;
+
+    return Node_p{};
 }
 
 int Tehran::minDistance(save_directions dist[], bool sptSet[])
@@ -107,14 +108,14 @@ save_directions Tehran::Find_Shortest_Path(int src, int dest)
 
             for (int v = 0; v < V; v++)
 
-                if (!sptSet[v] && matrix[u][v].s_p && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].s_p < dist[v].distance)
+                if (!sptSet[v] && matrix[u][v].get_min_dist().geymat && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].get_min_dist().geymat < dist[v].distance)
                 {
-                    dist[v].distance = dist[u].distance + matrix[u][v].s_p;
+                    dist[v].distance = dist[u].distance + matrix[u][v].get_min_dist().geymat;
 
                     dist[v].direct = dist[u].direct;
                     dist[v].direct.push_back(search(v));
                     dist[v].Line_vehicle = dist[u].Line_vehicle;
-                    dist[v].Line_vehicle.push_back(matrix[v][u].type);
+                    dist[v].Line_vehicle.push_back(matrix[v][u].get_min_dist().type);
                 }
         }
 
@@ -138,17 +139,17 @@ int Tehran::get_value(string key)
 void Tehran::read_file()
 {
 
-     ifstream file ;
-     string arr[2] = {"line" , "bus"} ;
-     int index = 0 ; 
-     for(int i=0 ; i<2 ; i++)
-     {
-        file.open(arr[i]+".txt" , ios::in );
-        if(file.is_open())
-        { 
-            string line ;
-            getline( file , line);
-            line.erase(line.size()-1 , 1) ;
+    ifstream file;
+    string arr[2] = {"line", "bus"};
+    int index = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        file.open(arr[i] + ".txt", ios::in);
+        if (file.is_open())
+        {
+            string line;
+            getline(file, line);
+            line.erase(line.size() - 1, 1);
 
             while (!file.eof())
             {
@@ -177,7 +178,7 @@ void Tehran::read_file()
                 {
                     Linemap[line].push_back(stat2);
                 }
-                if (stations.count(stat1)== 0)
+                if (stations.count(stat1) == 0)
                 {
                     stations.insert({stat1, index});
                     index++;
@@ -187,8 +188,8 @@ void Tehran::read_file()
                     stations.insert({stat2, index});
                     index++;
                 }
-                
-                if(line[0] == 'l')
+
+                if (line[0] == 'l')
                 {
                     Node_p v1{stoi(dis), line, "Taxi"}, v2{stoi(dis), line, "Subway"};
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
@@ -196,17 +197,16 @@ void Tehran::read_file()
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v2);
                 }
-                else if(line[0] == 'b')
+                else if (line[0] == 'b')
                 {
                     Node_p v1{stoi(dis), line, "Bus"};
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
                 }
             }
-        file.close() ;
+            file.close();
         }
-        
-     }
+    }
 }
 
 void Tehran::print_shortest_path(save_directions path, Time arrive_t)
@@ -281,7 +281,7 @@ void Tehran::complete_matrix_p()
                 for (int j = 0; j < item.second.size() - 2; j++)
                 {
                     Node_p cost;
-                    cost.geymat = 6000 * matrix[stations[item.second[j]]][stations[item.second[j + 1]]].s_p;
+                    cost.geymat = 6000 * matrix[stations[item.second[j]]][stations[item.second[j + 1]]].get_vehicle("Taxi").geymat;
                     cost.type = item.first;
                     cost.vehicle = "Taxi";
 
@@ -403,9 +403,9 @@ int Tehran::calc_time(string src, string dest, string pre_line, string vehi, Tim
     int speed;
     machine m1(vehi);
 
-    speed = matrix[get_value(src)][get_value(dest)].s_p * m1.get_path_time(t1);
+    speed = matrix[get_value(src)][get_value(dest)].get_vehicle(vehi).geymat * m1.get_path_time(t1);
 
-    if (matrix[get_value(src)][get_value(dest)].type != pre_line)
+    if (matrix[get_value(src)][get_value(dest)].get_vehicle(vehi).type != pre_line)
     {
         speed += m1.get_in_time(t1);
     }

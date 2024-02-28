@@ -50,7 +50,15 @@ Node_p Node_sp::get_min_dist()
         dist_values.push_back(node.geymat);
     }
 
-    int min_dist = *min_element(dist_values.begin(), dist_values.end());
+    // int min_dist = *min_element(dist_values.begin(), dist_values.end());
+    int min_dest = INT_MAX;
+    for (int &value : dist_values)
+    {
+        if (min_dest > value)
+        {
+            min_dest = value;
+        }
+    }
 
     for (Node_p &node : dist_edge)
     {
@@ -63,14 +71,13 @@ Node_p Node_sp::get_min_dist()
 
 Node_p Node_sp::get_vehicle(string name)
 {
-    for (Node_p& node : dist_edge)
+    for (Node_p &node : dist_edge)
     {
         if (node.vehicle == name)
         {
             return node;
         }
     }
-
 
     return Node_p{};
 }

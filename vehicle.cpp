@@ -37,10 +37,10 @@ int machine::get_path_time(Time t1)
 {
     if( t1.get_hour() >= start_traffic_time.get_hour() and  t1.get_hour() <= end_traffic_time.get_hour() and t1.get_noon() == start_traffic_time.get_noon() )
     {
-        return speed ;
+        return traffic_speed ;
     }
     else
     {
-        return traffic_speed ;
+        return speed ;
     }
 }

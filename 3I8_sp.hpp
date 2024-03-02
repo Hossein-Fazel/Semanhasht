@@ -19,6 +19,13 @@ struct Node_p
     string vehicle;
 };
 
+struct edge
+{
+    int dist = INT_MAX;
+    string type;
+    string vehicle;
+};
+
 class Price
 {
 public:
@@ -29,9 +36,9 @@ public:
 class Node_sp
 {
     public:
-    vector<Node_p> dist_edge;
-    Node_p get_min_dist();
-    Node_p get_vehicle(string name);
+    vector<edge> dist_edge;
+    edge get_min_dist();
+    edge get_vehicle(string name);
 };
 
 struct save_directions
@@ -56,6 +63,9 @@ public:
     save_directions find_best_cost(int src, int dest);
     void print_best_price(save_directions path, Time arrive_t);
     int calc_time(string src, string dest, string pre_line, string vehi,Time t1);
+    void travel_line( pair <string , string>data ,string src , save_directions save[] , Time t);
+    save_directions find_best_time(Time t);
+    void print_best_time(Time t);
 
     // bool is_visited(string name);
 

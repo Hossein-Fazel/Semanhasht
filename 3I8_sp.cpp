@@ -41,13 +41,13 @@ Node_p Price::get_min()
     return minimun;
 }
 
-Node_p Node_sp::get_min_dist()
+edge Node_sp::get_min_dist()
 {
-    Node_p min_dist;
+    edge min_dist;
 
-    for (Node_p &value : dist_edge)
+    for (edge &value : dist_edge)
     {
-        if (value.geymat < min_dist.geymat)
+        if (value.dist < min_dist.dist)
         {
             min_dist = value;
         }
@@ -56,9 +56,9 @@ Node_p Node_sp::get_min_dist()
     return min_dist;
 }
 
-Node_p Node_sp::get_vehicle(string name)
+edge Node_sp::get_vehicle(string name)
 {
-    for (Node_p &node : dist_edge)
+    for (edge &node : dist_edge)
     {
         if (node.vehicle == name)
         {
@@ -66,7 +66,7 @@ Node_p Node_sp::get_vehicle(string name)
         }
     }
 
-    return Node_p{};
+    return edge{};
 }
 
 int Tehran::minDistance(save_directions dist[], bool sptSet[])
@@ -102,9 +102,9 @@ save_directions Tehran::Find_Shortest_Path(int src, int dest)
 
             for (int v = 0; v < V; v++)
 
-                if (!sptSet[v] && matrix[u][v].get_min_dist().geymat != INT_MAX && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].get_min_dist().geymat < dist[v].distance)
+                if (!sptSet[v] && matrix[u][v].get_min_dist().dist != INT_MAX && dist[u].distance != INT_MAX && dist[u].distance + matrix[u][v].get_min_dist().dist < dist[v].distance)
                 {
-                    dist[v].distance = dist[u].distance + matrix[u][v].get_min_dist().geymat;
+                    dist[v].distance = dist[u].distance + matrix[u][v].get_min_dist().dist;
 
                     dist[v].direct = dist[u].direct;
                     dist[v].direct.push_back(search(v));
@@ -185,7 +185,7 @@ void Tehran::read_file()
 
                 if (line[0] == 'l')
                 {
-                    Node_p v1{stoi(dis), line, "Taxi"}, v2{stoi(dis), line, "Subway"};
+                    edge v1{stoi(dis), line, "Taxi"}, v2{stoi(dis), line, "Subway"};
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v2);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
@@ -193,7 +193,7 @@ void Tehran::read_file()
                 }
                 else if (line[0] == 'b')
                 {
-                    Node_p v1{stoi(dis), line, "Bus"};
+                    edge v1{stoi(dis), line, "Bus"};
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
                 }
@@ -290,7 +290,7 @@ void Tehran::complete_matrix_p()
                 for (int j = 0; j < item.second.size() - 2; j++)
                 {
                     Node_p cost;
-                    cost.geymat = 6000 * matrix[stations[item.second[j]]][stations[item.second[j + 1]]].get_vehicle("Taxi").geymat;
+                    cost.geymat = 6000 * matrix[stations[item.second[j]]][stations[item.second[j + 1]]].get_vehicle("Taxi").dist;
                     cost.type = item.first;
                     cost.vehicle = "Taxi";
 
@@ -396,7 +396,7 @@ int Tehran::calc_time(string src, string dest, string pre_line, string vehi, Tim
 {
     int speed = 0;
     machine m1(vehi);
-    speed = matrix[get_value(src)][get_value(dest)].get_vehicle(vehi).geymat * m1.get_path_time(t1);
+    speed = matrix[get_value(src)][get_value(dest)].get_vehicle(vehi).dist * m1.get_path_time(t1);
 
     if (matrix[get_value(src)][get_value(dest)].get_vehicle(vehi).type != pre_line)
     {
@@ -404,4 +404,34 @@ int Tehran::calc_time(string src, string dest, string pre_line, string vehi, Tim
     }
 
     return speed;
+}
+
+void Tehran::travel_line( pair <string , string>data ,string src , save_directions save[] , Time t)
+{
+    int index = find(Linemap[data.first].begin() ,Linemap[data.first].end() ,src) - Linemap[data.first].begin();
+    save_directions time ;
+    machine m1(data.second) ;
+
+    time.distance = 0 ;
+    for(int i=index ; i<Linemap[data.first].size()-1 ; i++)
+    {
+        if(save[stations[Linemap[data.first][i]]].Line_vehicle.size() == 0)
+        {
+            time.distance += m1.get_in_time(t + time.distance);
+        }
+
+        time.distance += matrix[stations[Linemap[data.first][i]]][stations[Linemap[data.first][i + 1]]].get_vehicle(data.second).dist;
+
+    }
+
+}
+
+save_directions Tehran:: find_best_time(Time t)
+{
+
+}
+
+void Tehran:: print_best_time(Time t)
+{
+
 }

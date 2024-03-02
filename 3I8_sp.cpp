@@ -416,9 +416,16 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
     {
         if(sptSet[stations[Linemap[data.first][i+1]]] == false)
         {
-            if(save[stations[Linemap[data.first][i]]].Line_vehicle.size() == 0)
+            if(i == index)
             {
-                time.distance += m1.get_in_time(t + time.distance);
+                if(time.Line_vehicle.size() == 0)
+                    time.distance += m1.get_in_time(t + time.distance);
+
+                else if(time.Line_vehicle[time.Line_vehicle.size() - 1] != data.first)
+                    time.distance += m1.get_in_time(t + time.distance);
+                
+                else if(time.vehicle[time.vehicle.size() - 1] != data.second)
+                    time.distance += m1.get_in_time(t + time.distance);
             }
 
             time.distance += matrix[stations[Linemap[data.first][i]]][stations[Linemap[data.first][i + 1]]].get_vehicle(data.second).dist * m1.get_path_time(t + time.distance);
@@ -443,9 +450,16 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
     {
         if(sptSet[stations[Linemap[data.first][i - 1]]] == false)
         {
-            if(save[stations[Linemap[data.first][i]]].Line_vehicle.size() == 0)
+            if(i == index)
             {
-                time.distance += m1.get_in_time(t + time.distance);
+                if(time.Line_vehicle.size() == 0)
+                    time.distance += m1.get_in_time(t + time.distance);
+
+                else if(time.Line_vehicle[time.Line_vehicle.size() - 1] != data.first)
+                    time.distance += m1.get_in_time(t + time.distance);
+                
+                else if(time.vehicle[time.vehicle.size() - 1] != data.second)
+                    time.distance += m1.get_in_time(t + time.distance);
             }
 
             time.distance += matrix[stations[Linemap[data.first][i]]][stations[Linemap[data.first][i - 1]]].get_vehicle(data.second).dist * m1.get_path_time(t + time.distance);
@@ -498,10 +512,10 @@ save_directions Tehran:: find_best_time(int src, int dest, Time t)
 void Tehran:: print_best_time(Time t, save_directions path)
 {
     cout << "Best time :\n";
-    // t += path.distance;
+    t += path.distance;
 
-    // t.print();
-    cout << path.distance << endl;
+    t.print();
+    // cout << path.distance << endl;
 
     for(int i = 0; i < path.direct.size(); i++)
     {

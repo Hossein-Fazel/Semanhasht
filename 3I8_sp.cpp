@@ -406,22 +406,59 @@ int Tehran::calc_time(string src, string dest, string pre_line, string vehi, Tim
     return speed;
 }
 
-void Tehran::travel_line( pair <string , string>data ,string src , save_directions save[] , Time t)
+void Tehran::travel_line( pair <string , string>data ,string src , save_directions save[] , Time t, bool sptSet[])
 {
-    int index = find(Linemap[data.first].begin() ,Linemap[data.first].end() ,src) - Linemap[data.first].begin();
+    const int  index = find(Linemap[data.first].begin() ,Linemap[data.first].end() ,src) - Linemap[data.first].begin();
     save_directions time ;
     machine m1(data.second) ;
 
     time.distance = 0 ;
-    for(int i=index ; i<Linemap[data.first].size()-1 ; i++)
+    time.direct.push_back(src);
+    for(int i=index ; i < Linemap[data.first].size()-1 ; i++)
     {
-        if(save[stations[Linemap[data.first][i]]].Line_vehicle.size() == 0)
+        if(sptSet[stations[Linemap[data.first][i+1]]] == false)
         {
-            time.distance += m1.get_in_time(t + time.distance);
+            if(save[stations[Linemap[data.first][i]]].Line_vehicle.size() == 0)
+            {
+                time.distance += m1.get_in_time(t + time.distance);
+            }
+
+            time.distance += matrix[stations[Linemap[data.first][i]]][stations[Linemap[data.first][i + 1]]].get_vehicle(data.second).dist * m1.get_path_time(t + time.distance);
+            time.direct.push_back(Linemap[data.first][i + 1]);
+            time.Line_vehicle.push_back(data.first);
+            time.vehicle.push_back(data.second);
+
+            if(save[stations[Linemap[data.first][i + 1]]].distance > time.distance)
+            {
+                save[stations[Linemap[data.first][i + 1]]] = time;
+            }
         }
+    }
 
-        time.distance += matrix[stations[Linemap[data.first][i]]][stations[Linemap[data.first][i + 1]]].get_vehicle(data.second).dist;
+    time.distance = 0;
+    time.direct.clear();
+    time.Line_vehicle.clear();
+    time.vehicle.clear();
 
+    for(int i=index ; i > 0 ; i--)
+    {
+        if(sptSet[stations[Linemap[data.first][i - 1]]] == false)
+        {
+            if(save[stations[Linemap[data.first][i]]].Line_vehicle.size() == 0)
+            {
+                time.distance += m1.get_in_time(t + time.distance);
+            }
+
+            time.distance += matrix[stations[Linemap[data.first][i]]][stations[Linemap[data.first][i - 1]]].get_vehicle(data.second).dist * m1.get_path_time(t + time.distance);
+            time.direct.push_back(Linemap[data.first][i - 1]);
+            time.Line_vehicle.push_back(data.first);
+            time.vehicle.push_back(data.second);
+
+            if(save[stations[Linemap[data.first][i - 1]]].distance > time.distance)
+            {
+                save[stations[Linemap[data.first][i - 1]]] = time;
+            }
+        }
     }
 
 }

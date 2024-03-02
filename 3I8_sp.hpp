@@ -63,15 +63,12 @@ public:
     save_directions find_best_cost(int src, int dest);
     void print_best_price(save_directions path, Time arrive_t);
     int calc_time(string src, string dest, string pre_line, string vehi,Time t1);
-    void travel_line( pair <string , string>data ,string src , save_directions save[] , Time t);
+    void travel_line( pair <string , string>data ,string src , save_directions save[] , Time t,bool sptSet[]);
     save_directions find_best_time(Time t);
     void print_best_time(Time t);
-
-    // bool is_visited(string name);
-
     struct myHash
     {
-        size_t operator()(pair<string,string> &obj)
+        size_t operator()(const pair<string,string> &obj)const
         {
             return hash<string>{}(obj.first) ^ hash<string>{}(obj.second);
         }
@@ -80,7 +77,7 @@ public:
 private:
     unordered_map<string, vector<string>> Linemap;
     unordered_map<string, int> stations;
-    unordered_map<string, unordered_set<pair<string, string>, myHash>> node_v;
+    unordered_map<string, unordered_set<pair<string , string> , Tehran::myHash>> node_v;
     Node_sp matrix[59][59];
     Price matrix_p[59][59];
 };

@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <vector>
 #include <limits.h>
+#include <unordered_set>
 #include "Time.hpp"
 
 using namespace std;
@@ -56,9 +57,18 @@ public:
     void print_best_price(save_directions path, Time arrive_t);
     int calc_time(string src, string dest, string pre_line, string vehi,Time t1);
 
+    struct myHash
+    {
+        size_t operator()(pair<string,string> &obj)
+        {
+            return hash<string>{}(obj.first) ^ hash<string>{}(obj.second);
+        }
+    };
+
 private:
     unordered_map<string, vector<string>> Linemap;
     unordered_map<string, int> stations;
+    unordered_map<string, unordered_set<pair<string, string>, myHash>> node_v;
     Node_sp matrix[59][59];
     Price matrix_p[59][59];
 };

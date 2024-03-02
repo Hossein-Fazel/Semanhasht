@@ -100,6 +100,17 @@ Time Time::operator+=(int min)
     return *this;
 }
 
+Time Time::operator+(int min)
+{
+    Time temp;
+    temp.set_hour(this->get_hour());
+    temp.set_minute(this->get_minute());
+    temp.set_noon(this->get_noon());
+
+    temp += min;
+    return temp;
+}
+
 istream &operator>>(istream &input, Time &t1)
 {
     string hour, minute, type;

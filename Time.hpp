@@ -20,6 +20,7 @@ class Time
 
         Time operator+=(int min);
         friend istream &operator>>(istream &input, Time &time);
+        Time operator+ (int min);
 
         int get_hour();
         int get_minute();

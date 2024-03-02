@@ -57,6 +57,8 @@ public:
     void print_best_price(save_directions path, Time arrive_t);
     int calc_time(string src, string dest, string pre_line, string vehi,Time t1);
 
+    // bool is_visited(string name);
+
     struct myHash
     {
         size_t operator()(pair<string,string> &obj)

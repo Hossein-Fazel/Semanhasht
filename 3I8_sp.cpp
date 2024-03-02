@@ -433,7 +433,7 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
             time.Line_vehicle.push_back(data.first);
             time.vehicle.push_back(data.second);
 
-            if(save[stations[Linemap[data.first][i + 1]]].distance > time.distance)
+            if(save[stations[Linemap[data.first][i + 1]]].distance >= time.distance)
             {
                 save[stations[Linemap[data.first][i + 1]]] = time;
             }
@@ -467,7 +467,7 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
             time.Line_vehicle.push_back(data.first);
             time.vehicle.push_back(data.second);
 
-            if(save[stations[Linemap[data.first][i - 1]]].distance > time.distance)
+            if(save[stations[Linemap[data.first][i - 1]]].distance >= time.distance)
             {
                 save[stations[Linemap[data.first][i - 1]]] = time;
             }

@@ -64,8 +64,8 @@ public:
     void print_best_price(save_directions path, Time arrive_t);
     int calc_time(string src, string dest, string pre_line, string vehi,Time t1);
     void travel_line( pair <string , string>data ,string src , save_directions save[] , Time t,bool sptSet[]);
-    save_directions find_best_time(Time t);
-    void print_best_time(Time t);
+    save_directions find_best_time(int src, int dest, Time t);
+    void print_best_time(Time t, save_directions path);
     struct myHash
     {
         size_t operator()(const pair<string,string> &obj)const

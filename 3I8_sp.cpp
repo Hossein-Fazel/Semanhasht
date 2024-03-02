@@ -409,11 +409,9 @@ int Tehran::calc_time(string src, string dest, string pre_line, string vehi, Tim
 void Tehran::travel_line( pair <string , string>data ,string src , save_directions save[] , Time t, bool sptSet[])
 {
     const int  index = find(Linemap[data.first].begin() ,Linemap[data.first].end() ,src) - Linemap[data.first].begin();
-    save_directions time ;
+    save_directions time = save[stations[src]];
     machine m1(data.second) ;
 
-    time.distance = 0 ;
-    time.direct.push_back(src);
     for(int i=index ; i < Linemap[data.first].size()-1 ; i++)
     {
         if(sptSet[stations[Linemap[data.first][i+1]]] == false)
@@ -433,12 +431,13 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
                 save[stations[Linemap[data.first][i + 1]]] = time;
             }
         }
+        else
+        {
+            return;
+        }
     }
 
-    time.distance = 0;
-    time.direct.clear();
-    time.Line_vehicle.clear();
-    time.vehicle.clear();
+    time = save[stations[src]];
 
     for(int i=index ; i > 0 ; i--)
     {
@@ -459,16 +458,58 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
                 save[stations[Linemap[data.first][i - 1]]] = time;
             }
         }
+        else
+        {
+            return;
+        }
     }
 
 }
 
-save_directions Tehran:: find_best_time(Time t)
+save_directions Tehran:: find_best_time(int src, int dest, Time t)
 {
-    
+    if (src >= 0 && src <= 58 && dest >= 0 && dest <= 58)
+    {
+        save_directions dist[V];
+
+        bool sptSet[59]{false};
+
+        dist[src].distance = 0;
+        dist[src].direct.push_back(search(src));
+
+        for (int count = 0; count < V - 1; count++)
+        {
+            int minIndex = minDistance(dist, sptSet);
+
+            for(auto item = node_v[search(minIndex)].begin(); item != node_v[search(minIndex)].end(); item++)
+            {
+                travel_line(*item, search(minIndex), dist, t, sptSet);
+            }
+            sptSet[minIndex] = true;
+        }
+        return dist[dest];
+    }
+    else
+    {
+        throw invalid_argument("Not existing value!");
+    }
 }
 
-void Tehran:: print_best_time(Time t)
+void Tehran:: print_best_time(Time t, save_directions path)
 {
+    cout << "Best time :\n";
+    // t += path.distance;
 
+    // t.print();
+    cout << path.distance << endl;
+
+    for(int i = 0; i < path.direct.size(); i++)
+    {
+        cout << path.direct[i];
+        if(i != path.direct.size() - 1)
+        {
+            cout << " -- (" << path.vehicle[i] << ") --> ";
+        }
+    }
+    cout << endl;
 }

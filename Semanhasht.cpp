@@ -42,6 +42,9 @@ void SMHT::start()
             t1.complete_matrix_p();
             save_directions pri = t1.find_best_cost(t1.get_value(currentRequest.sorce), t1.get_value(currentRequest.destination));
             t1.print_best_price(pri, time);
+
+            save_directions ti = t1.find_best_time(t1.get_value(currentRequest.sorce), t1.get_value(currentRequest.destination), time);
+            t1.print_best_time(time, ti);
         }
         catch (invalid_argument e1)
         {

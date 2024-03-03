@@ -2384,9 +2384,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -6454,6 +6454,101 @@ color : #005500 ;
    </property>
    <property name="orientation">
     <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_60">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>760</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Origin : </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_61">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>760</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Destination : </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_62">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>850</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Starting Time : </string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="T1">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>850</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="OR">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>770</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Empty</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="DS">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>770</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Empty</string>
    </property>
   </widget>
  </widget>

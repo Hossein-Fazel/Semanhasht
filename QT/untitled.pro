@@ -24,7 +24,6 @@ HEADERS += \
     ../vehicle.hpp \
     form.h \
     mainwindow.h
-
 FORMS += \
     form.ui \
     mainwindow.ui

@@ -7,6 +7,7 @@ Form::Form(QWidget *parent) :
     ui(new Ui::Form)
 {
     ui->setupUi(this);
+    ui->T1->setDisplayFormat("HH:mm AP");
 }
 
 void Form::save_btns()

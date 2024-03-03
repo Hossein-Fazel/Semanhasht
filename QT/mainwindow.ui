@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWidget{
-
+background-color : #e1feff;
 colo:rgb(170, 255, 255)c ;
 }
 
@@ -113,6 +113,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
     </property>
     <property name="cursor">
      <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>

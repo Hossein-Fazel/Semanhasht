@@ -239,6 +239,11 @@ release/moc_form.cpp: ../QT/form.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/QMap \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qicon.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/bin/moc.exe
 	C:\Qt\Qt5.12.12\5.12.12\mingw73_32\bin\moc.exe $(DEFINES) --include "D:/C++ training/Semanhasht/build-untitled-Desktop_Qt_5_12_12_MinGW_32_bit-Debug/release/moc_predefs.h" -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/mkspecs/win32-g++ -I"D:/C++ training/Semanhasht/QT" -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore -I. -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.12/Tools/mingw730_32/i686-w64-mingw32/include ..\QT\form.h -o release\moc_form.cpp
@@ -352,6 +357,10 @@ release/moc_mainwindow.cpp: ../QT/mainwindow.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qicon.h \
 		../QT/form.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/QMap \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/bin/moc.exe
 	C:\Qt\Qt5.12.12\5.12.12\mingw73_32\bin\moc.exe $(DEFINES) --include "D:/C++ training/Semanhasht/build-untitled-Desktop_Qt_5_12_12_MinGW_32_bit-Debug/release/moc_predefs.h" -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/mkspecs/win32-g++ -I"D:/C++ training/Semanhasht/QT" -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore -I. -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.12/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.12/Tools/mingw730_32/i686-w64-mingw32/include ..\QT\mainwindow.h -o release\moc_mainwindow.cpp
@@ -504,6 +513,11 @@ release/form.o: ../QT/form.cpp ../QT/form.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/QMap \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qicon.h \
 		ui_form.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QApplication \
@@ -517,10 +531,6 @@ release/form.o: ../QT/form.cpp ../QT/form.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qframe.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QPushButton \
-		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qicon.h \
 		../QT/mainwindow.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qmainwindow.h \
@@ -636,6 +646,10 @@ release/main.o: ../QT/main.cpp ../QT/mainwindow.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qicon.h \
 		../QT/form.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/QMap \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/qcoreapplication.h \
@@ -754,6 +768,10 @@ release/mainwindow.o: ../QT/mainwindow.cpp ../QT/mainwindow.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/qicon.h \
 		../QT/form.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QWidget \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/QMap \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QPushButton \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		ui_mainwindow.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtCore/QVariant \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtGui/QIcon \
@@ -772,9 +790,6 @@ release/mainwindow.o: ../QT/mainwindow.cpp ../QT/mainwindow.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qmenu.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qaction.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QPushButton \
-		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/QStatusBar \
 		C:/Qt/Qt5.12.12/5.12.12/mingw73_32/include/QtWidgets/qstatusbar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\QT\mainwindow.cpp

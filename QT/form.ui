@@ -94,7 +94,7 @@ color : #aa0000 ;
     <rect>
      <x>310</x>
      <y>230</y>
-     <width>91</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>
@@ -229,9 +229,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>480</y>
-     <width>151</width>
+     <x>580</x>
+     <y>470</y>
+     <width>161</width>
      <height>16</height>
     </rect>
    </property>
@@ -879,9 +879,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
   <widget class="QLabel" name="label_37">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>900</x>
      <y>800</y>
-     <width>91</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>
@@ -1512,7 +1512,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
   <widget class="QLabel" name="label_39">
    <property name="geometry">
     <rect>
-     <x>890</x>
+     <x>880</x>
      <y>680</y>
      <width>111</width>
      <height>16</height>
@@ -1650,7 +1650,7 @@ color : #005500 ;
     <rect>
      <x>740</x>
      <y>350</y>
-     <width>91</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>
@@ -1685,7 +1685,7 @@ color : #ff1aa3 ;
   <widget class="QLabel" name="label_59">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>900</x>
      <y>300</y>
      <width>91</width>
      <height>20</height>
@@ -3125,9 +3125,9 @@ color : #aa0000 ;
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>440</x>
      <y>610</y>
-     <width>111</width>
+     <width>171</width>
      <height>16</height>
     </rect>
    </property>
@@ -3428,7 +3428,7 @@ color : #00aaff ;
     <rect>
      <x>650</x>
      <y>410</y>
-     <width>91</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>
@@ -3658,9 +3658,9 @@ color : #ffcd6a;
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>110</x>
      <y>440</y>
-     <width>71</width>
+     <width>81</width>
      <height>20</height>
     </rect>
    </property>
@@ -5965,9 +5965,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
   <widget class="QLabel" name="label_23">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>900</x>
      <y>440</y>
-     <width>91</width>
+     <width>101</width>
      <height>16</height>
     </rect>
    </property>
@@ -6461,7 +6461,7 @@ color : #005500 ;
     <rect>
      <x>60</x>
      <y>760</y>
-     <width>61</width>
+     <width>51</width>
      <height>31</height>
     </rect>
    </property>
@@ -6477,7 +6477,7 @@ color : #005500 ;
   <widget class="QLabel" name="label_61">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>300</x>
      <y>760</y>
      <width>71</width>
      <height>31</height>
@@ -6489,15 +6489,15 @@ color : #005500 ;
     </font>
    </property>
    <property name="text">
-    <string>Destination : </string>
+    <string>Destination :</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_62">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>30</x>
      <y>850</y>
-     <width>91</width>
+     <width>121</width>
      <height>31</height>
     </rect>
    </property>
@@ -6530,7 +6530,7 @@ color : #005500 ;
     <rect>
      <x>110</x>
      <y>770</y>
-     <width>49</width>
+     <width>181</width>
      <height>16</height>
     </rect>
    </property>
@@ -6541,9 +6541,9 @@ color : #005500 ;
   <widget class="QLabel" name="DS">
    <property name="geometry">
     <rect>
-     <x>330</x>
+     <x>380</x>
      <y>770</y>
-     <width>49</width>
+     <width>171</width>
      <height>16</height>
     </rect>
    </property>

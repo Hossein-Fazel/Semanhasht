@@ -42,7 +42,7 @@ public:
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWidget{\n"
-"\n"
+"background-color : #e1feff;\n"
 "colo:rgb(170, 255, 255)c ;\n"
 "}\n"
 "\n"
@@ -97,6 +97,7 @@ public:
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(690, 210, 611, 511));
         pushButton->setCursor(QCursor(Qt::ArrowCursor));
+        pushButton->setStyleSheet(QString::fromUtf8(""));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/image.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton->setIcon(icon);

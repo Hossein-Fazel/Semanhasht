@@ -14,6 +14,7 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -277,6 +278,12 @@ public:
     QLabel *label_34;
     QFrame *line_139;
     QFrame *line_140;
+    QLabel *label_60;
+    QLabel *label_61;
+    QLabel *label_62;
+    QTimeEdit *T1;
+    QLabel *OR;
+    QLabel *DS;
 
     void setupUi(QWidget *Form)
     {
@@ -313,7 +320,7 @@ public:
         label_47->setGeometry(QRect(1500, 700, 49, 16));
         label_8 = new QLabel(Form);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setGeometry(QRect(310, 230, 91, 16));
+        label_8->setGeometry(QRect(310, 230, 101, 16));
         line_108 = new QFrame(Form);
         line_108->setObjectName(QString::fromUtf8("line_108"));
         line_108->setGeometry(QRect(520, 495, 211, 21));
@@ -369,7 +376,7 @@ public:
 ""));
         label_12 = new QLabel(Form);
         label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setGeometry(QRect(590, 480, 151, 16));
+        label_12->setGeometry(QRect(580, 470, 161, 16));
         line_9 = new QFrame(Form);
         line_9->setObjectName(QString::fromUtf8("line_9"));
         line_9->setGeometry(QRect(1410, 240, 121, 21));
@@ -671,7 +678,7 @@ public:
         label_3->setFont(font);
         label_37 = new QLabel(Form);
         label_37->setObjectName(QString::fromUtf8("label_37"));
-        label_37->setGeometry(QRect(910, 800, 91, 16));
+        label_37->setGeometry(QRect(900, 800, 101, 16));
         line_109 = new QFrame(Form);
         line_109->setObjectName(QString::fromUtf8("line_109"));
         line_109->setGeometry(QRect(770, 495, 41, 21));
@@ -962,7 +969,7 @@ public:
         line_107->setFrameShape(QFrame::HLine);
         label_39 = new QLabel(Form);
         label_39->setObjectName(QString::fromUtf8("label_39"));
-        label_39->setGeometry(QRect(890, 680, 111, 16));
+        label_39->setGeometry(QRect(880, 680, 111, 16));
         Shahid_Zeynoddin = new QPushButton(Form);
         Shahid_Zeynoddin->setObjectName(QString::fromUtf8("Shahid_Zeynoddin"));
         Shahid_Zeynoddin->setGeometry(QRect(1530, 230, 41, 41));
@@ -1019,7 +1026,7 @@ public:
         line_119->setFrameShape(QFrame::VLine);
         label_21 = new QLabel(Form);
         label_21->setObjectName(QString::fromUtf8("label_21"));
-        label_21->setGeometry(QRect(740, 350, 91, 16));
+        label_21->setGeometry(QRect(740, 350, 101, 16));
         line_6 = new QFrame(Form);
         line_6->setObjectName(QString::fromUtf8("line_6"));
         line_6->setGeometry(QRect(1040, 500, 231, 21));
@@ -1031,7 +1038,7 @@ public:
         line_6->setFrameShape(QFrame::HLine);
         label_59 = new QLabel(Form);
         label_59->setObjectName(QString::fromUtf8("label_59"));
-        label_59->setGeometry(QRect(910, 300, 91, 20));
+        label_59->setGeometry(QRect(900, 300, 91, 20));
         Nabard = new QPushButton(Form);
         Nabard->setObjectName(QString::fromUtf8("Nabard"));
         Nabard->setGeometry(QRect(1500, 720, 41, 41));
@@ -1324,9 +1331,9 @@ public:
         line_81 = new QFrame(Form);
         line_81->setObjectName(QString::fromUtf8("line_81"));
         line_81->setGeometry(QRect(1290, 830, 161, 16));
-        line_81->setStyleSheet(QString::fromUtf8("Line {\n"
+        line_81->setStyleSheet(QString::fromUtf8("\n"
 "color : #ffcd6a;\n"
-"}\n"
+"\n"
 ""));
         line_81->setFrameShadow(QFrame::Plain);
         line_81->setLineWidth(2);
@@ -1664,7 +1671,7 @@ public:
         line_100->setFrameShape(QFrame::HLine);
         label_14 = new QLabel(Form);
         label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(470, 610, 111, 16));
+        label_14->setGeometry(QRect(440, 610, 171, 16));
         label_15 = new QLabel(Form);
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setGeometry(QRect(670, 540, 71, 16));
@@ -1807,7 +1814,7 @@ public:
         line_42->setFrameShape(QFrame::VLine);
         label_17 = new QLabel(Form);
         label_17->setObjectName(QString::fromUtf8("label_17"));
-        label_17->setGeometry(QRect(650, 410, 91, 16));
+        label_17->setGeometry(QRect(650, 410, 101, 16));
         label = new QLabel(Form);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(120, 20, 71, 16));
@@ -1908,7 +1915,7 @@ public:
         line_74->setFrameShape(QFrame::VLine);
         label_6 = new QLabel(Form);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(120, 440, 71, 20));
+        label_6->setGeometry(QRect(110, 440, 81, 20));
         Ebne_Sina = new QPushButton(Form);
         Ebne_Sina->setObjectName(QString::fromUtf8("Ebne_Sina"));
         Ebne_Sina->setGeometry(QRect(1340, 720, 41, 41));
@@ -2928,7 +2935,7 @@ public:
 ""));
         label_23 = new QLabel(Form);
         label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setGeometry(QRect(910, 440, 91, 16));
+        label_23->setGeometry(QRect(900, 440, 101, 16));
         Gholhak = new QPushButton(Form);
         Gholhak->setObjectName(QString::fromUtf8("Gholhak"));
         Gholhak->setGeometry(QRect(1000, 150, 41, 41));
@@ -3133,6 +3140,32 @@ public:
         line_140->setFrameShadow(QFrame::Plain);
         line_140->setLineWidth(2);
         line_140->setFrameShape(QFrame::VLine);
+        label_60 = new QLabel(Form);
+        label_60->setObjectName(QString::fromUtf8("label_60"));
+        label_60->setGeometry(QRect(60, 760, 51, 31));
+        QFont font1;
+        font1.setPointSize(10);
+        label_60->setFont(font1);
+        label_61 = new QLabel(Form);
+        label_61->setObjectName(QString::fromUtf8("label_61"));
+        label_61->setGeometry(QRect(300, 760, 71, 31));
+        label_61->setFont(font1);
+        label_62 = new QLabel(Form);
+        label_62->setObjectName(QString::fromUtf8("label_62"));
+        label_62->setGeometry(QRect(30, 850, 121, 31));
+        QFont font2;
+        font2.setPointSize(12);
+        label_62->setFont(font2);
+        T1 = new QTimeEdit(Form);
+        T1->setObjectName(QString::fromUtf8("T1"));
+        T1->setGeometry(QRect(160, 850, 211, 31));
+        T1->setFont(font2);
+        OR = new QLabel(Form);
+        OR->setObjectName(QString::fromUtf8("OR"));
+        OR->setGeometry(QRect(110, 770, 181, 16));
+        DS = new QLabel(Form);
+        DS->setObjectName(QString::fromUtf8("DS"));
+        DS->setGeometry(QRect(380, 770, 171, 16));
 
         retranslateUi(Form);
 
@@ -3260,6 +3293,11 @@ public:
         label_51->setText(QApplication::translate("Form", "Haram-e Hazrat-e Abdolazim", nullptr));
         Mahdie->setText(QString());
         label_34->setText(QApplication::translate("Form", "Azadegan", nullptr));
+        label_60->setText(QApplication::translate("Form", "Origin : ", nullptr));
+        label_61->setText(QApplication::translate("Form", "Destination :", nullptr));
+        label_62->setText(QApplication::translate("Form", "Starting Time : ", nullptr));
+        OR->setText(QApplication::translate("Form", "Empty", nullptr));
+        DS->setText(QApplication::translate("Form", "Empty", nullptr));
     } // retranslateUi
 
 };

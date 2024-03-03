@@ -185,7 +185,14 @@ void Tehran::read_file()
 
                 if (line[0] == 'l')
                 {
-                    edge v1{stoi(dis), line, "Taxi"}, v2{stoi(dis), line, "Subway"};
+                    edge v1;
+                    v1.dist = stoi(dis);
+                    v1.type = line;
+                    v1.vehicle = "Taxi";
+                    edge v2;
+                    v2.dist = stoi(dis);
+                    v2.type = line;
+                    v2.vehicle = "Subway";
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v2);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
@@ -193,7 +200,10 @@ void Tehran::read_file()
                 }
                 else if (line[0] == 'b')
                 {
-                    edge v1{stoi(dis), line, "Bus"};
+                    edge v1;
+                    v1.dist = stoi(dis);
+                    v1.type = line;
+                    v1.vehicle = "Bus";
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
                 }

@@ -1,0 +1,10 @@
+release/3I8_sp.o
+release/Semanhasht.o
+release/Time.o
+release/vehicle.o
+release/form.o
+release/main.o
+release/mainwindow.o
+release/qrc_picture.o
+release/moc_form.o
+release/moc_mainwindow.o

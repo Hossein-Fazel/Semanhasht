@@ -6461,9 +6461,14 @@ color : #005500 ;
     <rect>
      <x>60</x>
      <y>760</y>
-     <width>49</width>
-     <height>16</height>
+     <width>61</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Origin : </string>
@@ -6472,11 +6477,16 @@ color : #005500 ;
   <widget class="QLabel" name="label_61">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>250</x>
      <y>760</y>
      <width>71</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Destination : </string>
@@ -6513,6 +6523,32 @@ color : #005500 ;
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="OR">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>770</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Empty</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="DS">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>770</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Empty</string>
    </property>
   </widget>
  </widget>

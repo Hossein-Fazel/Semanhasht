@@ -282,6 +282,8 @@ public:
     QLabel *label_61;
     QLabel *label_62;
     QTimeEdit *T1;
+    QLabel *OR;
+    QLabel *DS;
 
     void setupUi(QWidget *Form)
     {
@@ -3154,6 +3156,12 @@ public:
         T1->setObjectName("T1");
         T1->setGeometry(QRect(160, 850, 211, 31));
         T1->setFont(font1);
+        OR = new QLabel(Form);
+        OR->setObjectName("OR");
+        OR->setGeometry(QRect(100, 760, 49, 16));
+        DS = new QLabel(Form);
+        DS->setObjectName("DS");
+        DS->setGeometry(QRect(330, 760, 49, 16));
 
         retranslateUi(Form);
 
@@ -3284,6 +3292,8 @@ public:
         label_60->setText(QCoreApplication::translate("Form", "Origin : ", nullptr));
         label_61->setText(QCoreApplication::translate("Form", "Destination : ", nullptr));
         label_62->setText(QCoreApplication::translate("Form", "Starting Time : ", nullptr));
+        OR->setText(QCoreApplication::translate("Form", "Empty", nullptr));
+        DS->setText(QCoreApplication::translate("Form", "Empty", nullptr));
     } // retranslateUi
 
 };

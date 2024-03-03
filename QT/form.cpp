@@ -7,7 +7,7 @@ Form::Form(QWidget *parent) :
     ui(new Ui::Form)
 {
     ui->setupUi(this);
-    ui->T1->setDisplayFormat("HH:mm AP");
+    ui->T1->setDisplayFormat("hh:mm AP");
 }
 
 void Form::save_btns()
@@ -780,3 +780,73 @@ void Form::on_Tehran_Pars_clicked()
     }
 }
 
+void Form::on_Mahdie_clicked()
+{
+    if(ui->OR->text() == "Empty")
+    {
+        ui->OR->setText("Mahdieh");
+    }
+    else if(ui->DS->text() == "Empty")
+    {
+        ui->DS->setText("Mahdieh");
+    }
+}
+
+
+void Form::on_Moniriyeh_clicked()
+{
+    if(ui->OR->text() == "Empty")
+    {
+        ui->OR->setText("Moniriyeh");
+    }
+    else if(ui->DS->text() == "Empty")
+    {
+        ui->DS->setText("Moniriyeh");
+    }
+}
+
+
+void Form::on_Javadie_clicked()
+{
+    if(ui->OR->text() == "Empty")
+    {
+        ui->OR->setText("Javadiyeh");
+    }
+    else if(ui->DS->text() == "Empty")
+    {
+        ui->DS->setText("Javadiyeh");
+    }
+}
+
+
+void Form::on_Zamzam_clicked()
+{
+    if(ui->OR->text() == "Empty")
+    {
+        ui->OR->setText("Zamzam");
+    }
+    else if(ui->DS->text() == "Empty")
+    {
+        ui->DS->setText("Zamzam");
+    }
+}
+
+
+void Form::on_Azadegan_clicked()
+{
+    if(ui->OR->text() == "Empty")
+    {
+        ui->OR->setText("Azadegan");
+    }
+    else if(ui->DS->text() == "Empty")
+    {
+        ui->DS->setText("Azadegan");
+    }
+}
+
+void Form::on_reset_btn_clicked()
+{
+    ui->OR->setText("Empty");
+    ui->DS->setText("Empty");
+    ui->T1->setTime(QTime(0 , 0));
+}

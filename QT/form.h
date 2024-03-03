@@ -127,6 +127,18 @@ private slots:
 
     void on_Tehran_Pars_clicked();
 
+    void on_reset_btn_clicked();
+
+    void on_Mahdie_clicked();
+
+    void on_Moniriyeh_clicked();
+
+    void on_Javadie_clicked();
+
+    void on_Zamzam_clicked();
+
+    void on_Azadegan_clicked();
+
 private:
     Ui::Form *ui;
     QMap <QString, QPushButton *> button;

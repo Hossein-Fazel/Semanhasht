@@ -284,6 +284,7 @@ public:
     QTimeEdit *T1;
     QLabel *OR;
     QLabel *DS;
+    QPushButton *reset_btn;
 
     void setupUi(QWidget *Form)
     {
@@ -3166,6 +3167,9 @@ public:
         DS = new QLabel(Form);
         DS->setObjectName(QString::fromUtf8("DS"));
         DS->setGeometry(QRect(380, 770, 171, 16));
+        reset_btn = new QPushButton(Form);
+        reset_btn->setObjectName(QString::fromUtf8("reset_btn"));
+        reset_btn->setGeometry(QRect(440, 850, 81, 31));
 
         retranslateUi(Form);
 
@@ -3298,6 +3302,7 @@ public:
         label_62->setText(QApplication::translate("Form", "Starting Time : ", nullptr));
         OR->setText(QApplication::translate("Form", "Empty", nullptr));
         DS->setText(QApplication::translate("Form", "Empty", nullptr));
+        reset_btn->setText(QApplication::translate("Form", "RESET", nullptr));
     } // retranslateUi
 
 };

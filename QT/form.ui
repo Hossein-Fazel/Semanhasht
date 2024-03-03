@@ -6551,6 +6551,19 @@ color : #005500 ;
     <string>Empty</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="reset_btn">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>850</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>RESET</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

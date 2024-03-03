@@ -15,8 +15,17 @@
     <pointsize>7</pointsize>
    </font>
   </property>
+  <property name="cursor">
+   <cursorShape>PointingHandCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background-color : #e3d8fff;
+}
+</string>
   </property>
   <widget class="Line" name="line_32">
    <property name="windowModality">
@@ -34,9 +43,9 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -128,9 +137,9 @@ color : #aa0000 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -165,9 +174,9 @@ color : #00aaff ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -187,6 +196,9 @@ color : #005500 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -224,7 +236,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="text">
-    <string>Meydan-e Hazrat-e ValiAse</string>
+    <string>Meydan-e Hazrat-e ValiAsr</string>
    </property>
   </widget>
   <widget class="Line" name="line_9">
@@ -237,9 +249,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -280,9 +292,9 @@ color : #00aaff ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -302,6 +314,9 @@ color : #005500 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -358,9 +373,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -380,6 +395,9 @@ color : #00aaff ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -417,9 +435,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -460,9 +478,9 @@ color : #ffff00 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -490,9 +508,9 @@ color : #ffff00 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -512,6 +530,9 @@ color : #00aaff ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -547,6 +568,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -602,6 +626,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -638,9 +665,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -668,9 +695,9 @@ color : #00aaff ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -690,6 +717,9 @@ color : #00aaff ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -727,9 +757,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -751,9 +781,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -776,9 +806,9 @@ color : #ffcd6a;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -798,6 +828,9 @@ color : #ffff00 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -885,9 +918,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -909,9 +942,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -931,6 +964,9 @@ color : #ff1aa3 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -981,9 +1017,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1011,9 +1047,9 @@ color : #005500 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1033,6 +1069,9 @@ color : #aa0000 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -1069,6 +1108,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -1103,6 +1145,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -1140,9 +1185,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1170,9 +1215,9 @@ color : #ffff00 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1213,9 +1258,9 @@ color : #ff1aa3;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1256,9 +1301,9 @@ color : #aa0000 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1286,9 +1331,8 @@ color : #00aaff ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
-color : #ff1aa3 ;
-}</string>
+    <string notr="true">color : #ff1aa3 ;
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1308,6 +1352,9 @@ color : #ff1aa3 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -1363,6 +1410,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -1410,6 +1460,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -1478,6 +1531,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -1507,8 +1563,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
   <widget class="QLabel" name="label_32">
    <property name="geometry">
     <rect>
-     <x>950</x>
-     <y>40</y>
+     <x>1040</x>
+     <y>0</y>
      <width>49</width>
      <height>16</height>
     </rect>
@@ -1527,9 +1583,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1551,9 +1607,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1575,9 +1631,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1612,9 +1668,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1647,6 +1703,9 @@ color : #ff1aa3 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -1682,6 +1741,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -1719,9 +1781,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1743,9 +1805,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1805,9 +1867,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1835,9 +1897,9 @@ color : #ffff00 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -1859,9 +1921,8 @@ color : #00aaff ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
 </string>
    </property>
    <property name="frameShadow">
@@ -1895,6 +1956,9 @@ color : #ffcd6a;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -1931,6 +1995,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -1965,6 +2032,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2002,9 +2072,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2052,9 +2122,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2076,9 +2146,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -2101,9 +2171,9 @@ color : #ffcd6a;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2131,9 +2201,7 @@ color : #ffff00 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
-color : #ffff00 ;
-}</string>
+    <string notr="true">color : #ffff00 ;</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2155,9 +2223,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -2199,9 +2267,9 @@ color : #ffcd6a;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2217,15 +2285,15 @@ color : #005500 ;
    <property name="geometry">
     <rect>
      <x>1040</x>
-     <y>620</y>
+     <y>610</y>
      <width>41</width>
-     <height>20</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2247,9 +2315,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2316,9 +2384,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -2367,9 +2435,9 @@ color : #ffcd6a;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -2424,9 +2492,9 @@ color : #ffcd6a;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2446,6 +2514,9 @@ color : #aa0000 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2522,9 +2593,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color :#ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2557,6 +2628,9 @@ color :#ff1aa3 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2592,6 +2666,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2629,9 +2706,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2659,9 +2736,9 @@ color : #00aaff ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2683,9 +2760,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2707,9 +2784,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2729,6 +2806,9 @@ color : #ff1aa3 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2764,6 +2844,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2814,9 +2897,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2838,9 +2921,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2860,6 +2943,9 @@ color : #ffff00 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2897,9 +2983,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -2919,6 +3005,9 @@ color : #005500 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2954,6 +3043,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -2997,9 +3089,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3066,9 +3158,9 @@ color : #aa0000 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3108,6 +3200,9 @@ color : #005500 ;
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -3144,9 +3239,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3166,6 +3261,9 @@ color : #005500 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -3201,6 +3299,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -3249,6 +3350,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -3305,9 +3409,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3373,6 +3477,9 @@ color : #00aaff ;
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -3409,9 +3516,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3433,9 +3540,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3457,9 +3564,9 @@ color : #00aaff ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -3493,6 +3600,9 @@ color : #ffcd6a;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -3530,9 +3640,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -3566,6 +3676,9 @@ color : #ffcd6a;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -3615,6 +3728,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -3645,15 +3761,15 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
    <property name="geometry">
     <rect>
      <x>910</x>
-     <y>620</y>
+     <y>580</y>
      <width>91</width>
-     <height>21</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3673,6 +3789,9 @@ color : #ffff00 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -3722,6 +3841,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -3756,6 +3878,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -3805,6 +3930,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -3841,9 +3969,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
 </string>
    </property>
    <property name="frameShadow">
@@ -3917,9 +4044,9 @@ color : #ffcd6a;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3941,9 +4068,9 @@ color : #aa0000 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3971,9 +4098,9 @@ color : #005500 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -3989,15 +4116,15 @@ color : #aa0000 ;
    <property name="geometry">
     <rect>
      <x>1040</x>
-     <y>620</y>
+     <y>610</y>
      <width>61</width>
-     <height>21</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -4033,9 +4160,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -4104,9 +4231,9 @@ color : #ffcd6a;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4128,9 +4255,9 @@ color : #00aaff ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -4159,9 +4286,9 @@ color : #ffcd6a;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4194,6 +4321,9 @@ color : #aa0000 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -4237,9 +4367,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4279,6 +4409,9 @@ color : #00aaff ;
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -4313,6 +4446,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -4375,9 +4511,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4397,6 +4533,9 @@ color : #aa0000 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -4433,6 +4572,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -4468,6 +4610,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -4502,6 +4647,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -4564,9 +4712,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4586,6 +4734,9 @@ color : #ffff00 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -4623,9 +4774,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4647,9 +4798,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4671,9 +4822,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4727,9 +4878,8 @@ color : #ffff00 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
-color : #aa0000 ;
-}</string>
+    <string notr="true">
+color : #aa0000 ;</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4795,9 +4945,9 @@ color : #aa0000 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -4854,9 +5004,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -4910,6 +5060,9 @@ color : #ffcd6a;
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -4958,9 +5111,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5001,9 +5154,9 @@ color : #ff1aa3 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5025,9 +5178,9 @@ color : #aa0000 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5066,6 +5219,9 @@ color : #ffff00 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -5142,9 +5298,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5172,9 +5328,9 @@ color : #ff1aa3 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5202,9 +5358,9 @@ color : #aa0000 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color :#ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5224,6 +5380,9 @@ color :#ff1aa3 ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -5261,9 +5420,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5298,9 +5457,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5322,9 +5481,9 @@ color : #ffff00 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5346,9 +5505,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5370,9 +5529,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -5406,6 +5565,9 @@ color : #ffcd6a;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -5449,9 +5611,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5479,9 +5641,9 @@ color : #aa0000 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5516,9 +5678,9 @@ color : #ff1aa3 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5534,15 +5696,15 @@ color : #005500 ;
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>560</y>
+     <y>565</y>
      <width>121</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5564,9 +5726,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5594,9 +5756,9 @@ color : #00aaff ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5618,9 +5780,9 @@ color : #00aaff ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5660,6 +5822,9 @@ color : #ffff00 ;
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -5696,9 +5861,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
 </string>
    </property>
    <property name="frameShadow">
@@ -5721,9 +5885,9 @@ color : #ffcd6a;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #005500 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5745,9 +5909,9 @@ color : #005500 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -5768,6 +5932,9 @@ color : #ffcd6a;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -5817,6 +5984,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	font: 11pt ;
@@ -5853,9 +6023,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -5878,9 +6048,9 @@ color : #ffcd6a;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5900,6 +6070,9 @@ color : #00aaff ;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -5950,9 +6123,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -5987,9 +6160,9 @@ color : #ff1aa3 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -6010,6 +6183,9 @@ color : #ffcd6a;
      <width>41</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -6053,9 +6229,9 @@ radius: 1.35, stop: 0 #fff, stop: 1 #639595
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -6096,9 +6272,9 @@ color : #00aaff ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #00aaff ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -6126,9 +6302,9 @@ color : #00aaff ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #ffff00 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -6156,9 +6332,9 @@ color : #ffff00 ;
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color : #aa0000 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -6180,9 +6356,9 @@ color : #aa0000 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line{
+    <string notr="true">
 color :#ff1aa3 ;
-}</string>
+</string>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
@@ -6204,9 +6380,9 @@ color :#ff1aa3 ;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">Line {
+    <string notr="true">
 color : #ffcd6a;
-}
+
 </string>
    </property>
    <property name="frameShadow">
@@ -6230,6 +6406,113 @@ color : #ffcd6a;
    </property>
    <property name="text">
     <string>Azadegan</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_139">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>590</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color : #005500 ;
+</string>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_140">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>590</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+color : #005500 ;
+</string>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="lineWidth">
+    <number>2</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_60">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>760</y>
+     <width>49</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Origin : </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_61">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>760</y>
+     <width>71</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Destination : </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_62">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>850</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Starting Time : </string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="T1">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>850</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
  </widget>

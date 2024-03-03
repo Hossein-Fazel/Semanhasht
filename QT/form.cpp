@@ -7,10 +7,17 @@ Form::Form(QWidget *parent) :
     ui(new Ui::Form)
 {
     ui->setupUi(this);
+    ui->T1->setDisplayFormat("HH:mm AP");
 }
 
 Form::~Form()
 {
     delete ui;
+}
+
+
+void Form::on_Shahrake_Shariati_clicked()
+{
+    qDebug() << ui->T1->text();
 }
 

@@ -17,6 +17,8 @@ public:
 
 private slots:
 
+    void on_Shahrake_Shariati_clicked();
+
 private:
     Ui::Form *ui;
 };

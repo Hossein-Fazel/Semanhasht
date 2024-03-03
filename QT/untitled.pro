@@ -16,7 +16,6 @@ SOURCES += \
 HEADERS += \
     form.h \
     mainwindow.h
-
 FORMS += \
     form.ui \
     mainwindow.ui

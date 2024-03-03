@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWidget{
-
+background-color : #e1feff;
 colo:rgb(170, 255, 255)c ;
 }
 
@@ -31,7 +31,7 @@ colo:rgb(170, 255, 255)c ;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>610</x>
+      <x>690</x>
       <y>10</y>
       <width>791</width>
       <height>171</height>
@@ -41,7 +41,6 @@ colo:rgb(170, 255, 255)c ;
      <font>
       <family>Onyx</family>
       <pointsize>82</pointsize>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -54,7 +53,7 @@ font:82pt &quot;Onyx&quot;;
 }</string>
     </property>
     <property name="text">
-     <string>welcome to semanhasht</string>
+     <string>wellcome to semanhasht</string>
     </property>
    </widget>
    <widget class="QPushButton" name="total_exit">
@@ -70,10 +69,12 @@ font:82pt &quot;Onyx&quot;;
      <font>
       <family>Onyx</family>
       <pointsize>40</pointsize>
-      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>OpenHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -110,6 +111,12 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
       <height>511</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -131,7 +138,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
      <x>0</x>
      <y>0</y>
      <width>2052</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

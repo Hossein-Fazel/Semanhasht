@@ -70,7 +70,7 @@ void Form::save_btns()
     button["Sohrevardi"] = ui->Sohrevardi;
     button["Shahid Ghodousi"] = ui->Shahid_Ghodousi;
     button["Shahid Zeynoddin"] = ui->Shahid_Zeynoddin;
-//    button["
+    button["Aghdasiyeh"] = ui->Aghdasiyeh;
 }
 
 Form::~Form()

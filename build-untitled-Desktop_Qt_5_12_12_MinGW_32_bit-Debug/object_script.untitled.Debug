@@ -1,0 +1,10 @@
+debug/3I8_sp.o
+debug/Semanhasht.o
+debug/Time.o
+debug/vehicle.o
+debug/form.o
+debug/main.o
+debug/mainwindow.o
+debug/qrc_picture.o
+debug/moc_form.o
+debug/moc_mainwindow.o

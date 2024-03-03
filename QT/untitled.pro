@@ -9,11 +9,19 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ../3I8_sp.cpp \
+    ../Semanhasht.cpp \
+    ../Time.cpp \
+    ../vehicle.cpp \
     form.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    ../3I8_sp.hpp \
+    ../Semanhasht.hpp \
+    ../Time.hpp \
+    ../vehicle.hpp \
     form.h \
     mainwindow.h
 

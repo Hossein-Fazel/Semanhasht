@@ -7,7 +7,9 @@ Form::Form(QWidget *parent) :
     ui(new Ui::Form)
 {
     ui->setupUi(this);
+    this->setWindowTitle("SEMANHASHT");
     ui->T1->setDisplayFormat("hh:mm AP");
+    check_enable();
 }
 
 void Form::save_btns()
@@ -89,6 +91,7 @@ void Form::on_Merzaye_Shirazi_clicked()
     {
         ui->DS->setText("Merza-ye Shirazi");
     }
+    check_enable();
 }
 
 
@@ -102,6 +105,7 @@ void Form::on_Shahrake_Shariati_clicked()
     {
         ui->DS->setText("Shahrak-e Shari'ati");
     }
+    check_enable();
 }
 
 
@@ -115,6 +119,7 @@ void Form::on_Rahahan_clicked()
     {
         ui->DS->setText("Rahahan");
     }
+    check_enable();
 }
 
 
@@ -128,6 +133,7 @@ void Form::on_Meydane_Hazrate_Valiasr_clicked()
     {
         ui->DS->setText("Meydan-e Hazrat-e ValiAsr");
     }
+    check_enable();
 }
 
 
@@ -141,6 +147,7 @@ void Form::on_Bosstane_Laleh_clicked()
     {
         ui->DS->setText("Boostan-e Laleh");
     }
+    check_enable();
 }
 
 
@@ -154,6 +161,7 @@ void Form::on_Mirdamad_clicked()
     {
         ui->DS->setText("Mirdamad");
     }
+    check_enable();
 }
 
 
@@ -167,6 +175,7 @@ void Form::on_Tajrish_clicked()
     {
         ui->DS->setText("Tajrish");
     }
+    check_enable();
 }
 
 
@@ -180,6 +189,7 @@ void Form::on_Shahid_Sadr_clicked()
     {
         ui->DS->setText("Shahid Sadr");
     }
+    check_enable();
 }
 
 
@@ -193,6 +203,7 @@ void Form::on_Kouhsar_clicked()
     {
         ui->DS->setText("Kouhsar");
     }
+    check_enable();
 }
 
 
@@ -206,6 +217,7 @@ void Form::on_Kashani_clicked()
     {
         ui->DS->setText("Kashani");
     }
+    check_enable();
 }
 
 
@@ -219,6 +231,7 @@ void Form::on_Yadegare_Emam_clicked()
     {
         ui->DS->setText("Yadegar-e Emam");
     }
+    check_enable();
 }
 
 
@@ -232,6 +245,7 @@ void Form::on_Haftome_Tir_clicked()
     {
         ui->DS->setText("Haftom-e Tir");
     }
+    check_enable();
 }
 
 
@@ -245,6 +259,7 @@ void Form::on_Emam_Hossein_clicked()
     {
         ui->DS->setText("Emam Hossein");
     }
+    check_enable();
 }
 
 
@@ -258,6 +273,7 @@ void Form::on_Meydane_Shohada_clicked()
     {
         ui->DS->setText("Meydan-e Shohada");
     }
+    check_enable();
 }
 
 
@@ -271,6 +287,7 @@ void Form::on_Shahid_Rezaei_clicked()
     {
         ui->DS->setText("Shahid Rezaei");
     }
+    check_enable();
 }
 
 
@@ -284,6 +301,7 @@ void Form::on_Harame_Hazrate_Abdolazim_clicked()
     {
         ui->DS->setText("Haram-e Hazrat-e Abdolazim");
     }
+    check_enable();
 }
 
 
@@ -297,6 +315,7 @@ void Form::on_Chaharbagh_clicked()
     {
         ui->DS->setText("Chaharbagh");
     }
+    check_enable();
 }
 
 
@@ -310,6 +329,7 @@ void Form::on_Allameh_Jafari_clicked()
     {
         ui->DS->setText("Allameh Jafari");
     }
+    check_enable();
 }
 
 
@@ -323,6 +343,7 @@ void Form::on_Erame_Sabz_clicked()
     {
         ui->DS->setText("Eram-e Sabz");
     }
+    check_enable();
 }
 
 
@@ -336,6 +357,7 @@ void Form::on_Meydane_Azadi_clicked()
     {
         ui->DS->setText("Meydan-e Azadi");
     }
+    check_enable();
 }
 
 
@@ -349,6 +371,7 @@ void Form::on_Ostad_Moin_clicked()
     {
         ui->DS->setText("Ostad Moi'n");
     }
+    check_enable();
 }
 
 
@@ -362,6 +385,7 @@ void Form::on_Shademan_clicked()
     {
         ui->DS->setText("Shademan");
     }
+    check_enable();
 }
 
 
@@ -375,6 +399,7 @@ void Form::on_Towhid_clicked()
     {
         ui->DS->setText("Towhid");
     }
+    check_enable();
 }
 
 
@@ -388,6 +413,7 @@ void Form::on_Meydane_Enghelabe_Eslami_clicked()
     {
         ui->DS->setText("Meydan-e Enghelab-e Eslami");
     }
+    check_enable();
 }
 
 
@@ -401,6 +427,7 @@ void Form::on_Teatre_shahr_clicked()
     {
         ui->DS->setText("Teatr-e Shahr");
     }
+    check_enable();
 }
 
 
@@ -427,6 +454,7 @@ void Form::on_Darvazeh_Dowlat_clicked()
     {
         ui->DS->setText("Darvazeh Dowlat");
     }
+    check_enable();
 }
 
 
@@ -440,6 +468,7 @@ void Form::on_Darvazeh_Shemiran_clicked()
     {
         ui->DS->setText("Darvazeh Shemiran");
     }
+    check_enable();
 }
 
 
@@ -453,6 +482,7 @@ void Form::on_Ebne_Sina_clicked()
     {
         ui->DS->setText("Ebn-e Sina");
     }
+    check_enable();
 }
 
 
@@ -466,6 +496,7 @@ void Form::on_Pirouzi_clicked()
     {
         ui->DS->setText("Pirouzi");
     }
+    check_enable();
 }
 
 
@@ -479,6 +510,7 @@ void Form::on_Nabard_clicked()
     {
         ui->DS->setText("Nabard");
     }
+    check_enable();
 }
 
 
@@ -492,6 +524,7 @@ void Form::on_Nirou_Havaei_clicked()
     {
         ui->DS->setText("Nirou Havaei");
     }
+    check_enable();
 }
 
 
@@ -505,6 +538,7 @@ void Form::on_Shahid_Kolahdouz_clicked()
     {
         ui->DS->setText("Shahid Kolahdouz");
     }
+    check_enable();
 }
 
 
@@ -518,6 +552,7 @@ void Form::on_Kahrizak_clicked()
     {
         ui->DS->setText("Kahrizak");
     }
+    check_enable();
 }
 
 
@@ -531,6 +566,7 @@ void Form::on_Shahre_Rey_clicked()
     {
         ui->DS->setText("Shahr-e Rey");
     }
+    check_enable();
 }
 
 
@@ -544,6 +580,7 @@ void Form::on_Jonoub_Terminal_clicked()
     {
         ui->DS->setText("Jonoub Terminal");
     }
+    check_enable();
 }
 
 
@@ -557,6 +594,7 @@ void Form::on_Shoush_clicked()
     {
         ui->DS->setText("Shoush");
     }
+    check_enable();
 }
 
 
@@ -570,6 +608,7 @@ void Form::on_Panzdahe_Khordad_clicked()
     {
         ui->DS->setText("Panzdah-e Khordad");
     }
+    check_enable();
 }
 
 
@@ -583,6 +622,7 @@ void Form::on_Taleghani_clicked()
     {
         ui->DS->setText("Taleghani");
     }
+    check_enable();
 }
 
 
@@ -596,6 +636,7 @@ void Form::on_Shahid_Mofatteh_clicked()
     {
         ui->DS->setText("Shahid Mofatteh");
     }
+    check_enable();
 }
 
 
@@ -609,6 +650,7 @@ void Form::on_Shahid_Beheshti_clicked()
     {
         ui->DS->setText("Shahid Beheshti");
     }
+    check_enable();
 }
 
 
@@ -622,6 +664,7 @@ void Form::on_Shahid_Haghani_clicked()
     {
         ui->DS->setText("Shahid Haghani");
     }
+    check_enable();
 }
 
 
@@ -635,6 +678,7 @@ void Form::on_Gholhak_clicked()
     {
         ui->DS->setText("Gholhak");
     }
+    check_enable();
 }
 
 
@@ -648,6 +692,7 @@ void Form::on_Gheytariyeh_clicked()
     {
         ui->DS->setText("Gheytariyeh");
     }
+    check_enable();
 }
 
 
@@ -661,6 +706,7 @@ void Form::on_Meydane_Jahad_clicked()
     {
         ui->DS->setText("Meydan-e Jahad");
     }
+    check_enable();
 }
 
 
@@ -674,6 +720,7 @@ void Form::on_Sohrevardi_clicked()
     {
         ui->DS->setText("Sohrevardi");
     }
+    check_enable();
 }
 
 
@@ -687,6 +734,7 @@ void Form::on_Shahid_Ghodousi_clicked()
     {
         ui->DS->setText("Shahid Ghdousi");
     }
+    check_enable();
 }
 
 
@@ -700,6 +748,7 @@ void Form::on_Shahid_Zeynoddin_clicked()
     {
         ui->DS->setText("Shahid Zeynoddin");
     }
+    check_enable();
 }
 
 
@@ -713,6 +762,7 @@ void Form::on_Aghdasiyeh_clicked()
     {
         ui->DS->setText("Aghdasiyeh");
     }
+    check_enable();
 }
 
 
@@ -726,6 +776,7 @@ void Form::on_Ghaem_clicked()
     {
         ui->DS->setText("Gha'em");
     }
+    check_enable();
 }
 
 
@@ -739,6 +790,7 @@ void Form::on_Khajeh_Abdollahe_Ansari_clicked()
     {
         ui->DS->setText("Khajeh Abdollah-e Ansari");
     }
+    check_enable();
 }
 
 
@@ -752,6 +804,7 @@ void Form::on_Payaneh_Javanmard_clicked()
     {
         ui->DS->setText("Payaneh Javanmard");
     }
+    check_enable();
 }
 
 
@@ -765,6 +818,7 @@ void Form::on_Bimeh_clicked()
     {
         ui->DS->setText("Bimeh");
     }
+    check_enable();
 }
 
 
@@ -778,6 +832,7 @@ void Form::on_Tehran_Pars_clicked()
     {
         ui->DS->setText("Tehran Pars");
     }
+    check_enable();
 }
 
 void Form::on_Mahdie_clicked()
@@ -790,6 +845,7 @@ void Form::on_Mahdie_clicked()
     {
         ui->DS->setText("Mahdieh");
     }
+    check_enable();
 }
 
 
@@ -803,6 +859,7 @@ void Form::on_Moniriyeh_clicked()
     {
         ui->DS->setText("Moniriyeh");
     }
+    check_enable();
 }
 
 
@@ -816,6 +873,7 @@ void Form::on_Javadie_clicked()
     {
         ui->DS->setText("Javadiyeh");
     }
+    check_enable();
 }
 
 
@@ -829,6 +887,7 @@ void Form::on_Zamzam_clicked()
     {
         ui->DS->setText("Zamzam");
     }
+    check_enable();
 }
 
 
@@ -842,6 +901,7 @@ void Form::on_Azadegan_clicked()
     {
         ui->DS->setText("Azadegan");
     }
+    check_enable();
 }
 
 void Form::on_reset_btn_clicked()
@@ -849,4 +909,42 @@ void Form::on_reset_btn_clicked()
     ui->OR->setText("Empty");
     ui->DS->setText("Empty");
     ui->T1->setTime(QTime(0 , 0));
+    check_enable();
+}
+
+void Form::check_enable()
+{
+    if(ui->OR->text() != "Empty" and ui->DS->text() != "Empty")
+    {
+        ui->Dis_btn->setEnabled(1);
+        ui->Time_btn->setEnabled(1);
+        ui->Cost_btn->setEnabled(1);
+    }
+    else
+    {
+        ui->Dis_btn->setEnabled(0);
+        ui->Time_btn->setEnabled(0);
+        ui->Cost_btn->setEnabled(0);
+    }
+}
+
+void Form::on_Dis_btn_clicked()
+{
+    Time user_time(ui->T1->text().toStdString());
+    save_directions path = t1.Find_Shortest_Path(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
+}
+
+
+void Form::on_Time_btn_clicked()
+{
+    Time user_time(ui->T1->text().toStdString());
+    save_directions path = t1.find_best_time(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()), user_time);
+}
+
+
+void Form::on_Cost_btn_clicked()
+{
+    Time user_time(ui->T1->text().toStdString());
+    t1.complete_matrix_p();
+    save_directions path = t1.find_best_cost(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
 }

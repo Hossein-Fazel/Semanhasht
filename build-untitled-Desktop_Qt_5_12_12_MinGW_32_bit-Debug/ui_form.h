@@ -285,6 +285,9 @@ public:
     QLabel *OR;
     QLabel *DS;
     QPushButton *reset_btn;
+    QPushButton *Dis_btn;
+    QPushButton *Time_btn;
+    QPushButton *Cost_btn;
 
     void setupUi(QWidget *Form)
     {
@@ -3170,6 +3173,15 @@ public:
         reset_btn = new QPushButton(Form);
         reset_btn->setObjectName(QString::fromUtf8("reset_btn"));
         reset_btn->setGeometry(QRect(440, 850, 81, 31));
+        Dis_btn = new QPushButton(Form);
+        Dis_btn->setObjectName(QString::fromUtf8("Dis_btn"));
+        Dis_btn->setGeometry(QRect(30, 940, 80, 41));
+        Time_btn = new QPushButton(Form);
+        Time_btn->setObjectName(QString::fromUtf8("Time_btn"));
+        Time_btn->setGeometry(QRect(160, 940, 80, 41));
+        Cost_btn = new QPushButton(Form);
+        Cost_btn->setObjectName(QString::fromUtf8("Cost_btn"));
+        Cost_btn->setGeometry(QRect(290, 940, 80, 41));
 
         retranslateUi(Form);
 
@@ -3303,6 +3315,9 @@ public:
         OR->setText(QApplication::translate("Form", "Empty", nullptr));
         DS->setText(QApplication::translate("Form", "Empty", nullptr));
         reset_btn->setText(QApplication::translate("Form", "RESET", nullptr));
+        Dis_btn->setText(QApplication::translate("Form", "Distance", nullptr));
+        Time_btn->setText(QApplication::translate("Form", "Time", nullptr));
+        Cost_btn->setText(QApplication::translate("Form", "Cost", nullptr));
     } // retranslateUi
 
 };

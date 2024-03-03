@@ -224,6 +224,10 @@ void Tehran::read_file()
             }
             file.close();
         }
+        else
+        {
+            throw invalid_argument("there is no file!!!");
+        }
     }
 }
 

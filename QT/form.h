@@ -4,6 +4,9 @@
 #include <QWidget>
 #include <QMap>
 #include <QPushButton>
+#include "../3I8_sp.hpp"
+#include "../Time.hpp"
+using namespace std;
 namespace Ui {
 class Form;
 }
@@ -15,6 +18,7 @@ class Form : public QWidget
 public:
     explicit Form(QWidget *parent = nullptr);
     void save_btns();
+    void check_enable();
     ~Form();
 
 private slots:
@@ -139,9 +143,16 @@ private slots:
 
     void on_Azadegan_clicked();
 
+    void on_Dis_btn_clicked();
+
+    void on_Time_btn_clicked();
+
+    void on_Cost_btn_clicked();
+
 private:
     Ui::Form *ui;
     QMap <QString, QPushButton *> button;
+    Tehran t1;
 };
 
 #endif // FORM_H

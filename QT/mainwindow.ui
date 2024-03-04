@@ -41,6 +41,7 @@ colo:rgb(170, 255, 255)c ;
      <font>
       <family>Onyx</family>
       <pointsize>82</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -69,6 +70,7 @@ font:82pt &quot;Onyx&quot;;
      <font>
       <family>Onyx</family>
       <pointsize>40</pointsize>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -105,8 +107,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>210</y>
+      <x>700</x>
+      <y>200</y>
       <width>611</width>
       <height>511</height>
      </rect>
@@ -138,7 +140,7 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
      <x>0</x>
      <y>0</y>
      <width>2052</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

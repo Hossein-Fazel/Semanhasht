@@ -4,8 +4,10 @@
 #include <QWidget>
 #include <QMap>
 #include <QPushButton>
+#include <QPair>
 #include "../3I8_sp.hpp"
 #include "../Time.hpp"
+
 using namespace std;
 namespace Ui {
 class Form;
@@ -19,6 +21,7 @@ public:
     explicit Form(QWidget *parent = nullptr);
     void save_btns();
     void check_enable();
+    void reset_style();
     ~Form();
 
 private slots:
@@ -153,6 +156,8 @@ private:
     Ui::Form *ui;
     QMap <QString, QPushButton *> button;
     Tehran t1;
-};
+    QString style     =    "QPushButton {font: 11px ; color: #333; border: 2px solid #555; border-radius: 20px;border-style: outset;background: #00ff7f ;}";
 
+    QString def_style = "QPushButton {color: #a9fefe; border: 2px solid #555; border-radius: 20px;border-style: outset;background:  qradialgradient(cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,radius: 1.35, stop: 0 #fff, stop: 1 #a9fefe);padding: 5px;}QPushButton:hover {background:  qradialgradient(cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,radius: 1.35, stop: 0 #fff, stop: 1 #639595);}";
+};
 #endif // FORM_H

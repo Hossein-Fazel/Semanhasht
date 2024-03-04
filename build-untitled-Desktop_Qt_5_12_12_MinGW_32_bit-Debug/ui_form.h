@@ -2631,7 +2631,7 @@ public:
 "border-style: outset;\n"
 "background: qradialgradient(\n"
 "cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"radius: 1.35, stop: 0 #fff, stop: 1 #a9fefe\n"
+"radius: 1.35, stop: 0 #fff, stop: 1  #a9fefe\n"
 ");\n"
 "padding: 5px;\n"
 "}\n"

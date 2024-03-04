@@ -57,6 +57,7 @@ public:
         font.setPointSize(82);
         font.setBold(false);
         font.setItalic(false);
+        font.setWeight(50);
         label->setFont(font);
         label->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
@@ -71,6 +72,7 @@ public:
         font1.setPointSize(40);
         font1.setBold(false);
         font1.setItalic(false);
+        font1.setWeight(50);
         total_exit->setFont(font1);
         total_exit->setCursor(QCursor(Qt::OpenHandCursor));
         total_exit->setStyleSheet(QString::fromUtf8("QPushButton {\n"
@@ -95,7 +97,7 @@ public:
 ""));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(690, 210, 611, 511));
+        pushButton->setGeometry(QRect(700, 200, 611, 511));
         pushButton->setCursor(QCursor(Qt::ArrowCursor));
         pushButton->setStyleSheet(QString::fromUtf8(""));
         QIcon icon;
@@ -105,7 +107,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 2052, 21));
+        menubar->setGeometry(QRect(0, 0, 2052, 20));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

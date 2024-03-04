@@ -80,9 +80,17 @@ Form::~Form()
     delete ui;
 }
 
+void Form::reset_style()
+{
+    for (auto it = button.begin(); it != button.end() ; ++it)
+    {
+        it.value()->setStyleSheet(def_style);
+    }
+}
 
 void Form::on_Merzaye_Shirazi_clicked()
 {
+    ui->Merzaye_Shirazi->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Merza-ye Shirazi");
@@ -97,6 +105,7 @@ void Form::on_Merzaye_Shirazi_clicked()
 
 void Form::on_Shahrake_Shariati_clicked()
 {
+    ui->Shahrake_Shariati->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahrak-e Shari'ati");
@@ -111,6 +120,7 @@ void Form::on_Shahrake_Shariati_clicked()
 
 void Form::on_Rahahan_clicked()
 {
+    ui->Rahahan->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Rahahan");
@@ -125,6 +135,7 @@ void Form::on_Rahahan_clicked()
 
 void Form::on_Meydane_Hazrate_Valiasr_clicked()
 {
+    ui->Meydane_Hazrate_Valiasr->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Meydan-e Hazrat-e ValiAsr");
@@ -139,6 +150,7 @@ void Form::on_Meydane_Hazrate_Valiasr_clicked()
 
 void Form::on_Bosstane_Laleh_clicked()
 {
+    ui->Bosstane_Laleh->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Boostan-e Laleh");
@@ -153,6 +165,7 @@ void Form::on_Bosstane_Laleh_clicked()
 
 void Form::on_Mirdamad_clicked()
 {
+    ui->Mirdamad->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Mirdamad");
@@ -167,6 +180,7 @@ void Form::on_Mirdamad_clicked()
 
 void Form::on_Tajrish_clicked()
 {
+    ui->Tajrish->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Tajrish");
@@ -181,6 +195,7 @@ void Form::on_Tajrish_clicked()
 
 void Form::on_Shahid_Sadr_clicked()
 {
+    ui->Shahid_Sadr->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Sadr");
@@ -195,6 +210,7 @@ void Form::on_Shahid_Sadr_clicked()
 
 void Form::on_Kouhsar_clicked()
 {
+    ui->Kouhsar->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Kouhsar");
@@ -209,6 +225,7 @@ void Form::on_Kouhsar_clicked()
 
 void Form::on_Kashani_clicked()
 {
+    ui->Kashani->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Kashani");
@@ -223,6 +240,7 @@ void Form::on_Kashani_clicked()
 
 void Form::on_Yadegare_Emam_clicked()
 {
+    ui->Yadegare_Emam->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Yadegar-e Emam");
@@ -237,6 +255,7 @@ void Form::on_Yadegare_Emam_clicked()
 
 void Form::on_Haftome_Tir_clicked()
 {
+    ui->Haftome_Tir->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Haftom-e Tir");
@@ -251,6 +270,7 @@ void Form::on_Haftome_Tir_clicked()
 
 void Form::on_Emam_Hossein_clicked()
 {
+    ui->Emam_Hossein->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Emam Hossein");
@@ -265,6 +285,7 @@ void Form::on_Emam_Hossein_clicked()
 
 void Form::on_Meydane_Shohada_clicked()
 {
+    ui->Meydane_Shohada->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Meydan-e Shohada");
@@ -279,6 +300,7 @@ void Form::on_Meydane_Shohada_clicked()
 
 void Form::on_Shahid_Rezaei_clicked()
 {
+    ui->Shahid_Rezaei->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Rezaei");
@@ -293,6 +315,7 @@ void Form::on_Shahid_Rezaei_clicked()
 
 void Form::on_Harame_Hazrate_Abdolazim_clicked()
 {
+    ui->Harame_Hazrate_Abdolazim->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Haram-e Hazrat-e Abdolazim");
@@ -307,6 +330,7 @@ void Form::on_Harame_Hazrate_Abdolazim_clicked()
 
 void Form::on_Chaharbagh_clicked()
 {
+    ui->Chaharbagh->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Chaharbagh");
@@ -321,6 +345,7 @@ void Form::on_Chaharbagh_clicked()
 
 void Form::on_Allameh_Jafari_clicked()
 {
+    ui->Allameh_Jafari->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Allameh Jafari");
@@ -335,6 +360,7 @@ void Form::on_Allameh_Jafari_clicked()
 
 void Form::on_Erame_Sabz_clicked()
 {
+    ui->Erame_Sabz->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Eram-e Sabz");
@@ -349,6 +375,7 @@ void Form::on_Erame_Sabz_clicked()
 
 void Form::on_Meydane_Azadi_clicked()
 {
+    ui->Meydane_Azadi->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Meydan-e Azadi");
@@ -363,6 +390,7 @@ void Form::on_Meydane_Azadi_clicked()
 
 void Form::on_Ostad_Moin_clicked()
 {
+    ui->Ostad_Moin->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Ostad Moi'n");
@@ -377,6 +405,7 @@ void Form::on_Ostad_Moin_clicked()
 
 void Form::on_Shademan_clicked()
 {
+    ui->Shademan->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shademan");
@@ -391,6 +420,7 @@ void Form::on_Shademan_clicked()
 
 void Form::on_Towhid_clicked()
 {
+    ui->Towhid->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Towhid");
@@ -405,6 +435,7 @@ void Form::on_Towhid_clicked()
 
 void Form::on_Meydane_Enghelabe_Eslami_clicked()
 {
+    ui->Meydane_Enghelabe_Eslami->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Meydan-e Enghelab-e Eslami");
@@ -419,6 +450,7 @@ void Form::on_Meydane_Enghelabe_Eslami_clicked()
 
 void Form::on_Teatre_shahr_clicked()
 {
+    ui->Teatre_shahr->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Teatr-e Shahr");
@@ -433,6 +465,7 @@ void Form::on_Teatre_shahr_clicked()
 
 void Form::on_Ferdowsi_clicked()
 {
+    ui->Ferdowsi->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Ferdowsi");
@@ -446,6 +479,7 @@ void Form::on_Ferdowsi_clicked()
 
 void Form::on_Darvazeh_Dowlat_clicked()
 {
+    ui->Darvazeh_Dowlat->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Darvazeh Dowlat");
@@ -460,6 +494,7 @@ void Form::on_Darvazeh_Dowlat_clicked()
 
 void Form::on_Darvazeh_Shemiran_clicked()
 {
+    ui->Darvazeh_Shemiran->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Darvazeh Shemiran");
@@ -474,6 +509,7 @@ void Form::on_Darvazeh_Shemiran_clicked()
 
 void Form::on_Ebne_Sina_clicked()
 {
+    ui->Ebne_Sina->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Ebn-e Sina");
@@ -488,6 +524,7 @@ void Form::on_Ebne_Sina_clicked()
 
 void Form::on_Pirouzi_clicked()
 {
+    ui->Pirouzi->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Pirouzi");
@@ -502,6 +539,7 @@ void Form::on_Pirouzi_clicked()
 
 void Form::on_Nabard_clicked()
 {
+    ui->Nabard->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Nabard");
@@ -516,6 +554,7 @@ void Form::on_Nabard_clicked()
 
 void Form::on_Nirou_Havaei_clicked()
 {
+    ui->Nirou_Havaei->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Nirou Havaei");
@@ -530,6 +569,7 @@ void Form::on_Nirou_Havaei_clicked()
 
 void Form::on_Shahid_Kolahdouz_clicked()
 {
+    ui->Shahid_Kolahdouz->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Kolahdouz");
@@ -544,6 +584,7 @@ void Form::on_Shahid_Kolahdouz_clicked()
 
 void Form::on_Kahrizak_clicked()
 {
+    ui->Kahrizak->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Kahrizak");
@@ -558,6 +599,7 @@ void Form::on_Kahrizak_clicked()
 
 void Form::on_Shahre_Rey_clicked()
 {
+    ui->Shahre_Rey->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahr-e Rey");
@@ -572,6 +614,7 @@ void Form::on_Shahre_Rey_clicked()
 
 void Form::on_Jonoub_Terminal_clicked()
 {
+    ui->Jonoub_Terminal->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Jonoub Terminal");
@@ -586,6 +629,7 @@ void Form::on_Jonoub_Terminal_clicked()
 
 void Form::on_Shoush_clicked()
 {
+    ui->Shoush->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shoush");
@@ -600,6 +644,7 @@ void Form::on_Shoush_clicked()
 
 void Form::on_Panzdahe_Khordad_clicked()
 {
+    ui->Panzdahe_Khordad->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Panzdah-e Khordad");
@@ -614,6 +659,7 @@ void Form::on_Panzdahe_Khordad_clicked()
 
 void Form::on_Taleghani_clicked()
 {
+    ui->Taleghani->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Taleghani");
@@ -628,6 +674,7 @@ void Form::on_Taleghani_clicked()
 
 void Form::on_Shahid_Mofatteh_clicked()
 {
+    ui->Shahid_Mofatteh->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Mofatteh");
@@ -642,6 +689,7 @@ void Form::on_Shahid_Mofatteh_clicked()
 
 void Form::on_Shahid_Beheshti_clicked()
 {
+    ui->Shahid_Beheshti->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Beheshti");
@@ -656,6 +704,7 @@ void Form::on_Shahid_Beheshti_clicked()
 
 void Form::on_Shahid_Haghani_clicked()
 {
+    ui->Shahid_Haghani->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Haghani");
@@ -670,6 +719,7 @@ void Form::on_Shahid_Haghani_clicked()
 
 void Form::on_Gholhak_clicked()
 {
+    ui->Gholhak->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Gholhak");
@@ -684,6 +734,7 @@ void Form::on_Gholhak_clicked()
 
 void Form::on_Gheytariyeh_clicked()
 {
+    ui->Gheytariyeh->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Gheytariyeh");
@@ -698,6 +749,7 @@ void Form::on_Gheytariyeh_clicked()
 
 void Form::on_Meydane_Jahad_clicked()
 {
+    ui->Meydane_Jahad->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Meydan-e Jahad");
@@ -712,6 +764,7 @@ void Form::on_Meydane_Jahad_clicked()
 
 void Form::on_Sohrevardi_clicked()
 {
+    ui->Sohrevardi->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Sohrevardi");
@@ -726,6 +779,7 @@ void Form::on_Sohrevardi_clicked()
 
 void Form::on_Shahid_Ghodousi_clicked()
 {
+    ui->Shahid_Ghodousi->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Ghdousi");
@@ -740,6 +794,7 @@ void Form::on_Shahid_Ghodousi_clicked()
 
 void Form::on_Shahid_Zeynoddin_clicked()
 {
+    ui->Shahid_Zeynoddin->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Shahid Zeynoddin");
@@ -754,6 +809,7 @@ void Form::on_Shahid_Zeynoddin_clicked()
 
 void Form::on_Aghdasiyeh_clicked()
 {
+    ui->Aghdasiyeh->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Aghdasiyeh");
@@ -768,6 +824,7 @@ void Form::on_Aghdasiyeh_clicked()
 
 void Form::on_Ghaem_clicked()
 {
+    ui->Ghaem->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Gha'em");
@@ -782,6 +839,7 @@ void Form::on_Ghaem_clicked()
 
 void Form::on_Khajeh_Abdollahe_Ansari_clicked()
 {
+    ui->Khajeh_Abdollahe_Ansari->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Khajeh Abdollah-e Ansari");
@@ -796,6 +854,7 @@ void Form::on_Khajeh_Abdollahe_Ansari_clicked()
 
 void Form::on_Payaneh_Javanmard_clicked()
 {
+    ui->Payaneh_Javanmard->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Payaneh Javanmard");
@@ -810,6 +869,7 @@ void Form::on_Payaneh_Javanmard_clicked()
 
 void Form::on_Bimeh_clicked()
 {
+    ui->Bimeh->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Bimeh");
@@ -824,6 +884,7 @@ void Form::on_Bimeh_clicked()
 
 void Form::on_Tehran_Pars_clicked()
 {
+    ui->Tehran_Pars->setStyleSheet(style);
     if(ui->OR->text() == "Empty")
     {
         ui->OR->setText("Tehran Pars");
@@ -906,6 +967,9 @@ void Form::on_Azadegan_clicked()
 
 void Form::on_reset_btn_clicked()
 {
+    ui->Merzaye_Shirazi->setStyleSheet(def_style);
+    ui->Shahrake_Shariati->setStyleSheet(def_style);
+
     ui->OR->setText("Empty");
     ui->DS->setText("Empty");
     ui->T1->setTime(QTime(0 , 0));

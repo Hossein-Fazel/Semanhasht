@@ -3,6 +3,8 @@
 #include "mainwindow.h"
 
 #include <QDebug>
+#include <algorithm>
+
 Form::Form(QWidget *parent) : QWidget(parent),
                               ui(new Ui::Form)
 {
@@ -74,6 +76,7 @@ void Form::save_btns()
     button["Shahid Ghodousi"] = ui->Shahid_Ghodousi;
     button["Shahid Zeynoddin"] = ui->Shahid_Zeynoddin;
     button["Aghdasiyeh"] = ui->Aghdasiyeh;
+    //    button["Meydan-e Azadi"] = ui->Meydane_Azadi;
 }
 
 Form::~Form()
@@ -328,14 +331,14 @@ void Form::on_Shahid_Rezaei_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahid_Rezaei->setStyleSheet(style);
+        ui->Shahid_Rezaei->setStyleSheet(style);
 
         ui->OR->setText("Shahid Rezaei");
     }
 
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahid_Rezaei->setStyleSheet(style);
+        ui->Shahid_Rezaei->setStyleSheet(style);
 
         ui->DS->setText("Shahid Rezaei");
     }
@@ -346,13 +349,13 @@ void Form::on_Harame_Hazrate_Abdolazim_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Harame_Hazrate_Abdolazim->setStyleSheet(style);
+        ui->Harame_Hazrate_Abdolazim->setStyleSheet(style);
 
         ui->OR->setText("Haram-e Hazrat-e Abdolazim");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Harame_Hazrate_Abdolazim->setStyleSheet(style);
+        ui->Harame_Hazrate_Abdolazim->setStyleSheet(style);
 
         ui->DS->setText("Haram-e Hazrat-e Abdolazim");
     }
@@ -363,13 +366,13 @@ void Form::on_Chaharbagh_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Chaharbagh->setStyleSheet(style);
+        ui->Chaharbagh->setStyleSheet(style);
 
         ui->OR->setText("Chaharbagh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Chaharbagh->setStyleSheet(style);
+        ui->Chaharbagh->setStyleSheet(style);
 
         ui->DS->setText("Chaharbagh");
     }
@@ -380,13 +383,13 @@ void Form::on_Allameh_Jafari_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Allameh_Jafari->setStyleSheet(style);
+        ui->Allameh_Jafari->setStyleSheet(style);
 
         ui->OR->setText("Allameh Jafari");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Allameh_Jafari->setStyleSheet(style);
+        ui->Allameh_Jafari->setStyleSheet(style);
 
         ui->DS->setText("Allameh Jafari");
     }
@@ -397,13 +400,13 @@ void Form::on_Erame_Sabz_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Erame_Sabz->setStyleSheet(style);
+        ui->Erame_Sabz->setStyleSheet(style);
 
         ui->OR->setText("Eram-e Sabz");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Erame_Sabz->setStyleSheet(style);
+        ui->Erame_Sabz->setStyleSheet(style);
 
         ui->DS->setText("Eram-e Sabz");
     }
@@ -414,13 +417,13 @@ void Form::on_Meydane_Azadi_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Meydane_Azadi->setStyleSheet(style);
+        ui->Meydane_Azadi->setStyleSheet(style);
 
         ui->OR->setText("Meydan-e Azadi");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Meydane_Azadi->setStyleSheet(style);
+        ui->Meydane_Azadi->setStyleSheet(style);
 
         ui->DS->setText("Meydan-e Azadi");
     }
@@ -431,13 +434,13 @@ void Form::on_Ostad_Moin_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Ostad_Moin->setStyleSheet(style);
+        ui->Ostad_Moin->setStyleSheet(style);
 
         ui->OR->setText("Ostad Mo'in");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Ostad_Moin->setStyleSheet(style);
+        ui->Ostad_Moin->setStyleSheet(style);
 
         ui->DS->setText("Ostad Mo'in");
     }
@@ -448,13 +451,13 @@ void Form::on_Shademan_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shademan->setStyleSheet(style);
+        ui->Shademan->setStyleSheet(style);
 
         ui->OR->setText("Shademan");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shademan->setStyleSheet(style);
+        ui->Shademan->setStyleSheet(style);
 
         ui->DS->setText("Shademan");
     }
@@ -465,13 +468,13 @@ void Form::on_Towhid_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Towhid->setStyleSheet(style);
+        ui->Towhid->setStyleSheet(style);
 
         ui->OR->setText("Towhid");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Towhid->setStyleSheet(style);
+        ui->Towhid->setStyleSheet(style);
 
         ui->DS->setText("Towhid");
     }
@@ -482,13 +485,13 @@ void Form::on_Meydane_Enghelabe_Eslami_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Meydane_Enghelabe_Eslami->setStyleSheet(style);
+        ui->Meydane_Enghelabe_Eslami->setStyleSheet(style);
 
         ui->OR->setText("Meydan-e Enghelab-e Eslami");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Meydane_Enghelabe_Eslami->setStyleSheet(style);
+        ui->Meydane_Enghelabe_Eslami->setStyleSheet(style);
 
         ui->DS->setText("Meydan-e Enghelab-e Eslami");
     }
@@ -499,13 +502,13 @@ void Form::on_Teatre_shahr_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Teatre_shahr->setStyleSheet(style);
+        ui->Teatre_shahr->setStyleSheet(style);
 
         ui->OR->setText("Teatr-e Shahr");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Teatre_shahr->setStyleSheet(style);
+        ui->Teatre_shahr->setStyleSheet(style);
 
         ui->DS->setText("Teatr-e Shahr");
     }
@@ -516,13 +519,13 @@ void Form::on_Ferdowsi_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Ferdowsi->setStyleSheet(style);
+        ui->Ferdowsi->setStyleSheet(style);
 
         ui->OR->setText("Ferdowsi");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Ferdowsi->setStyleSheet(style);
+        ui->Ferdowsi->setStyleSheet(style);
 
         ui->DS->setText("Ferdowsi");
     }
@@ -532,13 +535,13 @@ void Form::on_Darvazeh_Dowlat_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Darvazeh_Dowlat->setStyleSheet(style);
+        ui->Darvazeh_Dowlat->setStyleSheet(style);
 
         ui->OR->setText("Darvazeh Dowlat");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Darvazeh_Dowlat->setStyleSheet(style);
+        ui->Darvazeh_Dowlat->setStyleSheet(style);
 
         ui->DS->setText("Darvazeh Dowlat");
     }
@@ -549,13 +552,13 @@ void Form::on_Darvazeh_Shemiran_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Darvazeh_Shemiran->setStyleSheet(style);
+        ui->Darvazeh_Shemiran->setStyleSheet(style);
 
         ui->OR->setText("Darvazeh Shemiran");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Darvazeh_Shemiran->setStyleSheet(style);
+        ui->Darvazeh_Shemiran->setStyleSheet(style);
 
         ui->DS->setText("Darvazeh Shemiran");
     }
@@ -566,13 +569,13 @@ void Form::on_Ebne_Sina_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Ebne_Sina->setStyleSheet(style);
+        ui->Ebne_Sina->setStyleSheet(style);
 
         ui->OR->setText("Ebn-e Sina");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Ebne_Sina->setStyleSheet(style);
+        ui->Ebne_Sina->setStyleSheet(style);
 
         ui->DS->setText("Ebn-e Sina");
     }
@@ -583,13 +586,13 @@ void Form::on_Pirouzi_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Pirouzi->setStyleSheet(style);
+        ui->Pirouzi->setStyleSheet(style);
 
         ui->OR->setText("Pirouzi");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Pirouzi->setStyleSheet(style);
+        ui->Pirouzi->setStyleSheet(style);
 
         ui->DS->setText("Pirouzi");
     }
@@ -600,13 +603,13 @@ void Form::on_Nabard_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Nabard->setStyleSheet(style);
+        ui->Nabard->setStyleSheet(style);
 
         ui->OR->setText("Nabard");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Nabard->setStyleSheet(style);
+        ui->Nabard->setStyleSheet(style);
 
         ui->DS->setText("Nabard");
     }
@@ -617,13 +620,13 @@ void Form::on_Nirou_Havaei_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Nirou_Havaei->setStyleSheet(style);
+        ui->Nirou_Havaei->setStyleSheet(style);
 
         ui->OR->setText("Nirou Havaei");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Nirou_Havaei->setStyleSheet(style);
+        ui->Nirou_Havaei->setStyleSheet(style);
 
         ui->DS->setText("Nirou Havaei");
     }
@@ -634,13 +637,13 @@ void Form::on_Shahid_Kolahdouz_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahid_Kolahdouz->setStyleSheet(style);
+        ui->Shahid_Kolahdouz->setStyleSheet(style);
 
         ui->OR->setText("Shahid Kolahdouz");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahid_Kolahdouz->setStyleSheet(style);
+        ui->Shahid_Kolahdouz->setStyleSheet(style);
 
         ui->DS->setText("Shahid Kolahdouz");
     }
@@ -651,13 +654,13 @@ void Form::on_Kahrizak_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Kahrizak->setStyleSheet(style);
+        ui->Kahrizak->setStyleSheet(style);
 
         ui->OR->setText("Kahrizak");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Kahrizak->setStyleSheet(style);
+        ui->Kahrizak->setStyleSheet(style);
         ui->DS->setText("Kahrizak");
     }
     check_enable();
@@ -667,13 +670,13 @@ void Form::on_Shahre_Rey_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahre_Rey->setStyleSheet(style);
+        ui->Shahre_Rey->setStyleSheet(style);
 
         ui->OR->setText("Shahr-e Rey");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahre_Rey->setStyleSheet(style);
+        ui->Shahre_Rey->setStyleSheet(style);
 
         ui->DS->setText("Shahr-e Rey");
     }
@@ -684,13 +687,13 @@ void Form::on_Jonoub_Terminal_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Jonoub_Terminal->setStyleSheet(style);
+        ui->Jonoub_Terminal->setStyleSheet(style);
 
         ui->OR->setText("Jonoub Terminal");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Jonoub_Terminal->setStyleSheet(style);
+        ui->Jonoub_Terminal->setStyleSheet(style);
 
         ui->DS->setText("Jonoub Terminal");
     }
@@ -701,13 +704,13 @@ void Form::on_Shoush_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shoush->setStyleSheet(style);
+        ui->Shoush->setStyleSheet(style);
 
         ui->OR->setText("Shoush");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shoush->setStyleSheet(style);
+        ui->Shoush->setStyleSheet(style);
 
         ui->DS->setText("Shoush");
     }
@@ -718,13 +721,13 @@ void Form::on_Panzdahe_Khordad_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Panzdahe_Khordad->setStyleSheet(style);
+        ui->Panzdahe_Khordad->setStyleSheet(style);
 
         ui->OR->setText("Panzdah-e Khordad");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Panzdahe_Khordad->setStyleSheet(style);
+        ui->Panzdahe_Khordad->setStyleSheet(style);
 
         ui->DS->setText("Panzdah-e Khordad");
     }
@@ -735,13 +738,13 @@ void Form::on_Taleghani_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Taleghani->setStyleSheet(style);
+        ui->Taleghani->setStyleSheet(style);
 
         ui->OR->setText("Taleghani");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Taleghani->setStyleSheet(style);
+        ui->Taleghani->setStyleSheet(style);
 
         ui->DS->setText("Taleghani");
     }
@@ -752,13 +755,13 @@ void Form::on_Shahid_Mofatteh_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahid_Mofatteh->setStyleSheet(style);
+        ui->Shahid_Mofatteh->setStyleSheet(style);
 
         ui->OR->setText("Shahid Mofatteh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahid_Mofatteh->setStyleSheet(style);
+        ui->Shahid_Mofatteh->setStyleSheet(style);
 
         ui->DS->setText("Shahid Mofatteh");
     }
@@ -769,13 +772,13 @@ void Form::on_Shahid_Beheshti_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahid_Beheshti->setStyleSheet(style);
+        ui->Shahid_Beheshti->setStyleSheet(style);
 
         ui->OR->setText("Shahid Beheshti");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahid_Beheshti->setStyleSheet(style);
+        ui->Shahid_Beheshti->setStyleSheet(style);
 
         ui->DS->setText("Shahid Beheshti");
     }
@@ -786,13 +789,13 @@ void Form::on_Shahid_Haghani_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahid_Haghani->setStyleSheet(style);
+        ui->Shahid_Haghani->setStyleSheet(style);
 
         ui->OR->setText("Shahid Haghani");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahid_Haghani->setStyleSheet(style);
+        ui->Shahid_Haghani->setStyleSheet(style);
 
         ui->DS->setText("Shahid Haghani");
     }
@@ -803,13 +806,13 @@ void Form::on_Gholhak_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Gholhak->setStyleSheet(style);
+        ui->Gholhak->setStyleSheet(style);
 
         ui->OR->setText("Gholhak");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Gholhak->setStyleSheet(style);
+        ui->Gholhak->setStyleSheet(style);
 
         ui->DS->setText("Gholhak");
     }
@@ -820,13 +823,13 @@ void Form::on_Gheytariyeh_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Gheytariyeh->setStyleSheet(style);
-        
+        ui->Gheytariyeh->setStyleSheet(style);
+
         ui->OR->setText("Gheytariyeh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Gheytariyeh->setStyleSheet(style);
+        ui->Gheytariyeh->setStyleSheet(style);
 
         ui->DS->setText("Gheytariyeh");
     }
@@ -837,13 +840,13 @@ void Form::on_Meydane_Jahad_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Meydane_Jahad->setStyleSheet(style);
+        ui->Meydane_Jahad->setStyleSheet(style);
 
         ui->OR->setText("Meydan-e Jahad");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Meydane_Jahad->setStyleSheet(style);
+        ui->Meydane_Jahad->setStyleSheet(style);
 
         ui->DS->setText("Meydan-e Jahad");
     }
@@ -854,13 +857,13 @@ void Form::on_Sohrevardi_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Sohrevardi->setStyleSheet(style);
+        ui->Sohrevardi->setStyleSheet(style);
 
         ui->OR->setText("Sohrevardi");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Sohrevardi->setStyleSheet(style);
+        ui->Sohrevardi->setStyleSheet(style);
 
         ui->DS->setText("Sohrevardi");
     }
@@ -871,13 +874,13 @@ void Form::on_Shahid_Ghodousi_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahid_Ghodousi->setStyleSheet(style);
+        ui->Shahid_Ghodousi->setStyleSheet(style);
 
         ui->OR->setText("Shahid Ghdousi");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahid_Ghodousi->setStyleSheet(style);
+        ui->Shahid_Ghodousi->setStyleSheet(style);
 
         ui->DS->setText("Shahid Ghdousi");
     }
@@ -888,13 +891,13 @@ void Form::on_Shahid_Zeynoddin_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Shahid_Zeynoddin->setStyleSheet(style);
+        ui->Shahid_Zeynoddin->setStyleSheet(style);
 
         ui->OR->setText("Shahid Zeynoddin");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Shahid_Zeynoddin->setStyleSheet(style);
+        ui->Shahid_Zeynoddin->setStyleSheet(style);
 
         ui->DS->setText("Shahid Zeynoddin");
     }
@@ -905,13 +908,13 @@ void Form::on_Aghdasiyeh_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Aghdasiyeh->setStyleSheet(style);
+        ui->Aghdasiyeh->setStyleSheet(style);
 
         ui->OR->setText("Aghdasiyeh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Aghdasiyeh->setStyleSheet(style);
+        ui->Aghdasiyeh->setStyleSheet(style);
 
         ui->DS->setText("Aghdasiyeh");
     }
@@ -922,13 +925,13 @@ void Form::on_Ghaem_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Ghaem->setStyleSheet(style);
+        ui->Ghaem->setStyleSheet(style);
 
         ui->OR->setText("Gha'em");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Ghaem->setStyleSheet(style);
+        ui->Ghaem->setStyleSheet(style);
 
         ui->DS->setText("Gha'em");
     }
@@ -939,13 +942,13 @@ void Form::on_Khajeh_Abdollahe_Ansari_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Khajeh_Abdollahe_Ansari->setStyleSheet(style);
+        ui->Khajeh_Abdollahe_Ansari->setStyleSheet(style);
 
         ui->OR->setText("Khajeh Abdollah-e Ansari");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Khajeh_Abdollahe_Ansari->setStyleSheet(style);
+        ui->Khajeh_Abdollahe_Ansari->setStyleSheet(style);
 
         ui->DS->setText("Khajeh Abdollah-e Ansari");
     }
@@ -956,13 +959,13 @@ void Form::on_Payaneh_Javanmard_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Payaneh_Javanmard->setStyleSheet(style);
+        ui->Payaneh_Javanmard->setStyleSheet(style);
 
         ui->OR->setText("Payaneh Javanmard");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Payaneh_Javanmard->setStyleSheet(style);
+        ui->Payaneh_Javanmard->setStyleSheet(style);
 
         ui->DS->setText("Payaneh Javanmard");
     }
@@ -973,13 +976,13 @@ void Form::on_Bimeh_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Bimeh->setStyleSheet(style);
+        ui->Bimeh->setStyleSheet(style);
 
         ui->OR->setText("Bimeh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Bimeh->setStyleSheet(style);
+        ui->Bimeh->setStyleSheet(style);
 
         ui->DS->setText("Bimeh");
     }
@@ -990,13 +993,13 @@ void Form::on_Tehran_Pars_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Tehran_Pars->setStyleSheet(style);
+        ui->Tehran_Pars->setStyleSheet(style);
 
         ui->OR->setText("Tehran Pars");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Tehran_Pars->setStyleSheet(style);
+        ui->Tehran_Pars->setStyleSheet(style);
 
         ui->DS->setText("Tehran Pars");
     }
@@ -1007,15 +1010,15 @@ void Form::on_Mahdie_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Mahdie->setStyleSheet(style);
+        ui->Mahdie->setStyleSheet(style);
 
-        ui->OR->setText("Mahdieh");
+        ui->OR->setText("Mahdiyeh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Mahdie->setStyleSheet(style);
+        ui->Mahdie->setStyleSheet(style);
 
-        ui->DS->setText("Mahdieh");
+        ui->DS->setText("Mahdiyeh");
     }
     check_enable();
 }
@@ -1024,13 +1027,13 @@ void Form::on_Moniriyeh_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Moniriyeh->setStyleSheet(style);
+        ui->Moniriyeh->setStyleSheet(style);
 
         ui->OR->setText("Moniriyeh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Moniriyeh->setStyleSheet(style);
+        ui->Moniriyeh->setStyleSheet(style);
 
         ui->DS->setText("Moniriyeh");
     }
@@ -1041,13 +1044,13 @@ void Form::on_Javadie_clicked()
 {
     if (ui->OR->text() == "Empty")
     {
-    ui->Javadie->setStyleSheet(style);
+        ui->Javadie->setStyleSheet(style);
 
         ui->OR->setText("Javadiyeh");
     }
     else if (ui->DS->text() == "Empty")
     {
-    ui->Javadie->setStyleSheet(style);
+        ui->Javadie->setStyleSheet(style);
 
         ui->DS->setText("Javadiyeh");
     }
@@ -1115,11 +1118,7 @@ void Form::on_Dis_btn_clicked()
 {
     Time user_time(ui->T1->text().toStdString());
     save_directions path = t1.Find_Shortest_Path(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
-    qDebug() << "test";
-//    for(string node:path.direct)
-//    {
-//        qDebug() << QString::fromStdString(node) << '\n';
-//    }
+    qDebug() << "distance\n";
     show_dist(path, user_time);
 }
 
@@ -1127,6 +1126,7 @@ void Form::on_Time_btn_clicked()
 {
     Time user_time(ui->T1->text().toStdString());
     save_directions path = t1.find_best_time(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()), user_time);
+    qDebug() << "time\n";
 }
 
 void Form::on_Cost_btn_clicked()
@@ -1134,17 +1134,43 @@ void Form::on_Cost_btn_clicked()
     Time user_time(ui->T1->text().toStdString());
     t1.complete_matrix_p();
     save_directions path = t1.find_best_cost(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
+    qDebug() << "cost\n";
+    show_cost(path, user_time);
 }
 
+void Form::Show_clock(Time time)
+{
+    ui->T1->setTime(QTime(time.get_hour() + 12 * (time.get_noon() == "pm" or time.get_noon() == "PM"), time.get_minute()));
+}
 
 void Form::show_dist(save_directions path, Time time)
 {
-    for(int i = 0 ; i < path.direct.size()-1; i++)
+    for (int i = 0; i < path.direct.size() - 1; i++)
     {
         button[QString::fromStdString(path.direct[i])]->setStyleSheet(style);
     }
     ui->value->setText(QString::number(path.distance) + " km");
-    Time arrive_t = t1.get_dis_time(path , time);
+    Time arrive_t = t1.get_dis_time(path, time);
+}
 
-    ui->T1->setTime(QTime(arrive_t.get_hour() + 12*(arrive_t.get_noon() == "pm" or arrive_t.get_noon() == "PM"), arrive_t.get_minute()));
+void Form::show_cost(save_directions path, Time user_time)
+{
+    ui->value->setText(QString::number(path.distance) + " Toman");
+    for (int i = 0; i < path.direct.size() - 1; i++)
+    {
+        auto start = std::find(t1.get_line_nodes(path.Line_vehicle[i]).begin(), t1.get_line_nodes(path.Line_vehicle[i]).end(), path.direct[i]) - t1.get_line_nodes(path.Line_vehicle[i]).begin();
+        auto end = std::find(t1.get_line_nodes(path.Line_vehicle[i]).begin(), t1.get_line_nodes(path.Line_vehicle[i]).end(), path.direct[i + 1]) - t1.get_line_nodes(path.Line_vehicle[i]).begin();
+
+        int step = start < end ? 1 : -1;
+        for (size_t j = start; j != end; j += step)
+        {
+            button[QString::fromStdString(t1.get_line_nodes(path.Line_vehicle[i])[j])]->setStyleSheet(style);
+            qDebug() << QString::fromStdString(t1.get_line_nodes(path.Line_vehicle[i])[j]) << '\n';
+        }
+    }
+
+    button[QString::fromStdString(path.direct[path.direct.size() - 1])]->setStyleSheet(style);
+    qDebug() << QString::fromStdString(path.direct[path.direct.size() - 1]);
+
+    Show_clock(t1.get_cost_time(path, user_time));
 }

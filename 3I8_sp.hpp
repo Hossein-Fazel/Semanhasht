@@ -75,6 +75,8 @@ public:
     };
 
     Time get_dis_time(save_directions path, Time user_time);
+    Time get_cost_time(save_directions path, Time user_time);
+    vector<string> get_line_nodes(string line_name);
 
 private:
     unordered_map<string, vector<string>> Linemap;

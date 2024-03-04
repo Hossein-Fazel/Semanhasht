@@ -23,7 +23,9 @@ public:
     void save_btns();
     void check_enable();
     void reset_style();
+    void Show_clock(Time time);
     void show_dist(save_directions path, Time time);
+    void show_cost(save_directions path, Time time);
     ~Form();
 
 private slots:

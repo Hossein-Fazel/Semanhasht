@@ -567,3 +567,61 @@ Time Tehran::get_dis_time(save_directions path, Time user_time)
     }
     return user_time;
 }
+
+
+vector<string> Tehran::get_line_nodes(string line_name)
+{
+    if(Linemap.count(line_name) == 1)
+    {
+        return Linemap[line_name];
+    }
+    throw invalid_argument("there is no line with this name !");
+}
+
+Time Tehran::get_cost_time(save_directions path, Time user_time)
+{
+    cout << "best cost :" << endl;
+    cout << path.distance << " toman" << endl;
+    bool check = 0;
+    for (int i = 0; i < path.direct.size() - 1; i++)
+    {
+        auto start = find(Linemap[path.Line_vehicle[i]].begin(), Linemap[path.Line_vehicle[i]].end(), path.direct[i]) - Linemap[path.Line_vehicle[i]].begin();
+        auto end = find(Linemap[path.Line_vehicle[i]].begin(), Linemap[path.Line_vehicle[i]].end(), path.direct[i + 1]) - Linemap[path.Line_vehicle[i]].begin();
+
+        int step = start < end ? 1 : -1;
+        for (size_t j = start; j != end; j += step)
+        {
+            cout << Linemap[path.Line_vehicle[i]][j];
+
+            if (j != end)
+            {
+                cout << " -- "
+                     << "(" << path.vehicle[i] << ")"
+                     << " --> ";
+            }
+            if (i == 0)
+            {
+                if(j == start)
+                {
+                    user_time += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], "NULL", path.vehicle[i], user_time);
+                }
+                else
+                {
+                    user_time += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], path.Line_vehicle[i], path.vehicle[i], user_time);
+                }
+            }
+
+            else
+            {
+                int index = j == start ? i - 1 : i;
+                user_time += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], path.Line_vehicle[index], path.vehicle[i], user_time);
+            }
+        }
+    }
+
+    cout << path.direct[path.direct.size() - 1];
+
+    cout << endl;
+    cout << "arriving time : ";
+    return user_time;
+}

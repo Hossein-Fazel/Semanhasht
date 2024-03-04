@@ -483,7 +483,7 @@ public:
         line_18->setFrameShape(QFrame::HLine);
         label_18 = new QLabel(Form);
         label_18->setObjectName(QString::fromUtf8("label_18"));
-        label_18->setGeometry(QRect(670, 680, 61, 21));
+        label_18->setGeometry(QRect(660, 620, 61, 21));
         line_50 = new QFrame(Form);
         line_50->setObjectName(QString::fromUtf8("line_50"));
         line_50->setWindowModality(Qt::ApplicationModal);
@@ -784,7 +784,7 @@ public:
 ""));
         Moniriyeh = new QPushButton(Form);
         Moniriyeh->setObjectName(QString::fromUtf8("Moniriyeh"));
-        Moniriyeh->setGeometry(QRect(730, 670, 41, 41));
+        Moniriyeh->setGeometry(QRect(730, 610, 41, 41));
         Moniriyeh->setCursor(QCursor(Qt::OpenHandCursor));
         Moniriyeh->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	font: 11pt ;\n"
@@ -1560,7 +1560,7 @@ public:
 ""));
         label_19 = new QLabel(Form);
         label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setGeometry(QRect(680, 620, 49, 16));
+        label_19->setGeometry(QRect(670, 680, 49, 16));
         line_129 = new QFrame(Form);
         line_129->setObjectName(QString::fromUtf8("line_129"));
         line_129->setGeometry(QRect(1290, 540, 71, 31));
@@ -3038,7 +3038,7 @@ public:
         line_70->setFrameShape(QFrame::HLine);
         Mahdie = new QPushButton(Form);
         Mahdie->setObjectName(QString::fromUtf8("Mahdie"));
-        Mahdie->setGeometry(QRect(730, 610, 41, 41));
+        Mahdie->setGeometry(QRect(730, 670, 41, 41));
         Mahdie->setCursor(QCursor(Qt::OpenHandCursor));
         Mahdie->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	font: 11pt ;\n"
@@ -3544,7 +3544,7 @@ public:
         Towhid->setText(QString());
         Shahrake_Shariati->setText(QString());
         Ostad_Moin->setText(QString());
-        label_19->setText(QApplication::translate("Form", "Mahdieh", nullptr));
+        label_19->setText(QApplication::translate("Form", "Mahdiyeh", nullptr));
         Emam_Hossein->setText(QString());
         Meydane_Shohada->setText(QString());
         Shahid_Beheshti->setText(QString());

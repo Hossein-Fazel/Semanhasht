@@ -2,6 +2,7 @@
 #include "ui_form.h"
 #include "mainwindow.h"
 
+#include <QDebug>
 Form::Form(QWidget *parent) : QWidget(parent),
                               ui(new Ui::Form)
 {
@@ -14,15 +15,15 @@ Form::Form(QWidget *parent) : QWidget(parent),
 
 void Form::save_btns()
 {
-    button["Chaharbahg"] = ui->Chaharbagh;
+    button["Chaharbagh"] = ui->Chaharbagh;
     button["Kashani"] = ui->Kashani;
     button["Allameh Jafari"] = ui->Allameh_Jafari;
     button["Eram-e Sabz"] = ui->Erame_Sabz;
     button["Meydan-e Azadi"] = ui->Meydane_Azadi;
     button["Ostad Mo'in"] = ui->Ostad_Moin;
     button["Shademan"] = ui->Shademan;
-    button["Tohid"] = ui->Towhid;
-    button["Meydan-e Engelab-e Eslami"] = ui->Meydane_Enghelabe_Eslami;
+    button["Towhid"] = ui->Towhid;
+    button["Meydan-e Enghelab-e Eslami"] = ui->Meydane_Enghelabe_Eslami;
     button["Teatr-e Shahr"] = ui->Teatre_shahr;
     button["Ferdowsi"] = ui->Ferdowsi;
     button["Darvazeh Dowlat"] = ui->Darvazeh_Dowlat;
@@ -35,7 +36,7 @@ void Form::save_btns()
     button["Shahid Kolahdouz"] = ui->Shahid_Kolahdouz;
     button["kouhsar"] = ui->Kouhsar;
     button["Yadegar-e Emam"] = ui->Yadegare_Emam;
-    button["Boostan-e Laleh"] = ui->Bosstane_Laleh;
+    button["Boostan-e laleh"] = ui->Bosstane_Laleh;
     button["Meydan-e Hazrat-e ValiAsr"] = ui->Meydane_Hazrate_Valiasr;
     button["Haftom-e Tir"] = ui->Haftome_Tir;
     button["Emam Hossein"] = ui->Emam_Hossein;
@@ -159,13 +160,13 @@ void Form::on_Bosstane_Laleh_clicked()
     {
         ui->Bosstane_Laleh->setStyleSheet(style);
 
-        ui->OR->setText("Boostan-e Laleh");
+        ui->OR->setText("Boostan-e laleh");
     }
     else if (ui->DS->text() == "Empty")
     {
         ui->Bosstane_Laleh->setStyleSheet(style);
 
-        ui->DS->setText("Boostan-e Laleh");
+        ui->DS->setText("Boostan-e laleh");
     }
     check_enable();
 }
@@ -432,13 +433,13 @@ void Form::on_Ostad_Moin_clicked()
     {
     ui->Ostad_Moin->setStyleSheet(style);
 
-        ui->OR->setText("Ostad Moi'n");
+        ui->OR->setText("Ostad Mo'in");
     }
     else if (ui->DS->text() == "Empty")
     {
     ui->Ostad_Moin->setStyleSheet(style);
 
-        ui->DS->setText("Ostad Moi'n");
+        ui->DS->setText("Ostad Mo'in");
     }
     check_enable();
 }
@@ -1091,6 +1092,7 @@ void Form::on_reset_btn_clicked()
     ui->DS->setText("Empty");
     ui->T1->setTime(QTime(0, 0));
     check_enable();
+    ui->value->setText("");
 }
 
 void Form::check_enable()
@@ -1113,6 +1115,12 @@ void Form::on_Dis_btn_clicked()
 {
     Time user_time(ui->T1->text().toStdString());
     save_directions path = t1.Find_Shortest_Path(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
+    qDebug() << "test";
+//    for(string node:path.direct)
+//    {
+//        qDebug() << QString::fromStdString(node) << '\n';
+//    }
+    show_dist(path, user_time);
 }
 
 void Form::on_Time_btn_clicked()
@@ -1126,4 +1134,17 @@ void Form::on_Cost_btn_clicked()
     Time user_time(ui->T1->text().toStdString());
     t1.complete_matrix_p();
     save_directions path = t1.find_best_cost(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
+}
+
+
+void Form::show_dist(save_directions path, Time time)
+{
+    for(int i = 0 ; i < path.direct.size()-1; i++)
+    {
+        button[QString::fromStdString(path.direct[i])]->setStyleSheet(style);
+    }
+    ui->value->setText(QString::number(path.distance) + " km");
+    Time arrive_t = t1.get_dis_time(path , time);
+
+    ui->T1->setTime(QTime(arrive_t.get_hour() + 12*(arrive_t.get_noon() == "pm" or arrive_t.get_noon() == "PM"), arrive_t.get_minute()));
 }

@@ -541,3 +541,29 @@ void Tehran:: print_best_time(Time t, save_directions path)
     }
     cout << endl;
 }
+
+Time Tehran::get_dis_time(save_directions path, Time user_time)
+{
+    for (int i = 0; i < path.direct.size() - 1; i++)
+    {
+        string vehi;
+        if (path.Line_vehicle[i][0] == 'l')
+        {
+            vehi = "Subway";
+        }
+        else
+        {
+            vehi = "Bus";
+        }
+
+        if (i == 0)
+        {
+            user_time += calc_time(path.direct[i], path.direct[i + 1], "NULL", vehi, user_time);
+        }
+        else
+        {
+            user_time += calc_time(path.direct[i], path.direct[i + 1], path.Line_vehicle[i - 1], vehi, user_time);
+        }
+    }
+    return user_time;
+}

@@ -74,6 +74,8 @@ public:
         }
     };
 
+    Time get_dis_time(save_directions path, Time user_time);
+
 private:
     unordered_map<string, vector<string>> Linemap;
     unordered_map<string, int> stations;

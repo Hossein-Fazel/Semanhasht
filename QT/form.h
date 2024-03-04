@@ -5,6 +5,7 @@
 #include <QMap>
 #include <QPushButton>
 #include <QPair>
+#include <string>
 #include "../3I8_sp.hpp"
 #include "../Time.hpp"
 
@@ -22,6 +23,7 @@ public:
     void save_btns();
     void check_enable();
     void reset_style();
+    void show_dist(save_directions path, Time time);
     ~Form();
 
 private slots:

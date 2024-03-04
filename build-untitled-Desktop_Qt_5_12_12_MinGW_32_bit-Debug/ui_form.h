@@ -288,6 +288,8 @@ public:
     QPushButton *Dis_btn;
     QPushButton *Time_btn;
     QPushButton *Cost_btn;
+    QPushButton *total_exit;
+    QLabel *label_63;
 
     void setupUi(QWidget *Form)
     {
@@ -1279,7 +1281,7 @@ public:
         line_49->setFrameShape(QFrame::VLine);
         line_85 = new QFrame(Form);
         line_85->setObjectName(QString::fromUtf8("line_85"));
-        line_85->setGeometry(QRect(1110, 840, 31, 91));
+        line_85->setGeometry(QRect(1110, 840, 31, 81));
         line_85->setStyleSheet(QString::fromUtf8("\n"
 "color : #ffcd6a;\n"
 "\n"
@@ -2748,7 +2750,7 @@ public:
         line_131->setFrameShape(QFrame::VLine);
         line_86 = new QFrame(Form);
         line_86->setObjectName(QString::fromUtf8("line_86"));
-        line_86->setGeometry(QRect(1104, 840, 31, 91));
+        line_86->setGeometry(QRect(1104, 840, 31, 81));
         line_86->setStyleSheet(QString::fromUtf8("\n"
 "color : #ffcd6a;\n"
 "\n"
@@ -3182,6 +3184,52 @@ public:
         Cost_btn = new QPushButton(Form);
         Cost_btn->setObjectName(QString::fromUtf8("Cost_btn"));
         Cost_btn->setGeometry(QRect(290, 940, 80, 41));
+        total_exit = new QPushButton(Form);
+        total_exit->setObjectName(QString::fromUtf8("total_exit"));
+        total_exit->setGeometry(QRect(490, 1010, 201, 71));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Onyx"));
+        font3.setPointSize(40);
+        font3.setBold(false);
+        font3.setItalic(false);
+        font3.setWeight(50);
+        total_exit->setFont(font3);
+        total_exit->setCursor(QCursor(Qt::OpenHandCursor));
+        total_exit->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font: 40pt \"Onyx\" ;\n"
+"color: #333;\n"
+"border: 2px solid #8eb0ffd;\n"
+"border-radius: 20px;\n"
+"border-style: outset;\n"
+"background: qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1#8eb0ff\n"
+");\n"
+"padding: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background:  qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff\n"
+");\n"
+"}\n"
+""));
+        label_63 = new QLabel(Form);
+        label_63->setObjectName(QString::fromUtf8("label_63"));
+        label_63->setGeometry(QRect(1010, 1000, 791, 171));
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Onyx"));
+        font4.setPointSize(82);
+        font4.setBold(false);
+        font4.setItalic(false);
+        font4.setWeight(50);
+        label_63->setFont(font4);
+        label_63->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"\n"
+"font:82pt \"Onyx\";\n"
+"}"));
 
         retranslateUi(Form);
 
@@ -3318,6 +3366,8 @@ public:
         Dis_btn->setText(QApplication::translate("Form", "Distance", nullptr));
         Time_btn->setText(QApplication::translate("Form", "Time", nullptr));
         Cost_btn->setText(QApplication::translate("Form", "Cost", nullptr));
+        total_exit->setText(QApplication::translate("Form", "start", nullptr));
+        label_63->setText(QApplication::translate("Form", "wellcome to semanhasht", nullptr));
     } // retranslateUi
 
 };

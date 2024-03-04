@@ -5,6 +5,6 @@ release/vehicle.o
 release/form.o
 release/main.o
 release/mainwindow.o
-release/qrc_picture.o
+release/qrc_pic.o
 release/moc_form.o
 release/moc_mainwindow.o

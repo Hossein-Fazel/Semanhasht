@@ -656,6 +656,7 @@ void Form::on_Kahrizak_clicked()
     }
     else if (ui->DS->text() == "Empty")
     {
+    ui->Kahrizak->setStyleSheet(style);
         ui->DS->setText("Kahrizak");
     }
     check_enable();

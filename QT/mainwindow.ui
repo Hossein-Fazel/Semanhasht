@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2052</width>
-    <height>1312</height>
+    <width>920</width>
+    <height>621</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -28,42 +28,26 @@ colo:rgb(170, 255, 255)c ;
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lbl_pic">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>10</y>
-      <width>791</width>
-      <height>171</height>
+      <x>0</x>
+      <y>-20</y>
+      <width>921</width>
+      <height>641</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Onyx</family>
-      <pointsize>82</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel
-{
-
-font:82pt &quot;Onyx&quot;;
-}</string>
-    </property>
     <property name="text">
-     <string>wellcome to semanhasht</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="total_exit">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>850</y>
-      <width>201</width>
-      <height>71</height>
+      <x>-20</x>
+      <y>570</y>
+      <width>951</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -104,50 +88,8 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
      <string>start</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>200</y>
-      <width>611</width>
-      <height>511</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>ArrowCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="picture.qrc">
-      <normaloff>:/img/image.png</normaloff>:/img/image.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>2000</width>
-      <height>2000</height>
-     </size>
-    </property>
-   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>2052</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="picture.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

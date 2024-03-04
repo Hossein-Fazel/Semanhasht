@@ -2219,7 +2219,7 @@ color : #ffff00 ;
      <x>1110</x>
      <y>840</y>
      <width>31</width>
-     <height>91</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -5525,7 +5525,7 @@ color : #005500 ;
      <x>1104</x>
      <y>840</y>
      <width>31</width>
-     <height>91</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -6601,6 +6601,82 @@ color : #005500 ;
    </property>
    <property name="text">
     <string>Cost</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="total_exit">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>1010</y>
+     <width>201</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Onyx</family>
+     <pointsize>40</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>OpenHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+font: 40pt &quot;Onyx&quot; ;
+color: #333;
+border: 2px solid #8eb0ffd;
+border-radius: 20px;
+border-style: outset;
+background: qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1#8eb0ff
+);
+padding: 5px;
+}
+
+QPushButton:hover {
+background:  qradialgradient(
+cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
+);
+}
+</string>
+   </property>
+   <property name="text">
+    <string>start</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_63">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>1000</y>
+     <width>791</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Onyx</family>
+     <pointsize>82</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+
+font:82pt &quot;Onyx&quot;;
+}</string>
+   </property>
+   <property name="text">
+    <string>wellcome to semanhasht</string>
    </property>
   </widget>
  </widget>

@@ -1127,6 +1127,7 @@ void Form::on_Time_btn_clicked()
     Time user_time(ui->T1->text().toStdString());
     save_directions path = t1.find_best_time(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()), user_time);
     qDebug() << "time\n";
+    show_time(path, user_time);
 }
 
 void Form::on_Cost_btn_clicked()
@@ -1173,4 +1174,36 @@ void Form::show_cost(save_directions path, Time user_time)
     qDebug() << QString::fromStdString(path.direct[path.direct.size() - 1]);
 
     Show_clock(t1.get_cost_time(path, user_time));
+}
+
+
+void Form::show_time(save_directions path, Time time)
+{
+    for(int i = 0; i < path.direct.size(); i++)
+    {
+        if(i == 0 or i == 1)
+        {
+            if(path.vehicle[0] == "Taxi")
+            {
+                button[QString::fromStdString(path.direct[i])]->setStyleSheet(taxi);
+            }
+            else
+            {
+                button[QString::fromStdString(path.direct[i])]->setStyleSheet(style);
+            }
+        }
+        else
+        {
+            if(path.vehicle[0] == "Taxi")
+            {
+                button[QString::fromStdString(path.direct[i - 1])]->setStyleSheet(taxi);
+            }
+            else
+            {
+                button[QString::fromStdString(path.direct[i - 1])]->setStyleSheet(style);
+            }
+        }
+    }
+
+    Show_clock(time + path.distance);
 }

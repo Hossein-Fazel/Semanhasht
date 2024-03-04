@@ -26,6 +26,7 @@ public:
     void Show_clock(Time time);
     void show_dist(save_directions path, Time time);
     void show_cost(save_directions path, Time time);
+    void show_time(save_directions path, Time time);
     ~Form();
 
 private slots:

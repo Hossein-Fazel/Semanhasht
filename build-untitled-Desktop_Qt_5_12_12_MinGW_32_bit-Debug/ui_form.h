@@ -10,9 +10,11 @@
 #define UI_FORM_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QWidget>
@@ -288,8 +290,8 @@ public:
     QPushButton *Dis_btn;
     QPushButton *Time_btn;
     QPushButton *Cost_btn;
-    QPushButton *total_exit;
-    QLabel *label_63;
+    QLabel *value;
+    QListView *listView;
 
     void setupUi(QWidget *Form)
     {
@@ -3148,88 +3150,337 @@ public:
         line_140->setFrameShape(QFrame::VLine);
         label_60 = new QLabel(Form);
         label_60->setObjectName(QString::fromUtf8("label_60"));
-        label_60->setGeometry(QRect(60, 760, 51, 31));
+        label_60->setGeometry(QRect(40, 690, 61, 31));
         QFont font1;
-        font1.setPointSize(10);
+        font1.setPointSize(13);
         label_60->setFont(font1);
         label_61 = new QLabel(Form);
         label_61->setObjectName(QString::fromUtf8("label_61"));
-        label_61->setGeometry(QRect(300, 760, 71, 31));
+        label_61->setGeometry(QRect(40, 730, 101, 31));
         label_61->setFont(font1);
         label_62 = new QLabel(Form);
         label_62->setObjectName(QString::fromUtf8("label_62"));
         label_62->setGeometry(QRect(30, 850, 121, 31));
-        QFont font2;
-        font2.setPointSize(12);
-        label_62->setFont(font2);
+        label_62->setFont(font1);
         T1 = new QTimeEdit(Form);
         T1->setObjectName(QString::fromUtf8("T1"));
-        T1->setGeometry(QRect(160, 850, 211, 31));
+        T1->setGeometry(QRect(120, 850, 161, 31));
+        QFont font2;
+        font2.setPointSize(12);
         T1->setFont(font2);
         OR = new QLabel(Form);
         OR->setObjectName(QString::fromUtf8("OR"));
-        OR->setGeometry(QRect(110, 770, 181, 16));
+        OR->setGeometry(QRect(190, 700, 181, 16));
+        QFont font3;
+        font3.setPointSize(11);
+        OR->setFont(font3);
         DS = new QLabel(Form);
         DS->setObjectName(QString::fromUtf8("DS"));
-        DS->setGeometry(QRect(380, 770, 171, 16));
+        DS->setGeometry(QRect(190, 740, 171, 16));
+        DS->setFont(font3);
         reset_btn = new QPushButton(Form);
         reset_btn->setObjectName(QString::fromUtf8("reset_btn"));
-        reset_btn->setGeometry(QRect(440, 850, 81, 31));
+        reset_btn->setGeometry(QRect(330, 850, 31, 31));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/img/reset.png"), QSize(), QIcon::Normal, QIcon::Off);
+        reset_btn->setIcon(icon);
+        reset_btn->setIconSize(QSize(28, 28));
         Dis_btn = new QPushButton(Form);
         Dis_btn->setObjectName(QString::fromUtf8("Dis_btn"));
-        Dis_btn->setGeometry(QRect(30, 940, 80, 41));
+        Dis_btn->setGeometry(QRect(30, 940, 80, 51));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/img/road.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Dis_btn->setIcon(icon1);
+        Dis_btn->setIconSize(QSize(45, 45));
         Time_btn = new QPushButton(Form);
         Time_btn->setObjectName(QString::fromUtf8("Time_btn"));
-        Time_btn->setGeometry(QRect(160, 940, 80, 41));
+        Time_btn->setGeometry(QRect(150, 940, 80, 51));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/img/clock.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Time_btn->setIcon(icon2);
+        Time_btn->setIconSize(QSize(45, 45));
         Cost_btn = new QPushButton(Form);
         Cost_btn->setObjectName(QString::fromUtf8("Cost_btn"));
-        Cost_btn->setGeometry(QRect(290, 940, 80, 41));
-        total_exit = new QPushButton(Form);
-        total_exit->setObjectName(QString::fromUtf8("total_exit"));
-        total_exit->setGeometry(QRect(490, 1010, 201, 71));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("Onyx"));
-        font3.setPointSize(40);
-        font3.setBold(false);
-        font3.setItalic(false);
-        font3.setWeight(50);
-        total_exit->setFont(font3);
-        total_exit->setCursor(QCursor(Qt::OpenHandCursor));
-        total_exit->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"font: 40pt \"Onyx\" ;\n"
-"color: #333;\n"
-"border: 2px solid #8eb0ffd;\n"
-"border-radius: 20px;\n"
-"border-style: outset;\n"
-"background: qradialgradient(\n"
-"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"radius: 1.35, stop: 0 #fff, stop: 1#8eb0ff\n"
-");\n"
-"padding: 5px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"background:  qradialgradient(\n"
-"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff\n"
-");\n"
-"}\n"
-""));
-        label_63 = new QLabel(Form);
-        label_63->setObjectName(QString::fromUtf8("label_63"));
-        label_63->setGeometry(QRect(1010, 1000, 791, 171));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Onyx"));
-        font4.setPointSize(82);
-        font4.setBold(false);
-        font4.setItalic(false);
-        font4.setWeight(50);
-        label_63->setFont(font4);
-        label_63->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{\n"
-"\n"
-"font:82pt \"Onyx\";\n"
-"}"));
+        Cost_btn->setGeometry(QRect(280, 940, 81, 51));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/img/money.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Cost_btn->setIcon(icon3);
+        Cost_btn->setIconSize(QSize(45, 45));
+        value = new QLabel(Form);
+        value->setObjectName(QString::fromUtf8("value"));
+        value->setGeometry(QRect(40, 780, 111, 41));
+        value->setFont(font1);
+        listView = new QListView(Form);
+        listView->setObjectName(QString::fromUtf8("listView"));
+        listView->setGeometry(QRect(10, 661, 401, 341));
+        listView->raise();
+        line_32->raise();
+        line_111->raise();
+        label_47->raise();
+        label_8->raise();
+        line_108->raise();
+        line_45->raise();
+        label_22->raise();
+        line_135->raise();
+        Payaneh_Javanmard->raise();
+        label_12->raise();
+        line_9->raise();
+        line_90->raise();
+        line_137->raise();
+        Darvazeh_Shemiran->raise();
+        line_88->raise();
+        line_11->raise();
+        Mirdamad->raise();
+        line_18->raise();
+        label_18->raise();
+        line_50->raise();
+        line_37->raise();
+        Shahid_Rezaei->raise();
+        Shoush->raise();
+        line_112->raise();
+        Panzdahe_Khordad->raise();
+        line_8->raise();
+        line_39->raise();
+        Yadegare_Emam->raise();
+        line_115->raise();
+        line_83->raise();
+        line_62->raise();
+        Azadegan->raise();
+        label_3->raise();
+        label_37->raise();
+        line_109->raise();
+        line_124->raise();
+        line->raise();
+        Zamzam->raise();
+        label_13->raise();
+        line_118->raise();
+        line_29->raise();
+        Shahid_Kolahdouz->raise();
+        Moniriyeh->raise();
+        Shahid_Mofatteh->raise();
+        line_54->raise();
+        line_35->raise();
+        label_4->raise();
+        line_20->raise();
+        label_16->raise();
+        line_47->raise();
+        line_33->raise();
+        Meydane_Enghelabe_Eslami->raise();
+        line_110->raise();
+        Kouhsar->raise();
+        label_7->raise();
+        Gheytariyeh->raise();
+        line_107->raise();
+        label_39->raise();
+        Shahid_Zeynoddin->raise();
+        label_32->raise();
+        line_126->raise();
+        line_17->raise();
+        line_119->raise();
+        label_21->raise();
+        line_6->raise();
+        label_59->raise();
+        Nabard->raise();
+        Meydane_Azadi->raise();
+        line_52->raise();
+        line_120->raise();
+        line_104->raise();
+        line_87->raise();
+        line_60->raise();
+        line_46->raise();
+        line_82->raise();
+        label_52->raise();
+        Pirouzi->raise();
+        Meydane_Hazrate_Valiasr->raise();
+        Bosstane_Laleh->raise();
+        line_130->raise();
+        label_54->raise();
+        label_44->raise();
+        line_117->raise();
+        line_84->raise();
+        line_63->raise();
+        line_49->raise();
+        line_85->raise();
+        line_99->raise();
+        line_136->raise();
+        line_123->raise();
+        line_55->raise();
+        label_33->raise();
+        label_10->raise();
+        line_94->raise();
+        line_81->raise();
+        label_11->raise();
+        label_24->raise();
+        line_69->raise();
+        label_46->raise();
+        label_29->raise();
+        line_21->raise();
+        Teatre_shahr->raise();
+        label_48->raise();
+        label_58->raise();
+        label_41->raise();
+        line_4->raise();
+        label_53->raise();
+        Ghaem->raise();
+        Towhid->raise();
+        line_12->raise();
+        line_51->raise();
+        line_64->raise();
+        line_7->raise();
+        Shahrake_Shariati->raise();
+        Ostad_Moin->raise();
+        label_19->raise();
+        line_129->raise();
+        line_65->raise();
+        Emam_Hossein->raise();
+        line_116->raise();
+        Meydane_Shohada->raise();
+        Shahid_Beheshti->raise();
+        line_19->raise();
+        line_100->raise();
+        label_14->raise();
+        label_15->raise();
+        line_122->raise();
+        line_97->raise();
+        Javadie->raise();
+        line_127->raise();
+        Taleghani->raise();
+        Nirou_Havaei->raise();
+        label_25->raise();
+        Harame_Hazrate_Abdolazim->raise();
+        label_42->raise();
+        line_42->raise();
+        label_17->raise();
+        label->raise();
+        line_92->raise();
+        Shademan->raise();
+        line_114->raise();
+        line_10->raise();
+        line_75->raise();
+        label_50->raise();
+        Rahahan->raise();
+        line_74->raise();
+        label_6->raise();
+        Ebne_Sina->raise();
+        label_40->raise();
+        Khajeh_Abdollahe_Ansari->raise();
+        line_57->raise();
+        Shahid_Haghani->raise();
+        label_57->raise();
+        Tajrish->raise();
+        Shahid_Sadr->raise();
+        label_31->raise();
+        Aghdasiyeh->raise();
+        line_77->raise();
+        label_36->raise();
+        label_2->raise();
+        line_105->raise();
+        line_26->raise();
+        line_121->raise();
+        line_23->raise();
+        line_58->raise();
+        label_26->raise();
+        line_79->raise();
+        line_106->raise();
+        label_5->raise();
+        line_41->raise();
+        line_76->raise();
+        line_27->raise();
+        label_27->raise();
+        Jonoub_Terminal->raise();
+        line_44->raise();
+        line_103->raise();
+        Shahid_Ghodousi->raise();
+        Allameh_Jafari->raise();
+        line_91->raise();
+        line_30->raise();
+        Sohrevardi->raise();
+        Haftome_Tir->raise();
+        Kashani->raise();
+        Bimeh->raise();
+        line_95->raise();
+        line_56->raise();
+        Shahre_Rey->raise();
+        line_125->raise();
+        line_132->raise();
+        line_66->raise();
+        label_30->raise();
+        label_35->raise();
+        line_22->raise();
+        line_101->raise();
+        line_98->raise();
+        line_48->raise();
+        Ferdowsi->raise();
+        line_72->raise();
+        line_96->raise();
+        label_56->raise();
+        Kahrizak->raise();
+        line_38->raise();
+        label_28->raise();
+        line_28->raise();
+        line_16->raise();
+        line_102->raise();
+        Merzaye_Shirazi->raise();
+        label_43->raise();
+        label_55->raise();
+        label_38->raise();
+        line_5->raise();
+        line_31->raise();
+        line_36->raise();
+        Meydane_Jahad->raise();
+        line_133->raise();
+        label_45->raise();
+        line_53->raise();
+        line_138->raise();
+        line_131->raise();
+        line_86->raise();
+        label_20->raise();
+        Darvazeh_Dowlat->raise();
+        line_25->raise();
+        line_34->raise();
+        label_9->raise();
+        line_134->raise();
+        line_113->raise();
+        line_13->raise();
+        line_43->raise();
+        line_61->raise();
+        line_93->raise();
+        Chaharbagh->raise();
+        line_71->raise();
+        line_128->raise();
+        line_78->raise();
+        Erame_Sabz->raise();
+        label_23->raise();
+        Gholhak->raise();
+        line_80->raise();
+        line_15->raise();
+        Tehran_Pars->raise();
+        label_49->raise();
+        line_2->raise();
+        label_51->raise();
+        line_70->raise();
+        Mahdie->raise();
+        line_40->raise();
+        line_89->raise();
+        line_14->raise();
+        line_59->raise();
+        line_24->raise();
+        line_3->raise();
+        line_73->raise();
+        label_34->raise();
+        line_139->raise();
+        line_140->raise();
+        label_60->raise();
+        label_61->raise();
+        label_62->raise();
+        T1->raise();
+        OR->raise();
+        DS->raise();
+        reset_btn->raise();
+        Dis_btn->raise();
+        Time_btn->raise();
+        Cost_btn->raise();
+        value->raise();
 
         retranslateUi(Form);
 
@@ -3359,15 +3610,14 @@ public:
         label_34->setText(QApplication::translate("Form", "Azadegan", nullptr));
         label_60->setText(QApplication::translate("Form", "Origin : ", nullptr));
         label_61->setText(QApplication::translate("Form", "Destination :", nullptr));
-        label_62->setText(QApplication::translate("Form", "Starting Time : ", nullptr));
+        label_62->setText(QApplication::translate("Form", " Time : ", nullptr));
         OR->setText(QApplication::translate("Form", "Empty", nullptr));
         DS->setText(QApplication::translate("Form", "Empty", nullptr));
-        reset_btn->setText(QApplication::translate("Form", "RESET", nullptr));
-        Dis_btn->setText(QApplication::translate("Form", "Distance", nullptr));
-        Time_btn->setText(QApplication::translate("Form", "Time", nullptr));
-        Cost_btn->setText(QApplication::translate("Form", "Cost", nullptr));
-        total_exit->setText(QApplication::translate("Form", "start", nullptr));
-        label_63->setText(QApplication::translate("Form", "wellcome to semanhasht", nullptr));
+        reset_btn->setText(QString());
+        Dis_btn->setText(QString());
+        Time_btn->setText(QString());
+        Cost_btn->setText(QString());
+        value->setText(QString());
     } // retranslateUi
 
 };

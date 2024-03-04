@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>920</width>
-    <height>621</height>
+    <width>1990</width>
+    <height>1104</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,38 +21,24 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWidget{
-background-color : #e1feff;
-colo:rgb(170, 255, 255)c ;
-}
+color : #000000;
+};
 
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="lbl_pic">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-20</y>
-      <width>921</width>
-      <height>641</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="total_exit">
     <property name="geometry">
      <rect>
-      <x>-20</x>
-      <y>570</y>
-      <width>951</width>
-      <height>51</height>
+      <x>650</x>
+      <y>850</y>
+      <width>611</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Onyx</family>
+      <family>Segoe UI Variable Display Semib</family>
       <pointsize>40</pointsize>
       <weight>50</weight>
       <italic>false</italic>
@@ -64,14 +50,14 @@ colo:rgb(170, 255, 255)c ;
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-font: 40pt &quot;Onyx&quot; ;
-color: #333;
-border: 2px solid #8eb0ffd;
-border-radius: 20px;
+font: 40pt &quot;Segoe UI Variable Display Semib&quot;;
+color: #000000;
+border: 2px solid #000000;
+border-radius: 40px;
 border-style: outset;
 background: qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1#8eb0ff
+radius: 1.35, stop: 0 #fff, stop: 1 #ffe724
 );
 padding: 5px;
 }
@@ -79,7 +65,7 @@ padding: 5px;
 QPushButton:hover {
 background:  qradialgradient(
 cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
+radius: 1.35, stop: 0 #fff, stop: 1 #f8ffae
 );
 }
 </string>
@@ -88,8 +74,54 @@ radius: 1.35, stop: 0 #fff, stop: 1 #bec8ff
      <string>start</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>110</y>
+      <width>1071</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="pic.qrc">
+      <normaloff>:/img/Screenshot 2024-03-04 112257.png</normaloff>:/img/Screenshot 2024-03-04 112257.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>8000</width>
+      <height>8000</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>-30</y>
+      <width>2021</width>
+      <height>1211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+ background-color : #000000 ;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>total_exit</zorder>
+   <zorder>pushButton</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections/>
 </ui>

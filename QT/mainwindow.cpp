@@ -10,14 +10,18 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("SEMANHASHT");
-    QPixmap pixmap("./../img/Screenshot 2024-03-04 112257.png");
-    ui->lbl_pic->setPixmap(pixmap);
-    ui->lbl_pic->setSizePolicy(QSizePolicy::Fixed , QSizePolicy::Fixed);
-    //ui->lbl_pic->setFixedSize(500,500);
+//    QPixmap pixmap("./../img/Screenshot 2024-03-04 112257.png");
+//   // ui->lbl_pic->setPixmap(pixmap);
+//    //ui->lbl_pic->setSizePolicy(QSizePolicy::Fixed , QSizePolicy::Fixed);
+//    //ui->lbl_pic->setFixedSize(2000,700);
+//    int w = ui->lbl_pic->width();
+//    int h = ui->lbl_pic->height();
 
- // QRegion *region = new QRegion(0 , 0 , ui->lbl_pic->width(), ui->lbl_pic->height(),QRegion::Ellipse);
-//   ui->lbl_pic->setScaledContents(true);
-//    ui->lbl_pic->setMask(*region);
+//    ui->lbl_pic->setPixmap(pixmap.scaled(w ,h ,Qt::KeepAspectRatio));
+
+//  //QRegion *region = new QRegion(0 , 0 , ui->lbl_pic->width(), ui->lbl_pic->height(),QRegion::Ellipse);
+
+
 }
 
 MainWindow::~MainWindow()

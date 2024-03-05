@@ -37,7 +37,7 @@ void Form::save_btns()
     button["Nabard"] = ui->Nabard;
     button["Nirou Havaei"] = ui->Nirou_Havaei;
     button["Shahid Kolahdouz"] = ui->Shahid_Kolahdouz;
-    button["kouhsar"] = ui->Kouhsar;
+    button["Kouhsar"] = ui->Kouhsar;
     button["Yadegar-e Emam"] = ui->Yadegare_Emam;
     button["Boostan-e laleh"] = ui->Bosstane_Laleh;
     button["Meydan-e Hazrat-e ValiAsr"] = ui->Meydane_Hazrate_Valiasr;
@@ -1238,6 +1238,7 @@ void Form::show_cost(save_directions path, Time user_time)
 
 void Form::show_time(save_directions path, Time time)
 {
+    qDebug() << path.direct.size();
     for(int i = 0; i < path.direct.size(); i++)
     {
         if(i == 0 or i == 1)
@@ -1253,7 +1254,7 @@ void Form::show_time(save_directions path, Time time)
         }
         else
         {
-            if(path.vehicle[0] == "Taxi")
+            if(path.vehicle[i - 1] == "Taxi")
             {
                 button[QString::fromStdString(path.direct[i - 1])]->setStyleSheet(taxi);
             }
@@ -1262,9 +1263,8 @@ void Form::show_time(save_directions path, Time time)
                 button[QString::fromStdString(path.direct[i - 1])]->setStyleSheet(style);
             }
         }
-//        qDebug() << path.direct[i] << '\n';
     }
-    if(path.vehicle[0] == "Taxi")
+    if(path.vehicle[path.vehicle.size() - 1] == "Taxi")
     {
         button[QString::fromStdString(path.direct[path.direct.size() - 1])]->setStyleSheet(taxi);
     }

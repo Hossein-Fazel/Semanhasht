@@ -3150,69 +3150,155 @@ public:
         line_140->setFrameShape(QFrame::VLine);
         label_60 = new QLabel(Form);
         label_60->setObjectName(QString::fromUtf8("label_60"));
-        label_60->setGeometry(QRect(40, 690, 61, 31));
+        label_60->setGeometry(QRect(50, 700, 61, 31));
         QFont font1;
-        font1.setPointSize(13);
+        font1.setFamily(QString::fromUtf8("Rockwell Condensed"));
+        font1.setPointSize(18);
+        font1.setBold(false);
+        font1.setItalic(false);
+        font1.setWeight(50);
         label_60->setFont(font1);
+        label_60->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         label_61 = new QLabel(Form);
         label_61->setObjectName(QString::fromUtf8("label_61"));
-        label_61->setGeometry(QRect(40, 730, 101, 31));
+        label_61->setGeometry(QRect(50, 750, 101, 31));
         label_61->setFont(font1);
+        label_61->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         label_62 = new QLabel(Form);
         label_62->setObjectName(QString::fromUtf8("label_62"));
-        label_62->setGeometry(QRect(30, 850, 121, 31));
+        label_62->setGeometry(QRect(50, 820, 61, 41));
         label_62->setFont(font1);
+        label_62->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         T1 = new QTimeEdit(Form);
         T1->setObjectName(QString::fromUtf8("T1"));
-        T1->setGeometry(QRect(120, 850, 161, 31));
-        QFont font2;
-        font2.setPointSize(12);
-        T1->setFont(font2);
+        T1->setGeometry(QRect(130, 820, 161, 41));
+        T1->setFont(font1);
+        T1->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         OR = new QLabel(Form);
         OR->setObjectName(QString::fromUtf8("OR"));
-        OR->setGeometry(QRect(190, 700, 181, 16));
-        QFont font3;
-        font3.setPointSize(11);
-        OR->setFont(font3);
+        OR->setGeometry(QRect(120, 706, 221, 20));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Rockwell Condensed"));
+        font2.setPointSize(13);
+        font2.setBold(false);
+        font2.setItalic(false);
+        font2.setWeight(50);
+        OR->setFont(font2);
+        OR->setStyleSheet(QString::fromUtf8("font: 13pt \"Rockwell Condensed\";"));
         DS = new QLabel(Form);
         DS->setObjectName(QString::fromUtf8("DS"));
-        DS->setGeometry(QRect(190, 740, 171, 16));
-        DS->setFont(font3);
+        DS->setGeometry(QRect(160, 750, 201, 31));
+        DS->setFont(font2);
+        DS->setStyleSheet(QString::fromUtf8("font: 13pt \"Rockwell Condensed\";"));
         reset_btn = new QPushButton(Form);
         reset_btn->setObjectName(QString::fromUtf8("reset_btn"));
-        reset_btn->setGeometry(QRect(330, 850, 31, 31));
+        reset_btn->setGeometry(QRect(310, 820, 31, 41));
+        reset_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"background: #efe4ff ;\n"
+"border-radius: 170px ;  \n"
+"\n"
+"}"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/reset.png"), QSize(), QIcon::Normal, QIcon::Off);
         reset_btn->setIcon(icon);
         reset_btn->setIconSize(QSize(28, 28));
         Dis_btn = new QPushButton(Form);
         Dis_btn->setObjectName(QString::fromUtf8("Dis_btn"));
-        Dis_btn->setGeometry(QRect(30, 940, 80, 51));
+        Dis_btn->setGeometry(QRect(380, 730, 71, 71));
+        Dis_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	font: 11pt ;\n"
+"color: #333;\n"
+"border: 2px solid #555;\n"
+"border-radius: 35px;\n"
+"border-style: outset;\n"
+"background: qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1#efe4ff\n"
+");\n"
+"padding: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background:  qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1 #b5adcc\n"
+");\n"
+"}\n"
+""));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/img/road.png"), QSize(), QIcon::Normal, QIcon::Off);
         Dis_btn->setIcon(icon1);
         Dis_btn->setIconSize(QSize(45, 45));
         Time_btn = new QPushButton(Form);
         Time_btn->setObjectName(QString::fromUtf8("Time_btn"));
-        Time_btn->setGeometry(QRect(150, 940, 80, 51));
+        Time_btn->setGeometry(QRect(330, 910, 51, 51));
+        Time_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	font: 11pt ;\n"
+"color: #333;\n"
+"border: 2px solid #555;\n"
+"border-radius: 25px;\n"
+"border-style: outset;\n"
+"background: qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1#efe4ff\n"
+");\n"
+"padding: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background:  qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1 #b5adcc\n"
+");\n"
+"}\n"
+"\n"
+""));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/img/clock.png"), QSize(), QIcon::Normal, QIcon::Off);
         Time_btn->setIcon(icon2);
         Time_btn->setIconSize(QSize(45, 45));
         Cost_btn = new QPushButton(Form);
         Cost_btn->setObjectName(QString::fromUtf8("Cost_btn"));
-        Cost_btn->setGeometry(QRect(280, 940, 81, 51));
+        Cost_btn->setGeometry(QRect(370, 830, 61, 61));
+        Cost_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"font: 11pt ;\n"
+"color: #333;\n"
+"border: 2px solid #555;\n"
+"border-radius: 30px;\n"
+"border-style: outset;\n"
+"background: qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1#efe4ff\n"
+");\n"
+"padding: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background:  qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1 #b5adcc\n"
+");\n"
+"}\n"
+""));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/img/money.png"), QSize(), QIcon::Normal, QIcon::Off);
         Cost_btn->setIcon(icon3);
         Cost_btn->setIconSize(QSize(45, 45));
         value = new QLabel(Form);
         value->setObjectName(QString::fromUtf8("value"));
-        value->setGeometry(QRect(40, 780, 111, 41));
-        value->setFont(font1);
+        value->setGeometry(QRect(130, 890, 111, 41));
+        QFont font3;
+        font3.setPointSize(13);
+        value->setFont(font3);
         listView = new QListView(Form);
         listView->setObjectName(QString::fromUtf8("listView"));
-        listView->setGeometry(QRect(10, 661, 401, 341));
+        listView->setGeometry(QRect(10, 620, 361, 351));
+        listView->setStyleSheet(QString::fromUtf8("QListView{\n"
+"background: #efe4ff ;\n"
+"border-radius: 170px ;\n"
+"border: 2px solid #555;\n"
+"\n"
+"}"));
         listView->raise();
         line_32->raise();
         line_111->raise();

@@ -519,10 +519,11 @@ save_directions Tehran:: find_best_time(int src, int dest, Time t)
         for (int count = 0; count < V - 1; count++)
         {
             int minIndex = minDistance(dist, sptSet);
+            string src_name= search(minIndex);
 
-            for(auto item = node_v[search(minIndex)].begin(); item != node_v[search(minIndex)].end(); item++)
+            for(auto item = node_v[src_name].begin(); item != node_v[src_name].end(); item++)
             {
-                travel_line(*item, search(minIndex), dist, t, sptSet);
+                travel_line(*item, src_name, dist, t, sptSet);
             }
             sptSet[minIndex] = true;
         }

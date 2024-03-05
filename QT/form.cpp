@@ -877,13 +877,13 @@ void Form::on_Shahid_Ghodousi_clicked()
     {
         ui->Shahid_Ghodousi->setStyleSheet(style);
 
-        ui->OR->setText("Shahid Ghdousi");
+        ui->OR->setText("Shahid Ghodousi");
     }
     else if (ui->DS->text() == "Empty")
     {
         ui->Shahid_Ghodousi->setStyleSheet(style);
 
-        ui->DS->setText("Shahid Ghdousi");
+        ui->DS->setText("Shahid Ghodousi");
     }
     check_enable();
 }
@@ -1162,7 +1162,25 @@ void Form::on_Cost_btn_clicked()
 
 void Form::Show_clock(Time time)
 {
-    ui->T1->setTime(QTime(time.get_hour() + 12 * (time.get_noon() == "pm" or time.get_noon() == "PM"), time.get_minute()));
+    int hour;
+    if(time.get_noon() == "PM" or time.get_noon() == "pm")
+    {
+        hour = time.get_hour() + 12;
+    }
+    else
+    {
+        if(time.get_hour() == 12)
+        {
+            hour = 0;
+        }
+        else
+        {
+            hour = time.get_hour();
+        }
+    }
+    cout << hour << '\n';
+    ui->T1->setTime(QTime(hour , time.get_minute()));
+    time.print();
 }
 
 void Form::show_dist(save_directions path, Time time)

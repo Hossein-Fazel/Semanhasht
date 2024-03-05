@@ -3156,7 +3156,7 @@ public:
         line_140->setFrameShape(QFrame::VLine);
         label_60 = new QLabel(Form);
         label_60->setObjectName(QString::fromUtf8("label_60"));
-        label_60->setGeometry(QRect(50, 700, 61, 31));
+        label_60->setGeometry(QRect(90, 720, 61, 31));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Rockwell Condensed"));
         font1.setPointSize(18);
@@ -3167,22 +3167,22 @@ public:
         label_60->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         label_61 = new QLabel(Form);
         label_61->setObjectName(QString::fromUtf8("label_61"));
-        label_61->setGeometry(QRect(50, 750, 101, 31));
+        label_61->setGeometry(QRect(90, 770, 101, 31));
         label_61->setFont(font1);
         label_61->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         label_62 = new QLabel(Form);
         label_62->setObjectName(QString::fromUtf8("label_62"));
-        label_62->setGeometry(QRect(50, 820, 61, 41));
+        label_62->setGeometry(QRect(90, 840, 61, 41));
         label_62->setFont(font1);
         label_62->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         T1 = new QTimeEdit(Form);
         T1->setObjectName(QString::fromUtf8("T1"));
-        T1->setGeometry(QRect(130, 820, 161, 41));
+        T1->setGeometry(QRect(170, 840, 161, 41));
         T1->setFont(font1);
         T1->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         OR = new QLabel(Form);
         OR->setObjectName(QString::fromUtf8("OR"));
-        OR->setGeometry(QRect(120, 706, 221, 20));
+        OR->setGeometry(QRect(160, 726, 221, 20));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Rockwell Condensed"));
         font2.setPointSize(13);
@@ -3193,12 +3193,12 @@ public:
         OR->setStyleSheet(QString::fromUtf8("font: 13pt \"Rockwell Condensed\";"));
         DS = new QLabel(Form);
         DS->setObjectName(QString::fromUtf8("DS"));
-        DS->setGeometry(QRect(160, 750, 201, 31));
+        DS->setGeometry(QRect(200, 770, 201, 31));
         DS->setFont(font2);
         DS->setStyleSheet(QString::fromUtf8("font: 13pt \"Rockwell Condensed\";"));
         reset_btn = new QPushButton(Form);
         reset_btn->setObjectName(QString::fromUtf8("reset_btn"));
-        reset_btn->setGeometry(QRect(310, 820, 31, 41));
+        reset_btn->setGeometry(QRect(350, 840, 31, 41));
         reset_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background: #efe4ff ;\n"
 "border-radius: 170px ;  \n"
@@ -3210,7 +3210,7 @@ public:
         reset_btn->setIconSize(QSize(28, 28));
         Dis_btn = new QPushButton(Form);
         Dis_btn->setObjectName(QString::fromUtf8("Dis_btn"));
-        Dis_btn->setGeometry(QRect(380, 730, 71, 71));
+        Dis_btn->setGeometry(QRect(420, 750, 71, 71));
         Dis_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	font: 11pt ;\n"
 "color: #333;\n"
@@ -3237,7 +3237,7 @@ public:
         Dis_btn->setIconSize(QSize(45, 45));
         Time_btn = new QPushButton(Form);
         Time_btn->setObjectName(QString::fromUtf8("Time_btn"));
-        Time_btn->setGeometry(QRect(330, 910, 51, 51));
+        Time_btn->setGeometry(QRect(370, 930, 51, 51));
         Time_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "	font: 11pt ;\n"
 "color: #333;\n"
@@ -3265,7 +3265,7 @@ public:
         Time_btn->setIconSize(QSize(45, 45));
         Cost_btn = new QPushButton(Form);
         Cost_btn->setObjectName(QString::fromUtf8("Cost_btn"));
-        Cost_btn->setGeometry(QRect(370, 830, 61, 61));
+        Cost_btn->setGeometry(QRect(410, 850, 61, 61));
         Cost_btn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "font: 11pt ;\n"
 "color: #333;\n"
@@ -3292,12 +3292,12 @@ public:
         Cost_btn->setIconSize(QSize(45, 45));
         value = new QLabel(Form);
         value->setObjectName(QString::fromUtf8("value"));
-        value->setGeometry(QRect(130, 890, 111, 41));
+        value->setGeometry(QRect(170, 910, 111, 41));
         value->setFont(font1);
         value->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         listView = new QListView(Form);
         listView->setObjectName(QString::fromUtf8("listView"));
-        listView->setGeometry(QRect(10, 620, 361, 351));
+        listView->setGeometry(QRect(50, 640, 361, 351));
         listView->setStyleSheet(QString::fromUtf8("QListView{\n"
 "background: #efe4ff ;\n"
 "border-radius: 170px ;\n"

@@ -13,6 +13,7 @@ Form::Form(QWidget *parent) : QWidget(parent),
     ui->T1->setDisplayFormat("hh:mm AP");
     check_enable();
     save_btns();
+    this->setWindowIcon(QIcon("./../img/icon1.png"));
 }
 
 void Form::save_btns()

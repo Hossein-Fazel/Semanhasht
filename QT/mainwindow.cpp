@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("SEMANHASHT");
+    this->setWindowIcon(QIcon("./../img/icon1.png"));
 //    QPixmap pixmap("./../img/Screenshot 2024-03-04 112257.png");
 //   // ui->lbl_pic->setPixmap(pixmap);
 //    //ui->lbl_pic->setSizePolicy(QSizePolicy::Fixed , QSizePolicy::Fixed);

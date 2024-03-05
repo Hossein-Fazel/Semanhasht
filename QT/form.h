@@ -162,7 +162,7 @@ private:
     QMap <QString, QPushButton *> button;
     Tehran t1;
     QString style     =    "QPushButton {font: 11px ; color: #333; border: 2px solid #555; border-radius: 20px;border-style: outset;background: #00ff7f ;}";
-    QString taxi     =     "QPushButton {font: 11px ; color: #333; border: 2px solid #555; border-radius: 20px;border-style: outset;background: #ff662a ;}";
+    QString taxi     =     "QPushButton {font: 11px ; color: #333; border: 2px solid #555; border-radius: 20px;border-style: outset;background: #d10042 ;}";
 
 
     QString def_style = "QPushButton {color: #a9fefe; border: 2px solid #555; border-radius: 20px;border-style: outset;background:  qradialgradient(cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,radius: 1.35, stop: 0 #fff, stop: 1 #a9fefe);padding: 5px;}QPushButton:hover {background:  qradialgradient(cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,radius: 1.35, stop: 0 #fff, stop: 1 #639595);}";

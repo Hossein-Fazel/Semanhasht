@@ -1116,6 +1116,7 @@ void Form::check_enable()
 
 void Form::on_Dis_btn_clicked()
 {
+    reset_style();
     Time user_time(ui->T1->text().toStdString());
     save_directions path = t1.Find_Shortest_Path(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
     qDebug() << "distance\n";
@@ -1124,6 +1125,7 @@ void Form::on_Dis_btn_clicked()
 
 void Form::on_Time_btn_clicked()
 {
+    reset_style();
     Time user_time(ui->T1->text().toStdString());
     save_directions path = t1.find_best_time(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()), user_time);
     qDebug() << "time\n";
@@ -1132,6 +1134,7 @@ void Form::on_Time_btn_clicked()
 
 void Form::on_Cost_btn_clicked()
 {
+    reset_style();
     Time user_time(ui->T1->text().toStdString());
     t1.complete_matrix_p();
     save_directions path = t1.find_best_cost(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
@@ -1146,32 +1149,51 @@ void Form::Show_clock(Time time)
 
 void Form::show_dist(save_directions path, Time time)
 {
-    for (int i = 0; i < path.direct.size() - 1; i++)
+    for (int i = 0; i < path.direct.size(); i++)
     {
         button[QString::fromStdString(path.direct[i])]->setStyleSheet(style);
     }
     ui->value->setText(QString::number(path.distance) + " km");
     Time arrive_t = t1.get_dis_time(path, time);
+    Show_clock(arrive_t);
 }
 
 void Form::show_cost(save_directions path, Time user_time)
 {
+//    qDebug() << "show cost\n";
     ui->value->setText(QString::number(path.distance) + " Toman");
     for (int i = 0; i < path.direct.size() - 1; i++)
     {
-        auto start = std::find(t1.get_line_nodes(path.Line_vehicle[i]).begin(), t1.get_line_nodes(path.Line_vehicle[i]).end(), path.direct[i]) - t1.get_line_nodes(path.Line_vehicle[i]).begin();
-        auto end = std::find(t1.get_line_nodes(path.Line_vehicle[i]).begin(), t1.get_line_nodes(path.Line_vehicle[i]).end(), path.direct[i + 1]) - t1.get_line_nodes(path.Line_vehicle[i]).begin();
+        int start = 0, end = 0;
+        for(int j = 0; j < t1.get_line_nodes(path.Line_vehicle[i]).size(); j++)
+        {
+            if(t1.get_line_nodes(path.Line_vehicle[i])[j] == path.direct[i])
+            {
+                start = j;
+                break;
+            }
+        }
+        for(int j = 0; j < t1.get_line_nodes(path.Line_vehicle[i]).size(); j++)
+        {
+            if(t1.get_line_nodes(path.Line_vehicle[i])[j] == path.direct[i + 1])
+            {
+                end = j;
+                break;
+            }
+        }
 
         int step = start < end ? 1 : -1;
-        for (size_t j = start; j != end; j += step)
+
+        for (int j = start; (j < end && step == 1) || (j > end && step == -1) ; j += step )
         {
+//            qDebug() << "for\n";
             button[QString::fromStdString(t1.get_line_nodes(path.Line_vehicle[i])[j])]->setStyleSheet(style);
-            qDebug() << QString::fromStdString(t1.get_line_nodes(path.Line_vehicle[i])[j]) << '\n';
+//            qDebug() << QString::fromStdString(t1.get_line_nodes(path.Line_vehicle[i])[j]) << '\n';
         }
     }
 
     button[QString::fromStdString(path.direct[path.direct.size() - 1])]->setStyleSheet(style);
-    qDebug() << QString::fromStdString(path.direct[path.direct.size() - 1]);
+//    qDebug() << QString::fromStdString(path.direct[path.direct.size() - 1]);
 
     Show_clock(t1.get_cost_time(path, user_time));
 }
@@ -1203,6 +1225,15 @@ void Form::show_time(save_directions path, Time time)
                 button[QString::fromStdString(path.direct[i - 1])]->setStyleSheet(style);
             }
         }
+//        qDebug() << path.direct[i] << '\n';
+    }
+    if(path.vehicle[0] == "Taxi")
+    {
+        button[QString::fromStdString(path.direct[path.direct.size() - 1])]->setStyleSheet(taxi);
+    }
+    else
+    {
+        button[QString::fromStdString(path.direct[path.direct.size() - 1])]->setStyleSheet(style);
     }
 
     Show_clock(time + path.distance);

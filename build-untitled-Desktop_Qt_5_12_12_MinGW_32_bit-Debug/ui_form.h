@@ -292,6 +292,12 @@ public:
     QPushButton *Cost_btn;
     QLabel *value;
     QListView *listView;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QLabel *label_63;
+    QLabel *label_64;
+    QPushButton *pushButton_3;
+    QLabel *label_65;
 
     void setupUi(QWidget *Form)
     {
@@ -3298,6 +3304,75 @@ public:
 "border: 2px solid #555;\n"
 "\n"
 "}"));
+        pushButton = new QPushButton(Form);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(1760, 20, 71, 71));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	font: 11pt ;\n"
+"color: #333;\n"
+"border: 2px solid #555;\n"
+"border-radius: 35px;\n"
+"border-style: outset;\n"
+"background: qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1#efe4ff\n"
+");\n"
+"padding: 5px;\n"
+"}"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/img/icons8-subway-48.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon4);
+        pushButton->setIconSize(QSize(90, 90));
+        pushButton_2 = new QPushButton(Form);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setGeometry(QRect(1610, 20, 71, 71));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	font: 11pt ;\n"
+"color: #333;\n"
+"border: 2px solid #555;\n"
+"border-radius: 35px;\n"
+"border-style: outset;\n"
+"background: qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1#efe4ff\n"
+");\n"
+"padding: 5px;\n"
+"}"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/img/icons8-bus-94.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_2->setIcon(icon5);
+        pushButton_2->setIconSize(QSize(50, 50));
+        label_63 = new QLabel(Form);
+        label_63->setObjectName(QString::fromUtf8("label_63"));
+        label_63->setGeometry(QRect(1410, 30, 31, 41));
+        label_63->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
+        label_64 = new QLabel(Form);
+        label_64->setObjectName(QString::fromUtf8("label_64"));
+        label_64->setGeometry(QRect(1560, 30, 51, 41));
+        label_64->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
+        pushButton_3 = new QPushButton(Form);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(1450, 20, 71, 71));
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"	font: 11pt ;\n"
+"color: #333;\n"
+"border: 2px solid #555;\n"
+"border-radius: 35px;\n"
+"border-style: outset;\n"
+"background: qradialgradient(\n"
+"cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"radius: 1.35, stop: 0 #fff, stop: 1#efe4ff\n"
+");\n"
+"padding: 5px;\n"
+"}"));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/img/icons8-taxi-94.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_3->setIcon(icon6);
+        pushButton_3->setIconSize(QSize(50, 50));
+        label_65 = new QLabel(Form);
+        label_65->setObjectName(QString::fromUtf8("label_65"));
+        label_65->setGeometry(QRect(1710, 30, 41, 41));
+        label_65->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         listView->raise();
         line_32->raise();
         line_111->raise();
@@ -3566,6 +3641,12 @@ public:
         Time_btn->raise();
         Cost_btn->raise();
         value->raise();
+        pushButton->raise();
+        pushButton_2->raise();
+        label_63->raise();
+        label_64->raise();
+        pushButton_3->raise();
+        label_65->raise();
 
         retranslateUi(Form);
 
@@ -3703,6 +3784,12 @@ public:
         Time_btn->setText(QString());
         Cost_btn->setText(QString());
         value->setText(QString());
+        pushButton->setText(QString());
+        pushButton_2->setText(QString());
+        label_63->setText(QApplication::translate("Form", "Red", nullptr));
+        label_64->setText(QApplication::translate("Form", "green", nullptr));
+        pushButton_3->setText(QString());
+        label_65->setText(QApplication::translate("Form", "green", nullptr));
     } // retranslateUi
 
 };

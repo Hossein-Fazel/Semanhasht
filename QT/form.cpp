@@ -90,6 +90,7 @@ void Form::reset_style()
     {
         it.value()->setStyleSheet(def_style);
     }
+    ui->value->setText("");
 }
 
 void Form::on_Merzaye_Shirazi_clicked()

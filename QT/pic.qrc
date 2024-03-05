@@ -6,5 +6,8 @@
         <file>../img/clock.png</file>
         <file>../img/road.png</file>
         <file>../img/error.png</file>
+        <file>../img/icons8-bus-94.png</file>
+        <file>../img/icons8-taxi-94.png</file>
+        <file>../img/icons8-subway-48.png</file>
     </qresource>
 </RCC>

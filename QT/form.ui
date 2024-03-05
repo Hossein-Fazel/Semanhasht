@@ -6780,8 +6780,15 @@ radius: 1.35, stop: 0 #fff, stop: 1 #b5adcc
    </property>
    <property name="font">
     <font>
-     <pointsize>13</pointsize>
+     <family>Rockwell Condensed</family>
+     <pointsize>18</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 18pt &quot;Rockwell Condensed&quot;;</string>
    </property>
    <property name="text">
     <string/>

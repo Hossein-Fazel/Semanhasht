@@ -3287,9 +3287,8 @@ public:
         value = new QLabel(Form);
         value->setObjectName(QString::fromUtf8("value"));
         value->setGeometry(QRect(130, 890, 111, 41));
-        QFont font3;
-        font3.setPointSize(13);
-        value->setFont(font3);
+        value->setFont(font1);
+        value->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         listView = new QListView(Form);
         listView->setObjectName(QString::fromUtf8("listView"));
         listView->setGeometry(QRect(10, 620, 361, 351));

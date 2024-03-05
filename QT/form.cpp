@@ -1117,29 +1117,46 @@ void Form::check_enable()
 void Form::on_Dis_btn_clicked()
 {
     reset_style();
-    Time user_time(ui->T1->text().toStdString());
-    save_directions path = t1.Find_Shortest_Path(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
-    qDebug() << "distance\n";
-    show_dist(path, user_time);
+    try{
+        Time user_time(ui->T1->text().toStdString());
+        save_directions path = t1.Find_Shortest_Path(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
+        qDebug() << "distance\n";
+        show_dist(path, user_time);
+    }
+    catch(std::exception& e)
+    {
+        show_error(QString(e.what()));
+    }
+
 }
 
 void Form::on_Time_btn_clicked()
 {
     reset_style();
-    Time user_time(ui->T1->text().toStdString());
-    save_directions path = t1.find_best_time(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()), user_time);
-    qDebug() << "time\n";
-    show_time(path, user_time);
+    try {
+        Time user_time(ui->T1->text().toStdString());
+        save_directions path = t1.find_best_time(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()), user_time);
+        qDebug() << "time\n";
+        show_time(path, user_time);
+    }
+    catch (std::exception& e) {
+        show_error(QString(e.what()));
+    }
 }
 
 void Form::on_Cost_btn_clicked()
 {
     reset_style();
-    Time user_time(ui->T1->text().toStdString());
-    t1.complete_matrix_p();
-    save_directions path = t1.find_best_cost(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
-    qDebug() << "cost\n";
-    show_cost(path, user_time);
+    try {
+        Time user_time(ui->T1->text().toStdString());
+        t1.complete_matrix_p();
+        save_directions path = t1.find_best_cost(t1.get_value(ui->OR->text().toStdString()), t1.get_value(ui->DS->text().toStdString()));
+        qDebug() << "cost\n";
+        show_cost(path, user_time);
+    }
+    catch (std::exception& e) {
+        show_error(QString(e.what()));
+    }
 }
 
 void Form::Show_clock(Time time)
@@ -1193,7 +1210,7 @@ void Form::show_cost(save_directions path, Time user_time)
     }
 
     button[QString::fromStdString(path.direct[path.direct.size() - 1])]->setStyleSheet(style);
-//    qDebug() << QString::fromStdString(path.direct[path.direct.size() - 1]);
+
 
     Show_clock(t1.get_cost_time(path, user_time));
 }
@@ -1237,4 +1254,13 @@ void Form::show_time(save_directions path, Time time)
     }
 
     Show_clock(time + path.distance);
+}
+
+void Form::show_error(QString ewhat)
+{
+    QMessageBox mbox;
+    mbox.setIconPixmap(QPixmap("./../img/error.png"));
+    mbox.setWindowTitle("ERROR");
+    mbox.setText(ewhat);
+    mbox.exec();
 }

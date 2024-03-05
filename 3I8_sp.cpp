@@ -14,7 +14,18 @@ using namespace std;
 
 Tehran::Tehran()
 {
-    read_file();
+    try
+    {
+        read_file();
+    }
+    catch (std::exception& e)
+    {
+        show_error(QString(e.what()));
+    }
+    catch(...)
+    {
+        show_error("Undefined error!");
+    }
 }
 
 string Tehran::search(int key)
@@ -624,4 +635,14 @@ Time Tehran::get_cost_time(save_directions path, Time user_time)
     cout << endl;
     cout << "arriving time : ";
     return user_time;
+}
+
+
+void Tehran::show_error(QString ewhat)
+{
+    QMessageBox mbox;
+    mbox.setIconPixmap(QPixmap("./../img/error.png"));
+    mbox.setWindowTitle("ERROR");
+    mbox.setText(ewhat);
+    mbox.exec();
 }

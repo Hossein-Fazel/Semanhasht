@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QPair>
 #include <string>
+#include <QMessageBox>
 #include "../3I8_sp.hpp"
 #include "../Time.hpp"
 
@@ -27,6 +28,7 @@ public:
     void show_dist(save_directions path, Time time);
     void show_cost(save_directions path, Time time);
     void show_time(save_directions path, Time time);
+    void show_error(QString ewhat);
     ~Form();
 
 private slots:

@@ -6,6 +6,7 @@
 #include <vector>
 #include <limits.h>
 #include <unordered_set>
+#include <QMessageBox>
 #include "Time.hpp"
 
 using namespace std;
@@ -77,6 +78,7 @@ public:
     Time get_dis_time(save_directions path, Time user_time);
     Time get_cost_time(save_directions path, Time user_time);
     vector<string> get_line_nodes(string line_name);
+    void show_error(QString ewhat);
 
 private:
     unordered_map<string, vector<string>> Linemap;

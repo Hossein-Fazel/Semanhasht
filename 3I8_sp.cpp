@@ -465,7 +465,7 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
         }
         else
         {
-            return;
+            break;
         }
     }
 
@@ -499,7 +499,7 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
         }
         else
         {
-            return;
+            break;
         }
     }
 

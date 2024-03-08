@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../img/Screenshot 2024-03-04 112257.png</file>
+        <file>../img/reset.png</file>
+        <file>../img/money.png</file>
+        <file>../img/clock.png</file>
+        <file>../img/road.png</file>
+        <file>../img/error.png</file>
+        <file>../img/icons8-bus-94.png</file>
+        <file>../img/icons8-taxi-94.png</file>
+        <file>../img/icons8-subway-48.png</file>
+        <file>../img/icon1.png</file>
+        <file>../img/icon2.png</file>
+    </qresource>
+</RCC>

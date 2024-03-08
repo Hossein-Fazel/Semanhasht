@@ -14,7 +14,18 @@ using namespace std;
 
 Tehran::Tehran()
 {
-    read_file();
+    try
+    {
+        read_file();
+    }
+    catch (std::exception& e)
+    {
+        show_error(QString(e.what()));
+    }
+    catch(...)
+    {
+        show_error("Undefined error!");
+    }
 }
 
 string Tehran::search(int key)
@@ -185,7 +196,14 @@ void Tehran::read_file()
 
                 if (line[0] == 'l')
                 {
-                    edge v1{stoi(dis), line, "Taxi"}, v2{stoi(dis), line, "Subway"};
+                    edge v1;
+                    v1.dist = stoi(dis);
+                    v1.type = line;
+                    v1.vehicle = "Taxi";
+                    edge v2;
+                    v2.dist = stoi(dis);
+                    v2.type = line;
+                    v2.vehicle = "Subway";
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v2);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
@@ -193,7 +211,10 @@ void Tehran::read_file()
                 }
                 else if (line[0] == 'b')
                 {
-                    edge v1{stoi(dis), line, "Bus"};
+                    edge v1;
+                    v1.dist = stoi(dis);
+                    v1.type = line;
+                    v1.vehicle = "Bus";
                     matrix[get_value(stat1)][get_value(stat2)].dist_edge.push_back(v1);
                     matrix[get_value(stat2)][get_value(stat1)].dist_edge.push_back(v1);
                 }
@@ -213,6 +234,10 @@ void Tehran::read_file()
                 }
             }
             file.close();
+        }
+        else
+        {
+            throw invalid_argument("there is no file!!!");
         }
     }
 }
@@ -440,7 +465,7 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
         }
         else
         {
-            return;
+            break;
         }
     }
 
@@ -474,7 +499,7 @@ void Tehran::travel_line( pair <string , string>data ,string src , save_directio
         }
         else
         {
-            return;
+            break;
         }
     }
 
@@ -494,10 +519,11 @@ save_directions Tehran:: find_best_time(int src, int dest, Time t)
         for (int count = 0; count < V - 1; count++)
         {
             int minIndex = minDistance(dist, sptSet);
+            string src_name= search(minIndex);
 
-            for(auto item = node_v[search(minIndex)].begin(); item != node_v[search(minIndex)].end(); item++)
+            for(auto item = node_v[src_name].begin(); item != node_v[src_name].end(); item++)
             {
-                travel_line(*item, search(minIndex), dist, t, sptSet);
+                travel_line(*item, src_name, dist, t, sptSet);
             }
             sptSet[minIndex] = true;
         }
@@ -526,4 +552,98 @@ void Tehran:: print_best_time(Time t, save_directions path)
         }
     }
     cout << endl;
+}
+
+Time Tehran::get_dis_time(save_directions path, Time user_time)
+{
+    for (int i = 0; i < path.direct.size() - 1; i++)
+    {
+        string vehi;
+        if (path.Line_vehicle[i][0] == 'l')
+        {
+            vehi = "Subway";
+        }
+        else
+        {
+            vehi = "Bus";
+        }
+
+        if (i == 0)
+        {
+            user_time += calc_time(path.direct[i], path.direct[i + 1], "NULL", vehi, user_time);
+        }
+        else
+        {
+            user_time += calc_time(path.direct[i], path.direct[i + 1], path.Line_vehicle[i - 1], vehi, user_time);
+        }
+    }
+    return user_time;
+}
+
+
+vector<string> Tehran::get_line_nodes(string line_name)
+{
+    if(Linemap.count(line_name) == 1)
+    {
+        return Linemap[line_name];
+    }
+    throw invalid_argument("there is no line with this name !");
+}
+
+Time Tehran::get_cost_time(save_directions path, Time user_time)
+{
+    cout << "best cost :" << endl;
+    cout << path.distance << " toman" << endl;
+    bool check = 0;
+    for (int i = 0; i < path.direct.size() - 1; i++)
+    {
+        auto start = find(Linemap[path.Line_vehicle[i]].begin(), Linemap[path.Line_vehicle[i]].end(), path.direct[i]) - Linemap[path.Line_vehicle[i]].begin();
+        auto end = find(Linemap[path.Line_vehicle[i]].begin(), Linemap[path.Line_vehicle[i]].end(), path.direct[i + 1]) - Linemap[path.Line_vehicle[i]].begin();
+
+        int step = start < end ? 1 : -1;
+        for (size_t j = start; j != end; j += step)
+        {
+            cout << Linemap[path.Line_vehicle[i]][j];
+
+            if (j != end)
+            {
+                cout << " -- "
+                     << "(" << path.vehicle[i] << ")"
+                     << " --> ";
+            }
+            if (i == 0)
+            {
+                if(j == start)
+                {
+                    user_time += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], "NULL", path.vehicle[i], user_time);
+                }
+                else
+                {
+                    user_time += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], path.Line_vehicle[i], path.vehicle[i], user_time);
+                }
+            }
+
+            else
+            {
+                int index = j == start ? i - 1 : i;
+                user_time += calc_time(Linemap[path.Line_vehicle[i]][j], Linemap[path.Line_vehicle[i]][j + step], path.Line_vehicle[index], path.vehicle[i], user_time);
+            }
+        }
+    }
+
+    cout << path.direct[path.direct.size() - 1];
+
+    cout << endl;
+    cout << "arriving time : ";
+    return user_time;
+}
+
+
+void Tehran::show_error(QString ewhat)
+{
+    QMessageBox mbox;
+    mbox.setIconPixmap(QPixmap("./../img/error.png"));
+    mbox.setWindowTitle("ERROR");
+    mbox.setText(ewhat);
+    mbox.exec();
 }

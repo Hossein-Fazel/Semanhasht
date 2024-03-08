@@ -79,22 +79,23 @@ Time Time::operator+=(int min)
     minute += min;
     if(minute >= 60)
     {
-        minute -= 60;
-        hour++;
+        int count = minute / 60;
+        minute %= 60;
+        hour+= count;
         if(hour == 12)
         {
             if(noon == "AM" || noon == "am")
             {
-                  noon = "PM";
+                noon = "PM";
             }
             else if(noon == "PM" || noon == "pm")
             {
-                  noon = "AM";
+                noon = "AM";
             }
         }
         else if(hour > 12 )
         {
-            hour -= 12 ;
+            hour %= 12 ;
         }
     }
     return *this;

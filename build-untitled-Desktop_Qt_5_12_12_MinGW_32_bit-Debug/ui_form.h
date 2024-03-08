@@ -3344,11 +3344,11 @@ public:
         pushButton_2->setIconSize(QSize(50, 50));
         label_63 = new QLabel(Form);
         label_63->setObjectName(QString::fromUtf8("label_63"));
-        label_63->setGeometry(QRect(1410, 30, 31, 41));
+        label_63->setGeometry(QRect(1410, 30, 41, 41));
         label_63->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         label_64 = new QLabel(Form);
         label_64->setObjectName(QString::fromUtf8("label_64"));
-        label_64->setGeometry(QRect(1560, 30, 51, 41));
+        label_64->setGeometry(QRect(1550, 30, 61, 41));
         label_64->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         pushButton_3 = new QPushButton(Form);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
@@ -3371,7 +3371,7 @@ public:
         pushButton_3->setIconSize(QSize(50, 50));
         label_65 = new QLabel(Form);
         label_65->setObjectName(QString::fromUtf8("label_65"));
-        label_65->setGeometry(QRect(1710, 30, 41, 41));
+        label_65->setGeometry(QRect(1700, 30, 71, 41));
         label_65->setStyleSheet(QString::fromUtf8("font: 18pt \"Rockwell Condensed\";"));
         listView->raise();
         line_32->raise();

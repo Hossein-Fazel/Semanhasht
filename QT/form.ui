@@ -6891,7 +6891,7 @@ padding: 5px;
     <rect>
      <x>1410</x>
      <y>30</y>
-     <width>31</width>
+     <width>41</width>
      <height>41</height>
     </rect>
    </property>
@@ -6905,9 +6905,9 @@ padding: 5px;
   <widget class="QLabel" name="label_64">
    <property name="geometry">
     <rect>
-     <x>1560</x>
+     <x>1550</x>
      <y>30</y>
-     <width>51</width>
+     <width>61</width>
      <height>41</height>
     </rect>
    </property>
@@ -6958,9 +6958,9 @@ padding: 5px;
   <widget class="QLabel" name="label_65">
    <property name="geometry">
     <rect>
-     <x>1710</x>
+     <x>1700</x>
      <y>30</y>
-     <width>41</width>
+     <width>71</width>
      <height>41</height>
     </rect>
    </property>
